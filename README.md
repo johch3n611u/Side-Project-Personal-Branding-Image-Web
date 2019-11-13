@@ -1,8 +1,8 @@
 # Little-KingKong
 Angular &amp; .NET core _ Side Project
 ## 方式
-MVC5的知識為底學習 .NET Core
-EasyUi、JQ的知識為底學習 Angular
+MVC5的知識為底學習 .NET Core </br>
+EasyUi、JQ的知識為底學習 Angular </br>
 
 ## 步驟
 以此教學為架構建置 sideproject，</br>
