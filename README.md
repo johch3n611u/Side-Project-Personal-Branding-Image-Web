@@ -6,7 +6,7 @@ EasyUi、JQ的知識為底學習 Angular
 
 ## 步驟
 以此教學為架構建置 sideproject，</br>
-https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008
+https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008 </br>
 發現以上對於剛接觸的人可能會不瞭解 angular 架構，</br>
 所以優先把以下看完或實做，</br>
 .net mvc 與 c#相對於前端較熟所以可能多花點時間在angular，</br>
