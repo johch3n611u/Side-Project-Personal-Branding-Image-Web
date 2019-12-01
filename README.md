@@ -22,13 +22,13 @@ Little-KingKong則是有目的性的必須要在兩個月內把技術補齊，</
 
 ## 參考
 ### angular
-https://www.slideshare.net/WillHuangTW/happy-leaning-angular-2-web-framework-modern-web-2016
-https://ithelp.ithome.com.tw/m/users/20107113/ironman/1240
-https://ithelp.ithome.com.tw/m/users/20111882/ironman/2922
-https://ithelp.ithome.com.tw/m/users/20090728/ironman/1600
-https://ithelp.ithome.com.tw/m/users/20103745/ironman/1160
-https://github.com/jiayisheji/blog/issues/16
-https://angular.tw/
+https://www.slideshare.net/WillHuangTW/happy-leaning-angular-2-web-framework-modern-web-2016</br>
+https://ithelp.ithome.com.tw/m/users/20107113/ironman/1240</br>
+https://ithelp.ithome.com.tw/m/users/20111882/ironman/2922</br>
+https://ithelp.ithome.com.tw/m/users/20090728/ironman/1600</br>
+https://ithelp.ithome.com.tw/m/users/20103745/ironman/1160</br>
+https://github.com/jiayisheji/blog/issues/16</br>
+https://angular.tw/</br>
 
 ### .net core
-https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372
+https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372</br>
