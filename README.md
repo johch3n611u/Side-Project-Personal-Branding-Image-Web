@@ -32,7 +32,7 @@ https://angular.tw/</br>
 
 ### .net core
 https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372</br>
-https://blog.johnwu.cc/article/asp-net-core-3-starting.html</br>
+https://blog.johnwu.cc/tags/asp-net-core-3/</br>
 https://ithelp.ithome.com.tw/users/20111879/ironman/1749?page=1</br>
 https://ithelp.ithome.com.tw/users/20107875/ironman/2001?page=3</br>
 https://ithelp.ithome.com.tw/users/20103676/ironman/2914</br>
