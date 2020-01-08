@@ -5,7 +5,7 @@ Angular &amp; .NET core _ Side Project
 以EasyUi、JQ的知識為底學習 Angular </br>
 
 ## 步驟
-以此教學為架構並構思更改UML與Sitemap，建置sideproject，</br>
+以此教學為架構並構思更改UML與Wireframe 與 Prototype，建置sideproject，</br>
 https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008 </br>
 發現以上對於剛接觸的人可能會不瞭解 angular 架構，</br>
 所以優先把以下參考看完或實做，</br>
