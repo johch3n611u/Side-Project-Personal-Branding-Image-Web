@@ -29,6 +29,7 @@ https://ithelp.ithome.com.tw/m/users/20090728/ironman/1600</br>
 https://ithelp.ithome.com.tw/m/users/20103745/ironman/1160</br>
 https://github.com/jiayisheji/blog/issues/16</br>
 https://angular.tw/</br>
+https://ithelp.ithome.com.tw/users/20103808/ironman/1389</br>
 
 ### .net core
 https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372</br>
