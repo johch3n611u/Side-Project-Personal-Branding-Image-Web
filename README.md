@@ -37,6 +37,7 @@ https://blog.johnwu.cc/tags/asp-net-core-3/</br>
 https://ithelp.ithome.com.tw/users/20111879/ironman/1749?page=1</br>
 https://ithelp.ithome.com.tw/users/20107875/ironman/2001?page=3</br>
 https://ithelp.ithome.com.tw/users/20103676/ironman/2914</br>
+https://ithelp.ithome.com.tw/users/20111879/ironman/1749?page=1</br>
 
 ### angular material
 https://ithelp.ithome.com.tw/users/20020617/ironman/1263
