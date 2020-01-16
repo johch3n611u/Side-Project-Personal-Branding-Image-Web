@@ -32,6 +32,7 @@ https://angular.tw/</br>
 https://ithelp.ithome.com.tw/users/20103808/ironman/1389</br>
 
 ### .net core
+https://docs.microsoft.com/zh-tw/aspnet/?view=aspnetcore-3.0#pivot=core</br>
 https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372</br>
 https://blog.johnwu.cc/tags/asp-net-core-3/</br>
 https://ithelp.ithome.com.tw/users/20111879/ironman/1749?page=1</br>
