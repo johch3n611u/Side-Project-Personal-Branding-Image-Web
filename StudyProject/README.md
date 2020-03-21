@@ -4,8 +4,9 @@ https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-cr
 
 ## Angular cli 
 ---------------------------------------
-習慣取代配置 -> Angular cli 
-TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
+>習慣取代配置 -> Angular cli 
+
+>TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
 
 常用指令 
 ---------------------------------------
@@ -43,5 +44,9 @@ https://ithelp.ithome.com.tw/articles/10195363
 |Startup time|-|Shorter|
 ---------------------------------------
 > ng serve
->
+
 > ng lint TypeScript 撰寫風格
+
+> ng test (Unit Testing)
+
+> ng e2e (end to end) jasmine 框架 karma 程序
