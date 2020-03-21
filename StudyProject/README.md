@@ -120,5 +120,4 @@ Component在包裝wselector、template、style。
 > AllSigned：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。
 > RemoteSigned：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。
 > Unrestricted：無限制，所有PowerShell Script皆可執行。
-
 > set-executionpolicy remotesigned
