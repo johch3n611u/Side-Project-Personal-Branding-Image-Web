@@ -95,9 +95,14 @@ Component在包裝wselector、template、style。
 ---------------------------------------
 ## 環境建置
 ### cmd常用指令 ctrl + ~
+
 cls 清空終端機
+
 cd.. 上層資料夾
+
 ### nvm nodejs 安裝
+
 1.nvm for windows
+
 2.https://www.onejar99.com/nvm-install-for-windows/
  
