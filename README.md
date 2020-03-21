@@ -1,5 +1,5 @@
-# Little-kingkong
-Angular &amp; .NET core _ Side Project
+#  Self Brand Image Web
+Framework - Angular &amp; .NET core 
 ## 方式
 以MVC5的知識為底學習 .NET Core </br>
 以EasyUi、JQ的知識為底學習 Angular </br>
