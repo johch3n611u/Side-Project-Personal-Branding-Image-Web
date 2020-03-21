@@ -3,7 +3,7 @@
 https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-create-components/
 
 ## Angular cli 
----------------------------------------
+
 >習慣取代配置 -> Angular cli 
 
 >TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
@@ -47,6 +47,9 @@ https://ithelp.ithome.com.tw/articles/10195363
 
 > ng lint TypeScript 撰寫風格
 
-> ng test (Unit Testing)
+> ng test (Unit Testing) jasmine、karma 套件
 
-> ng e2e (end to end) jasmine 框架 karma 程序
+> ng e2e (end to end) karma、Protractor 套件
+---------------------------------------
+* sssss
+* * sss
