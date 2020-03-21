@@ -51,7 +51,7 @@ https://ithelp.ithome.com.tw/articles/10195363
 
 > ng e2e (end to end) karma、Protractor 套件
 ---------------------------------------
-[ng new](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)ng new
+##[ng new](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
 
 * e2e - 測試資料夾。
 * node_modules - npm套件。
@@ -92,40 +92,33 @@ Component在包裝wselector、template、style。
 
 
 # Sample Todolist 1
----------------------------------------
 ## 環境建置
-### cmd常用指令 ctrl + ~
 
-cls 清空終端機
+#### cmd常用指令 ctrl + ~
 
-cd.. 上層資料夾
+> cls 清空終端機
+> cd.. 上層資料夾
 
-### nvm nodejs 安裝
+#### nvm nodejs 安裝
 
-1.nvm for windows https://github.com/coreybutler/nvm-windows
-
-2.nvm list available https://www.onejar99.com/nvm-install-for-windows/
-
-nvm install 版本號
-
-nvm use 版本號
+> 1.nvm for windows https://github.com/coreybutler/nvm-windows
+> 2.nvm list available https://www.onejar99.com/nvm-install-for-windows/
+> nvm install 版本號
+> nvm use 版本號
  
-### Angular 安裝
+#### Angular 安裝
 
- npm install -g @angular/cli
+> npm install -g @angular/cli
 
- ### 數位簽署坑
+ #### 數位簽署坑
 
  http://limitedcode.blogspot.com/2016/03/powershell-ps1.html
 
- get-executionpolicy
+> get-executionpolicy
 
 > Restricted：所有PowerShell Script(.ps1) 皆無法執行。(Windows系統預設)
-
 > AllSigned：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。
-
 > RemoteSigned：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。
-
 > Unrestricted：無限制，所有PowerShell Script皆可執行。
 
-set-executionpolicy remotesigned
+> set-executionpolicy remotesigned
