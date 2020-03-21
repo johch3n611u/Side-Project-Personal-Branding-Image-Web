@@ -2,7 +2,7 @@
 ---------------------------------------
 https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-create-components/
 
-#### Angular cli 
+## Angular cli 
 ---------------------------------------
 習慣取代配置 -> Angular cli 
 TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
