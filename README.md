@@ -30,6 +30,7 @@ https://ithelp.ithome.com.tw/m/users/20103745/ironman/1160</br>
 https://github.com/jiayisheji/blog/issues/16</br>
 https://angular.tw/</br>
 https://ithelp.ithome.com.tw/users/20103808/ironman/1389</br>
+https://wellwind.idv.tw/blog/categories/Angular%E9%80%9F%E6%88%90%E7%8F%AD/
 
 ### .net core
 https://docs.microsoft.com/zh-tw/aspnet/?view=aspnetcore-3.0#pivot=core</br>
