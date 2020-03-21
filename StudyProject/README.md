@@ -102,7 +102,30 @@ cd.. 上層資料夾
 
 ### nvm nodejs 安裝
 
-1.nvm for windows
+1.nvm for windows https://github.com/coreybutler/nvm-windows
 
-2.https://www.onejar99.com/nvm-install-for-windows/
+2.nvm list available https://www.onejar99.com/nvm-install-for-windows/
+
+nvm install 版本號
+
+nvm use 版本號
  
+### Angular 安裝
+
+ npm install -g @angular/cli
+
+ ### 數位簽署坑
+
+ http://limitedcode.blogspot.com/2016/03/powershell-ps1.html
+
+ get-executionpolicy
+
+> Restricted：所有PowerShell Script(.ps1) 皆無法執行。(Windows系統預設)
+
+> AllSigned：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。
+
+> RemoteSigned：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。
+
+> Unrestricted：無限制，所有PowerShell Script皆可執行。
+
+set-executionpolicy remotesigned
