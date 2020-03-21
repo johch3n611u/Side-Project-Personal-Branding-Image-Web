@@ -10,18 +10,27 @@ TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
 常用指令 
 ---------------------------------------
 > ng --help
+
 > ng --help [command]
+
 > ng new [專案名稱]
 ---------------------------------------
 > ng generate
+
 > ng g
+
 > Decorator（ES6裝飾器@）
+
 > 元件 : https://angular.io/cli/generate
 ---------------------------------------
 > ng build
+
 > ng build --prod -> 最小化
+
 > ng build -w
+
 > JIT Just-in-Time
+
 > AOT Ahead-of-Time
 ---------------------------------------
 https://ithelp.ithome.com.tw/articles/10195363
