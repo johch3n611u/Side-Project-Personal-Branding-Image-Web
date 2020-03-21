@@ -33,6 +33,7 @@ https://ithelp.ithome.com.tw/users/20103808/ironman/1389</br>
 https://wellwind.idv.tw/blog/categories/Angular%E9%80%9F%E6%88%90%E7%8F%AD/
 
 ### .net core
+https://ithelp.ithome.com.tw/users/20083151/ironman/856</br>
 https://docs.microsoft.com/zh-tw/aspnet/?view=aspnetcore-3.0#pivot=core</br>
 https://ithelp.ithome.com.tw/m/users/20107461/ironman/1372</br>
 https://blog.johnwu.cc/tags/asp-net-core-3/</br>
