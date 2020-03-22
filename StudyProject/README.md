@@ -6,7 +6,7 @@ https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-cr
 
 >習慣取代配置 -> Angular cli 
 
->TypeScript -> 編譯環境需求 node.js (webpack已含在ng內)
+>TypeScript -> 編譯環境需求 node.js ( webpack 已含在 ng 內)
 
 常用指令 
 ---------------------------------------
@@ -20,7 +20,7 @@ https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-cr
 
 > ng g
 
-> Decorator（ES6裝飾器@）
+> Decorator（ ES6 裝飾器@）
 
 > 元件 : https://angular.io/cli/generate
 ---------------------------------------
@@ -79,13 +79,13 @@ https://ithelp.ithome.com.tw/articles/10195363
 
 ## 環境建置
 
-#### cmd常用指令 ctrl + ~
+#### cmd 常用指令 ctrl + ~
 
 > cls 清空終端機
 
 > cd.. 上層資料夾
 
-> Ctrl+C 結束程序 ex : ng serve
+> Ctrl + C 結束程序 ex : ng serve
 
 #### nvm nodejs 安裝
 
@@ -113,13 +113,15 @@ OS: win32 x64
 
 > get-executionpolicy
 
-Restricted：所有PowerShell Script(.ps1) 皆無法執行。(Windows系統預設)
+Restricted：所有 PowerShell Script(.ps1) 皆無法執行。( Windows 系統預設)
 
-AllSigned：所有PowerShell Script都要經過受信任的發行者簽屬過後才可執行。
+AllSigned：所有 PowerShell Script 都要經過受信任的發行者簽屬過後才可執行。
 
-RemoteSigned：針對從異地下載下來的PowerShell Script需要經過受信任的發行者簽屬過後才可執行，本機的PowerShell Script可直接執行。
+RemoteSigned：針對從異地下載下來的 PowerShell Script 需要經過受信任的發行者簽屬過後才可執行，
 
-Unrestricted：無限制，所有PowerShell Script皆可執行。
+本機的 PowerShell Script 可直接執行。
+
+Unrestricted：無限制，所有 PowerShell Script 皆可執行。
 
 > set-executionpolicy remotesigned
 
@@ -127,26 +129,26 @@ Unrestricted：無限制，所有PowerShell Script皆可執行。
 
 ## 原理
 
-Angular使用ES6中引進的Module概念，
+Angular 使用 ES6 中引進的 Module 概念，
 
-APP是由數個Component組成，
+APP 是由數個 Component 組成，
 
-利用import、export、@decorator，包裝component，
+利用 import、export、@decorator ，包裝 component，
 
 > ES6 decorator語法，使用@#XXXX來從不同的切面對程式進行描述。
 
 Component內屬性綁定selector、template、style。
 
-並藉由 import、export 引入傳遞資料與引入其他Component或Module。
+並藉由 import、export 引入傳遞資料與引入其他 Component 或 Module 。
 
 ---------------------------------------
 @Component
 
-> selector: 用來表示在HTML上的哪個element要套用這個component。
+> selector: 用來表示在 HTML 上的哪個 element 要套用這個 component 。
 
-> templateUrl: 用來表示這個component的view存放位置。
+> templateUrl: 用來表示這個 component 的 view 存放位置。
 
-> styleUrls: 用來加入專屬於這個component的css檔案位置。
+> styleUrls: 用來加入專屬於這個 component 的 css 檔案位置。
 
 src/app/app.component.ts
 
@@ -156,25 +158,25 @@ decorator 裝飾 AppComponent 這個 class
 
 ---------------------------------------
 
-src/index.html 網站首頁內並看不到script引入，
-而是building時，透過webpack自動幫我們把打包好的程式加入。
+src/index.html 網站首頁內並看不到 script 引入，
+而是 building 時，透過 webpack 自動幫我們把打包好的程式加入。
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/1.JPG)
 
 ---------------------------------------
 @NgModule 
 
-透過module對複雜的components做分類管理
+透過 module 對複雜的 components 做分類管理
 
-src/app/app.module.ts 是程式最主要的module
+src/app/app.module.ts 是程式最主要的 module
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/2.jpg)
 
-import { AppComponent } from './app.component' 引入了component
+import { AppComponent } from './app.component' 引入了 component
 
 declarations 宣告了 AppComponent
 
-bootstrap 宣告由AppComponent來啟動
+bootstrap 宣告由 AppComponent 來啟動
 
 # Sample todolist1
 
@@ -184,24 +186,44 @@ bootstrap 宣告由AppComponent來啟動
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.JPG)
 
-header.component.spec.ts是用來寫unit test
+---------------------------------------
+
+header.component.spec.ts 是用來寫unit test
 
 > 檔案命名規則遵循 https://angular.io/guide/styleguide
 
-src/app/app.module.ts內cli自動將HeaderComponent寫入declarations
+src/app/app.module.ts 內 cli 自動將 HeaderComponent 寫入 declarations
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/5.JPG)
+
+---------------------------------------
 
 header.component.ts
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/6.JPG)
 
-OnInit 為控制生命週期的介面其餘的跟 appcomponent 都一樣
+> constructor（建構子）是個隨著 class 一同建立並初始化物件的特殊方法。
 
-header.component.html 內為templateUrl模板，
+> OnInit 為控制生命週期的介面，其餘的跟 appcomponent 都一樣。
 
-概念類似ASP.NET MVC的Layout、Partial View或ASP.NET Webform的Master Page。
+---------------------------------------
 
-回到 app.component.html 將 &lt;app-root&gt;&lt;/app-root&gt; 
+header.component.html 內為 templateUrl 模板，
 
-改為 header.component.ts 的 selector &lt;app-header&gt;&lt;/app-header&gt;
+> 概念類似ASP.NET MVC的Layout、Partial View或ASP.NET Webform的Master Page。
+
+回到 app.component.html 增加，
+
+header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
+
+其餘 Components 一樣
+
+> ng g c add-form
+
+> ng g c todo-items
+
+接著分別修改各自元件內的 templateUrl
+
+> ng serve 即可看到 app 內容
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/7.JPG)
