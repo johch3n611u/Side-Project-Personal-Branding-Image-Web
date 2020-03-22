@@ -141,7 +141,9 @@ Component內屬性綁定selector、template、style。
 
 並藉由 import、export 引入傳遞資料與引入其他 Component 或 Module 。
 
----------------------------------------
+
+#Component 元件化
+
 @Component
 
 > selector: 用來表示在 HTML 上的哪個 element 要套用這個 component 。
@@ -227,3 +229,7 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 > ng serve 即可看到 app 內容
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/7.JPG)
+
+#Data Binding
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.JPG)
