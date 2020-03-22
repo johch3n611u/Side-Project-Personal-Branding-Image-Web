@@ -76,7 +76,9 @@ https://ithelp.ithome.com.tw/articles/10195363
     * README.md - 自述文件。
     * tslint.json - 專案預設的TypeScript風格設定。
 ---------------------------------------
-# 原理
+# Sample Todolist1
+
+## 原理
 
 Angular使用ES6中引進的Module概念，
 
@@ -91,7 +93,7 @@ Component在包裝wselector、template、style。
 並藉由 import、export 引入傳遞資料與引入其他Component或Module。
 
 
-# Sample Todolist 1
+
 ## 環境建置
 
 #### cmd常用指令 ctrl + ~
@@ -113,6 +115,12 @@ Component在包裝wselector、template、style。
 #### Angular 安裝
 
 > npm install -g @angular/cli
+
+Angular CLI: 9.0.7
+
+Node: 12.16.1
+
+OS: win32 x64
 
  #### 數位簽署坑
 
