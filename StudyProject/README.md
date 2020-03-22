@@ -1,6 +1,8 @@
 # Angular2+
----------------------------------------
+
 https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-create-components/
+
+https://forum.angular.tw/
 
 ## Angular cli 
 
@@ -20,9 +22,9 @@ https://wellwind.idv.tw/blog/2016/10/18/angular-tutorial-4-basic-concepts-and-cr
 
 > ng g
 
-> Decorator（ ES6 裝飾器@）
+Decorator（ ES6 裝飾器@）
 
-> 元件 : https://angular.io/cli/generate
+元件 : https://angular.io/cli/generate
 ---------------------------------------
 > ng build
 
@@ -51,7 +53,7 @@ https://ithelp.ithome.com.tw/articles/10195363
 
 > ng e2e (end to end) karma、Protractor 套件
 ---------------------------------------
-##[](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
+[參考](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
 
 * e2e - 測試資料夾。
 * node_modules - npm套件。
@@ -233,3 +235,11 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 # Data Binding 資料綁定
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.jpg)
+
+#### 內崁binding (Interpolation)
+
+內崁binding除了可以崁入變數外，也可以加入一些運算式或component的函數回傳值
+
+Component export class { 變數 或 函式  }
+
+templateUrl DOM -> {{變數名稱 或 函式}}
