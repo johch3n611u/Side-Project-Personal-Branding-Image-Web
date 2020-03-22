@@ -76,21 +76,7 @@ https://ithelp.ithome.com.tw/articles/10195363
     * README.md - 自述文件。
     * tslint.json - 專案預設的TypeScript風格設定。
 ---------------------------------------
-# Sample Todolist1
 
-## 原理
-
-Angular使用ES6中引進的Module概念，
-
-APP是由數個Component組成，
-
-利用import、export、@decorator，
-
-包裝component，
-
-Component在包裝wselector、template、style。
-
-並藉由 import、export 引入傳遞資料與引入其他Component或Module。
 
 
 
@@ -101,6 +87,8 @@ Component在包裝wselector、template、style。
 > cls 清空終端機
 
 > cd.. 上層資料夾
+
+> Ctrl+C 結束程序 ex : ng serve
 
 #### nvm nodejs 安裝
 
@@ -137,3 +125,44 @@ RemoteSigned：針對從異地下載下來的PowerShell Script需要經過受信
 Unrestricted：無限制，所有PowerShell Script皆可執行。
 
 > set-executionpolicy remotesigned
+
+# Sample Todolist1
+
+## 原理
+
+Angular使用ES6中引進的Module概念，
+
+APP是由數個Component組成，
+
+利用import、export、@decorator，
+
+> ES6 decorator語法，使用@#XXXX來從不同的切面對程式進行描述。
+
+包裝component，
+
+Component在包裝wselector、template、style。
+
+並藉由 import、export 引入傳遞資料與引入其他Component或Module。
+
+---------------------------------------
+@component
+
+> selector: 用來表示在HTML上的哪個element要套用這個component。
+
+> templateUrl: 用來表示這個component的view存放位置。
+
+> styleUrls: 用來加入專屬於這個component的css檔案位置。
+
+---------------------------------------
+
+src/index.html 網站首頁內並看不到script引入，
+而是building時，透過webpack自動幫我們把打包好的程式加入。
+
+---------------------------------------
+src/app/app.module.ts
+
+@NgModule 透過module對複雜的components做分類管理
+
+AppModule 是程式最主要的module
+
+bootstrap 宣告由AppComponent來啟動
