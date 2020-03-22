@@ -153,7 +153,7 @@ Component內屬性綁定selector、template、style。
 
 src/app/app.component.ts
 
-![]("/img/0.JPG")
+![]("https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/0.JPG")
 
 ---------------------------------------
 
