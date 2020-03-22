@@ -77,9 +77,6 @@ https://ithelp.ithome.com.tw/articles/10195363
     * tslint.json - 專案預設的TypeScript風格設定。
 ---------------------------------------
 
-
-
-
 ## 環境建置
 
 #### cmd常用指令 ctrl + ~
@@ -126,7 +123,7 @@ Unrestricted：無限制，所有PowerShell Script皆可執行。
 
 > set-executionpolicy remotesigned
 
-# Sample Todolist1
+---------------------------------------
 
 ## 原理
 
@@ -171,25 +168,20 @@ src/index.html 網站首頁內並看不到script引入，
 
 src/app/app.module.ts 是程式最主要的module
 
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/2.jpg)
+
+import { AppComponent } from './app.component' 引入了component
+
+declarations 宣告了 AppComponent
+
 bootstrap 宣告由AppComponent來啟動
 
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+# Sample todolist1
 
-import { AppComponent } from './app.component';
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/3.JPG)
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+> ng g c header
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.JPG)
+
+header.component.spec.ts是用來寫unit test
