@@ -155,10 +155,14 @@ src/app/app.component.ts
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/0.JPG)
 
+decorator 裝飾 AppComponent 這個 class
+
 ---------------------------------------
 
 src/index.html 網站首頁內並看不到script引入，
 而是building時，透過webpack自動幫我們把打包好的程式加入。
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/1.JPG)
 
 ---------------------------------------
 @NgModule 
@@ -168,3 +172,24 @@ src/index.html 網站首頁內並看不到script引入，
 src/app/app.module.ts 是程式最主要的module
 
 bootstrap 宣告由AppComponent來啟動
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
