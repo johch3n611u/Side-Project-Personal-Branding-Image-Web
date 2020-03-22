@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  title = 'Welcome to TodoList APP !!!';
+
+  getDate() { return (new Date()); }
+
   constructor() { }
 
   ngOnInit(): void {

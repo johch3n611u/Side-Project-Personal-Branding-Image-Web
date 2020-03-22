@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFormComponent implements OnInit {
 
+  placeholderText = '請輸入代辦事項';
+
+  addTodo($event: MouseEvent) {
+    alert(this.placeholderText);
+    console.log($event);
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -30,13 +30,14 @@ Decorator（ ES6 裝飾器@）
 
 > ng build --prod -> 最小化
 
-> ng build -w
+> ng build --watch
 
 > JIT Just-in-Time
 
 > AOT Ahead-of-Time
----------------------------------------
+
 https://ithelp.ithome.com.tw/articles/10195363
+
 |Characteristic|JiT|AoT|
 |-|-|-|
 |Compilation target|Browser|Server|
@@ -242,4 +243,11 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 
 Component export class { 變數 或 函式  }
 
-templateUrl DOM -> {{變數名稱 或 函式}}
+templateUrl DOM Content -> {{變數名稱 或 函式}}
+
+#### 屬性binding (property binding)
+
+> $event : 事件 TypeScript 強行別事件 <br/>
+> 屬性binding是由內崁binding衍生出來的一種簡易樣板
+
+#### 事件binding (event binding)
