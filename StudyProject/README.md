@@ -184,11 +184,11 @@ bootstrap 宣告由 AppComponent 來啟動
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/3.JPG)
 
+---------------------------------------
+
 > ng g c header
 
-![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.JPG)
-
----------------------------------------
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.jpg
 
 header.component.spec.ts 是用來寫unit test
 
@@ -232,4 +232,4 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 
 # Data Binding 資料綁定
 
-![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.JPG)
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.jpg)
