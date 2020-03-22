@@ -53,7 +53,7 @@ https://ithelp.ithome.com.tw/articles/10195363
 
 > ng e2e (end to end) karma、Protractor 套件
 ---------------------------------------
-[參考](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
+[參考-[Angular #3]認識 Angular CLI 產生的專案目錄結構 EllaYang](https://medium.com/angular-%E7%9A%84%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/angular-3-%E8%AA%8D%E8%AD%98-angular-cli-%E7%94%A2%E7%94%9F%E7%9A%84%E5%B0%88%E6%A1%88%E7%9B%AE%E9%8C%84%E7%B5%90%E6%A7%8B-ba20c77d0029)
 
 * e2e - 測試資料夾。
 * node_modules - npm套件。
