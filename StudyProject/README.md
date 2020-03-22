@@ -180,7 +180,7 @@ declarations 宣告了 AppComponent
 
 bootstrap 宣告由 AppComponent 來啟動
 
-# Sample todolist1
+## Sample todolist1
 
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/3.JPG)
 
