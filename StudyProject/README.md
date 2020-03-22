@@ -185,3 +185,23 @@ bootstrap 宣告由AppComponent來啟動
 ![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.JPG)
 
 header.component.spec.ts是用來寫unit test
+
+> 檔案命名規則遵循 https://angular.io/guide/styleguide
+
+src/app/app.module.ts內cli自動將HeaderComponent寫入declarations
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/5.JPG)
+
+header.component.ts
+
+![](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/6.JPG)
+
+OnInit 為控制生命週期的介面其餘的跟 appcomponent 都一樣
+
+header.component.html 內為templateUrl模板，
+
+概念類似ASP.NET MVC的Layout、Partial View或ASP.NET Webform的Master Page。
+
+回到 app.component.html 將 &lt;app-root&gt;&lt;/app-root&gt; 
+
+改為 header.component.ts 的 selector &lt;app-header&gt;&lt;/app-header&gt;
