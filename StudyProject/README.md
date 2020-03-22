@@ -134,18 +134,16 @@ Angular使用ES6中引進的Module概念，
 
 APP是由數個Component組成，
 
-利用import、export、@decorator，
+利用import、export、@decorator，包裝component，
 
 > ES6 decorator語法，使用@#XXXX來從不同的切面對程式進行描述。
 
-包裝component，
-
-Component在包裝wselector、template、style。
+Component內屬性綁定selector、template、style。
 
 並藉由 import、export 引入傳遞資料與引入其他Component或Module。
 
 ---------------------------------------
-@component
+@Component
 
 > selector: 用來表示在HTML上的哪個element要套用這個component。
 
@@ -153,16 +151,20 @@ Component在包裝wselector、template、style。
 
 > styleUrls: 用來加入專屬於這個component的css檔案位置。
 
+src/app/app.component.ts
+
+![]("/img/0.JPG")
+
 ---------------------------------------
 
 src/index.html 網站首頁內並看不到script引入，
 而是building時，透過webpack自動幫我們把打包好的程式加入。
 
 ---------------------------------------
-src/app/app.module.ts
+@NgModule 
 
-@NgModule 透過module對複雜的components做分類管理
+透過module對複雜的components做分類管理
 
-AppModule 是程式最主要的module
+src/app/app.module.ts 是程式最主要的module
 
 bootstrap 宣告由AppComponent來啟動
