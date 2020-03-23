@@ -6,9 +6,10 @@ import { TodoItem } from './shared/todo-item';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'todolist1';
 
+export class AppComponent {
+
+  // 測試傳遞的假資料
   todoItems: TodoItem[] = [{
     id: 1,
     value: 'Todo Item No.1',
@@ -23,4 +24,25 @@ export class AppComponent {
     done: false
   }];
 
+  // 提供傳遞內容的函式，讓 App.Component 的 View 可以做向 add-form.Component 傳遞事件
+  addTodo(text) {
+    this.todoItems.push({
+      id: (new Date()).getTime(),
+      value: text,
+      done: false
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
+
+

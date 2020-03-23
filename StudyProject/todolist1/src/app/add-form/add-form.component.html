@@ -1,6 +1,8 @@
 <!-- 藉由雙向綁定即可
-  <input type="text" [value]="todoText" (input)="changeTodoText($event)" [placeholder]="placeholderText">
+<input type="text" [value]="todoText" (input)="changeTodoText($event)" [placeholder]="placeholderText">
 <button (click)="addTodo($event)">增加</button> -->
 
+<!-- [(ngModel)]="todoText" 雙向綁定 ， [placeholder]="placeholderText" 屬性綁定(後向前) -->
 <input type="text" [(ngModel)]="todoText" [placeholder]="placeholderText">
+<!-- (click)="addTodo($event)" 事件綁定(前向後) -->
 <button (click)="addTodo($event)">增加</button>

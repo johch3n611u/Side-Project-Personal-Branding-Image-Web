@@ -283,14 +283,14 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 > 並且在資料變更時也能同步讓component知道，該怎麼辦呢？
 > 我們可能會寫成這樣 :
 
-View 部分 :
+* add-form.component.html
 
 ```html
 <input type="text" [value]="todoText" (input)="changeTodoText($event)" [placeholder]="placeholderText">
 <button (click)="addTodo($event)">增加</button>
 ```
 
-Component 部分 :
+* add-form.component.ts
 
 ```TypeScript
 export class AddFormComponent implements OnInit {
@@ -315,12 +315,14 @@ export class AddFormComponent implements OnInit {
 
 > 利用雙向綁定 [(ngModel)]="變數" : 似乎只能綁定變數 ?
 
+* add-form.component.html
+
 ```HTML
 <input type="text" [(ngmodel)]="todoText" [placeholder]="placeholderText">
 <button (click)="addTodo($event)">增加</button>
 ```
 
-就可以將 AddFormComponent : changeTodoText($event: KeyboardEvent) 部分移除
+就可以將 Add-Form.Component : changeTodoText($event: KeyboardEvent) 部分移除
 
 > tip : Can't bind to 'ngModel' since it isn't a known property of 'input'
 >
@@ -330,7 +332,7 @@ export class AddFormComponent implements OnInit {
 
 ## 番外篇 : VSCode - Debug
 
-Key Word : Angular Debug
+> Key Word : Angular Debug
 
 不像 Visual Studio IDE 各項東西都整合好，
 
@@ -342,13 +344,13 @@ VSCode Debug 主要有兩種方式的樣子，一種是藉由瀏覽器所提供�
 
 ## @Input, @output, ngFor, ngIf
 
-TodoItem interface
+### 資料準備 TodoItem interface
 
 > ng g interface shared\TodoItem
->
-> 原話 : interface 屬於 TypeScript 的語法，目的是用來賦予沒有強型別的 JavsScript 物件一個型別，如此一來在將 TypeScript 編譯成 JavaScript 時，就可以用來檢查我們傳入的物件是否有正確的屬性名稱；同時 IDE 如果支援的話，還可以藉此享受到 autocomplete 和即時檢查型別是否正確等等的方便功能
 
-src/app/app.component.ts -> import { TodoItem } from './shared/todo-item';
+ 原話 : interface 屬於 TypeScript 的語法，目的是用來賦予沒有強型別的 JavsScript 物件一個型別，如此一來在將 TypeScript 編譯成 JavaScript 時，就可以用來檢查我們傳入的物件是否有正確的屬性名稱；同時 IDE 如果支援的話，還可以藉此享受到 autocomplete 和即時檢查型別是否正確等等的方便功能
+
+> src/app/app.component.ts -> import { TodoItem } from './shared/todo-item';
 
 原話 : 接著 AppComponent 這個 class 裡面我們先加入幾個 TodoItems (不太確認原作為何會把資料做在這裡，感覺不太符合架構。)
 
@@ -357,15 +359,102 @@ src/app/app.component.ts -> import { TodoItem } from './shared/todo-item';
 原話 : 根據我們之前的規劃，顯示 TodoItem 資料應該是在 TodoItemsComponent，但為了管理方便我們目前的資料都放在 AppComponent 中
 
 > app/app.component.html    將資料由 AppComponent -> TodoItemsComponent
->
-> 原來 : &lt;app-todo-items&gt;&lt;/app-todo-items&gt;
->
-> 傳遞資料 : &lt;app-todo-items [items]="todoItems"&gt;&lt;/app-todo-items&gt;
 
-此時會報錯不用慌那是因為沒有用@input裝飾器接收資料，
+原來 : &lt;app-todo-items&gt;&lt;/app-todo-items&gt;
+
+> 傳遞資料 : &lt;app-todo-items [items]="todoItems"&gt;&lt;/app-todo-items&gt; 屬性綁定 由後向前傳遞資料
+
+此時會報錯不用慌那是因為沒有用 @input 裝飾器接收資料，
 
 接著進入 src/app/todo-items/todo-items.component.ts 接收資料，
 
 import { TodoItem } from './../shared/todo-item'; 補上以便使用 interface 宣告變數型別，
 
 TodoItemsComponent class 補上 @Input() items: TodoItem[]; 即可接收資料。
+
+> @Input('items') theTodoItems: TodoItem[];
+>
+> 代表我們要接收的屬性依然是items，但是會傳給theTodoItems這個變數。
+
+### 使用ngFor來列舉資料 / 使用ngIf來顯示/隱藏資料 (樣板語言?)
+
+讓TodoItemsComponent能正確顯示傳進來的資料 -> src/app/todo-items/todo-items.component.html
+
+> 必須先藉由 *ngFor 的 let item of items 類似於 python 的 each of 遍歷整個群組
+>
+> 然後由於 for 在 JavaScript 中屬於保留字，因此這邊必須使用 htmlFor 的方式來取代，也可以使用 attr.for 的方式，來代表使用 attributes 中的 for 。
+>
+> 屬性內容部分用字串 chk_ 與變數組成原 HTML 內 label 的 for 屬性
+>
+> 然後 *ngIf="" 會根據歷整到的變數 true 或 false 判斷此 tag 是否要顯示
+
+* todo-items.component.html
+
+```HTML
+<ul>
+  <li *ngFor="let item of items">
+    <label htmlFor="chk_{{item.id}}">
+      <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done"> {{ item.value }}
+    </label>
+    |
+    <a href="#">刪除</a>
+    <span *ngIf="item.done"> (已完成) </span>
+    </li>
+</ul>
+```
+
+這邊可以看到，雖然編譯過為 HTML 後 Angular 有寫非常詳盡的註解，但整個感覺很肥大不知道為什麼，甚至比 Razor 或 TagHelpers ，差別大概只在前端編譯或後端編譯了... 就要看如果是正式 build 會不會簡化到最原始。
+
+![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/9.jpg)
+
+### 使用@Output讓元件間的事件進行傳遞
+
+在 App.Component 中寫好要加入 TodoItem 的函數，
+
+* app.component.ts
+
+```JavaScript
+addTodo(text) {
+  this.todoItems.push({
+    id: (new Date()).getTime(),
+    value: text,
+    done: false
+  });
+}
+```
+
+push() 方法會添加一個或多個元素至陣列的末端，並且回傳陣列的新長度。
+
+接著把 app.component.html 中的 &lt;app-add-form>&lt;/app-add-form>
+
+改為 &lt;app-add-form (addtodoitem)="addTodo($event)">&lt;/app-add-form> 事件綁定 由前向後傳遞資料
+
+但 addtodoitem 這個事件是從哪裡而來的呢?
+
+> src\app\add-form\add-form.component.ts
+>
+> import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+>
+> class @Output() addTodoItem = new EventEmitter();
+
+新增 addTodoItem 事件，利用 @Output() 往外丟
+
+* add-form.component.ts
+
+```JavaScript
+addTodo($event: MouseEvent) {
+  this.addTodoItem.emit(this.todoText);
+}
+```
+
+EventEmitter 实例对象的 emit 方法，用来触发事件。它的第一个参数是事件名称，其余参数都会依次传入回调函数。
+
+<https://javascript.ruanyifeng.com/nodejs/events.html#toc3>
+
+* app.component.html
+
+```HTML
+<app-add-form (addTodoItem)="addTodo($event)"></app-add-form>
+```
+
+参数都会依次传入回调函数 -> 將 this.todoText 當做 $event 傳遞至 App.Component 內的 addTodo(text)

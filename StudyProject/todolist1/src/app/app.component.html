@@ -1,5 +1,7 @@
 <app-header></app-header>
 
-<app-add-form></app-add-form>
+<!-- 向 add-form.Component 傳遞 addTodo($event) 事件 -->
+<app-add-form (addTodoItem)="addTodo($event)"></app-add-form>
 
+<!-- 向 todo-items.Component 傳遞 todoItems 資料 -->
 <app-todo-items [items]="todoItems"></app-todo-items>
