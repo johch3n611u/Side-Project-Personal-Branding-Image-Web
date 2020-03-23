@@ -9,10 +9,17 @@ export class AddFormComponent implements OnInit {
 
   placeholderText = '請輸入代辦事項';
 
+  todoText = '';
+
   addTodo($event: MouseEvent) {
-    alert(this.placeholderText);
+    alert(this.todoText);
     console.log($event);
   }
+
+  // 藉由雙向綁定即可
+  // changeTodoText($event: KeyboardEvent) {
+  //   this.todoText = ($event.target as HTMLInputElement).value;
+  // }
 
   constructor() { }
 

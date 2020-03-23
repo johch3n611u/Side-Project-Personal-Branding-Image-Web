@@ -251,7 +251,7 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 
 ![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.jpg)
 
-## 內崁binding (Interpolation)
+### 內崁binding (Interpolation)
 
 (one way binding) 資料傳遞方向 Component -> DOM
 
@@ -261,7 +261,7 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 
 內崁binding除了可以崁入變數外，也可以加入一些運算式或component的函數回傳值
 
-## 屬性binding (property binding)
+### 屬性binding (property binding)
 
 (one way binding) 資料傳遞方向 Component -> DOM
 
@@ -269,7 +269,7 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 >
 > 屬性binding是由內崁binding衍生出來的一種簡易樣板
 
-## 事件binding (event binding)
+### 事件binding (event binding)
 
 資料傳遞方向 DOM -> Component (one way binding)
 
@@ -277,7 +277,7 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 >
 > $event : 事件 TypeScript 強行別事件
 
-## 雙向binding (two way binding)
+### 雙向binding (two way binding)
 
 > 如果今天我們有一個文字方塊要能夠接收component的資料，
 > 並且在資料變更時也能同步讓component知道，該怎麼辦呢？
@@ -312,3 +312,60 @@ export class AddFormComponent implements OnInit {
   }
 }
 ```
+
+> 利用雙向綁定 [(ngModel)]="變數" : 似乎只能綁定變數 ?
+
+```HTML
+<input type="text" [(ngmodel)]="todoText" [placeholder]="placeholderText">
+<button (click)="addTodo($event)">增加</button>
+```
+
+就可以將 AddFormComponent : changeTodoText($event: KeyboardEvent) 部分移除
+
+> tip : Can't bind to 'ngModel' since it isn't a known property of 'input'
+>
+> cli 部分有使用到的 Module 並沒有引入，導致 ngModel 無法使用於 input ，需要 import formsModule 。
+>
+> <https://stackoverflow.com/questions/38892771/cant-bind-to-ngmodel-since-it-isnt-a-known-property-of-input>
+
+## 番外篇 : VSCode - Debug
+
+Key Word : Angular Debug
+
+不像 Visual Studio IDE 各項東西都整合好，
+
+VSCode Debug 主要有兩種方式的樣子，一種是藉由瀏覽器所提供的開發工具或Chrome套件，
+
+第二種是利用 VSCode 本身除錯工具，輔以瀏覽器延伸套件如 Debugger for Chrome，
+
+現在測試是可以使用但未來可能還是有變數，就需要利用 Key Word 屆時再加以排解。
+
+## @Input, @output, ngFor, ngIf
+
+TodoItem interface
+
+> ng g interface shared\TodoItem
+>
+> 原話 : interface 屬於 TypeScript 的語法，目的是用來賦予沒有強型別的 JavsScript 物件一個型別，如此一來在將 TypeScript 編譯成 JavaScript 時，就可以用來檢查我們傳入的物件是否有正確的屬性名稱；同時 IDE 如果支援的話，還可以藉此享受到 autocomplete 和即時檢查型別是否正確等等的方便功能
+
+src/app/app.component.ts -> import { TodoItem } from './shared/todo-item';
+
+原話 : 接著 AppComponent 這個 class 裡面我們先加入幾個 TodoItems (不太確認原作為何會把資料做在這裡，感覺不太符合架構。)
+
+### 使用@Input接收傳入Component的資料
+
+原話 : 根據我們之前的規劃，顯示 TodoItem 資料應該是在 TodoItemsComponent，但為了管理方便我們目前的資料都放在 AppComponent 中
+
+> app/app.component.html    將資料由 AppComponent -> TodoItemsComponent
+>
+> 原來 : &lt;app-todo-items&gt;&lt;/app-todo-items&gt;
+>
+> 傳遞資料 : &lt;app-todo-items [items]="todoItems"&gt;&lt;/app-todo-items&gt;
+
+此時會報錯不用慌那是因為沒有用@input裝飾器接收資料，
+
+接著進入 src/app/todo-items/todo-items.component.ts 接收資料，
+
+import { TodoItem } from './../shared/todo-item'; 補上以便使用 interface 宣告變數型別，
+
+TodoItemsComponent class 補上 @Input() items: TodoItem[]; 即可接收資料。
