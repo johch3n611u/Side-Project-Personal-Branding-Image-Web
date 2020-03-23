@@ -429,7 +429,7 @@ push() 方法會添加一個或多個元素至陣列的末端，並且回傳陣�
 
 改為 &lt;app-add-form (addtodoitem)="addTodo($event)">&lt;/app-add-form> 事件綁定 由前向後傳遞資料
 
-但 addtodoitem 這個事件是從哪裡而來的呢?
+* 但 addtodoitem 這個事件是從哪裡而來的呢?
 
 > src\app\add-form\add-form.component.ts
 >
@@ -458,3 +458,121 @@ EventEmitter 实例对象的 emit 方法，用来触发事件。它的第一个�
 ```
 
 参数都会依次传入回调函数 -> 將 this.todoText 當做 $event 傳遞至 App.Component 內的 addTodo(text)
+
+### 挑戰 : 原作並無範例實作 [勾選/取消勾選]和[刪除]功能
+
+但看不懂 [勾選/取消勾選] 如不藉由後端該怎時做，所以嘗試看看實作刪除功能。
+
+思路 : 一樣的要利用 @Ouput 觸發刪除事件，且要將 id 參數向刪除事件傳遞。
+
+結果 : 其實只要將 id 傳至 todo-item.component 即可對陣列作相對應刪除，
+
+但我對於原始 js 與 ts 太不熟了，像是 eachof 或是以下方式都不太了解，
+
+卡在最後一步，因為splice只能針對陣列位置做刪除，
+
+但因為是 for of 的方式，不知道如何取陣列位置，導致非常難以刪除 ...
+
+```TypeScript
+delTodo(delId: number) {
+    if (confirm(delId + '確定刪除?')) {
+      for (const chkDelitems of this.items) {
+        if (chkDelitems.id === delId) {
+          console.log('delId:' + delId);
+          console.log('this.items:' + this.items);
+          console.log('chkDelitems.id:' + chkDelitems.id);
+          console.log('chkDelitems:' + chkDelitems);
+          this.items.splice(0, 1);
+        }
+      }
+    }
+  }
+```
+
+結果最後隨便用 tsline 不推薦的方式就成功了 ...
+
+```JavaScript
+for (var i = 0; i < this.items.length; i++) {
+        if (delId == this.items[i].id) {
+          this.items.splice(i, 1);
+        }
+```
+
+## 每個Component各自CSS獨立
+
+內容蠻簡單的在介紹 styleUrls: ['./todo-items.component.css'] 就不再贅述。
+
+補充前幾天看的 SASS :
+
+[Sass/SCSS 簡明入門教學Sass/SCSS 簡明入門教學](https://blog.techbridge.cc/2017/06/30/sass-scss-tutorial-introduction/)
+
+[30天掌握Sass語法 系列](https://ithelp.ithome.com.tw/users/20040221/ironman/562)
+
+[一起來用Sass+Compass吧](https://blog.hellosanta.com.tw/%E7%B6%B2%E7%AB%99%E8%A8%AD%E8%A8%88/%E5%89%8D%E7%AB%AF/%E4%B8%80%E8%B5%B7%E4%BE%86%E7%94%A8sasscompass%E5%90%A7%EF%BC%8C%E6%88%91%E5%80%91%E5%8F%AF%E6%98%AF%E4%B8%80%E7%A7%92%E5%B9%BE%E5%8D%83%E8%90%AC%E4%B8%8A%E4%B8%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%EF%BC%8C%E6%80%8E%E9%BA%BC%E8%83%BD%E6%8A%8A%E6%99%82%E9%96%93%E6%B5%AA%E8%B2%BB%E5%9C%A8css%E8%BA%AB%E4%B8%8A%E5%91%A2%EF%BC%81)
+
+心得 : 感覺 CSS 在向程式學習 ， 前端再向後端學習 ， 而後端在向 DevOps 學習 ...
+
+## Global引入資源庫 (CSS,JS,Library...)
+
+要使用 global CSS，只需要把 CSS 加入 src/style.css 就可以了
+
+建立新專案時，都會有一個 angular-cli.json 檔案這裡面存放著 Angular CLI 執行指令時需要的設定檔
+
+```C
+"styles": [
+  "styles.css"
+],
+"scripts": [],
+```
+
+```C
+npm install --save jquery
+npm install --save bootstrap
+```
+
+```C
+"styles": [
+  "../node_modules/bootstrap/dist/css/bootstrap.css",
+  "styles.css"
+],
+"scripts": [
+  "../node_modules/jquery/dist/jquery.js",
+  "../node_modules/bootstrap/dist/js/bootstrap.js"
+],
+```
+
+## 使用NgClass動態為HTML element加入class
+
+ ngClass後面可以接三種類型的參數 字串、陣列、物件
+
+前兩者藉由屬性綁定函式可依條件連動
+
+```HTML
+<div>
+  <span [ngclass]="getBlueClass()"> TodoItemsComponent 中測試 blue class </span>
+</div>
+```
+
+```JavaScript
+getBlueClass() {
+    // 這裡可以用程式動態決定要回傳字串、陣列或物件
+    return 'blue';
+}
+```
+
+第三種可以依照 View 上的條件決定是否要加入某個 class
+
+[ngClass]="{'classA': true, 'classB': false}"
+
+```CSS
+.done {
+    text-decoration: line-through;
+}
+```
+
+```HTML
+<input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemClick(item)">
+<span [ngclass]="{'done' : item.done}">{{ item.value }}</span>
+```
+
+

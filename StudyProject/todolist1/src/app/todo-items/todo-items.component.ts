@@ -1,5 +1,5 @@
 import { TodoItem } from './../shared/todo-item';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo-items',
@@ -9,9 +9,34 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class TodoItemsComponent implements OnInit {
 
-  // @Input('items') theTodoItems: TodoItem[];
+  // @Input() items: TodoItem[]; @Input('items') theTodoItems: TodoItem[];
   // 接收的屬性依然是items，但是會傳給theTodoItems這個變數
   @Input() items: TodoItem[];
+
+  delTodo(delId: number) {
+    if (confirm(delId + '確定刪除?')) {
+      // for (const chkDelitems of this.items) {
+      //   if (chkDelitems.id === delId) {
+      //     console.log('delId:' + delId);
+      //     console.log('this.items:' + this.items);
+      //     console.log('chkDelitems.id:' + chkDelitems.id);
+      //     console.log('chkDelitems:' + chkDelitems);
+      //     this.items.splice(0, 1);
+      //   }
+      // }
+
+      // Expected a 'for-of' loop instead of a 'for' loop with this simple iteration (prefer-for-of)tslint(1)
+      for (var i = 0; i < this.items.length; i++) {
+        if (delId == this.items[i].id) {
+          this.items.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  itemChk($event: MouseEvent) {
+    console.log(($event.target as HTMLInputElement).value);
+  }
 
   constructor() { }
 

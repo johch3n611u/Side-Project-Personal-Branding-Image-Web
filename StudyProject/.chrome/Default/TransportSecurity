@@ -1,8 +1,8 @@
 {
    "8/RrMmQlCD2Gsp14wUCE1P8r7B2C5+yE0+g79IPyRsc=": {
-      "expiry": 1616462912.251566,
+      "expiry": 1616489199.048943,
       "mode": "force-https",
       "sts_include_subdomains": false,
-      "sts_observed": 1584926912.251567
+      "sts_observed": 1584953199.048945
    }
 }

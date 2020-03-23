@@ -9,10 +9,10 @@
 <ul>
     <!-- Template syntax *ngFor 類似 C# foreach -->
     <li *ngFor="let item of items">
-        <label htmlFor="chk_{{item.id}}">
-            <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done"> {{ item.value }}
+        <label [ngClass]="{'done' : item.done}" htmlFor="chk_{{item.id}}">
+            <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemChk($event)"> {{ item.value }}
         </label> |
-        <a href="#"> 刪除 </a>
+        <a href="#" (click)="delTodo(item.id)"> 刪除 </a>
         <span *ngIf="item.done"> (已完成) </span>
     </li>
 </ul>
