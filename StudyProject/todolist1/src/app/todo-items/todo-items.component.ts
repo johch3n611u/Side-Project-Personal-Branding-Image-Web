@@ -35,7 +35,13 @@ export class TodoItemsComponent implements OnInit {
   }
 
   itemChk($event: MouseEvent) {
-    console.log(($event.target as HTMLInputElement).value);
+    const repID = Number((($event.target as HTMLInputElement).id).replace('chk_', ''));
+    console.log(repID);
+    for (var i = 0; i < this.items.length; i++) {
+      if (repID == this.items[i].id) {
+        this.items[i].done = ($event.target as HTMLInputElement).checked;
+      }
+    }
   }
 
   constructor() { }
