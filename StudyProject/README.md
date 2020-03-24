@@ -586,3 +586,52 @@ itemChk($event: MouseEvent) {
     }
   }
 ```
+
+## NgFor的五個變數
+
+index：整數值；代表目前資料在陣列中的index
+
+first：布林值；代表目前資料是否為第一筆
+
+last：布林值；代表目前資料是否為最後一筆
+
+even：布林值；代表目前資料的index是否為第偶數筆
+
+odd：布林值；代表目前資料的index是否為第奇數筆
+
+* 使用方式
+
+> *ngFor="let item of items;let recordIndex = index;let firstRecord = first;let lastRecotd = last; let evenRecord = even; let oddRecord = odd
+
+```HTML
+<ul>
+  <li *ngFor="let item of items;let recordIndex = index;let firstRecord = first;let lastRecotd = last; let evenRecord = even; let oddRecord = odd">
+    <label htmlFor="chk_{{item.id}}">
+      <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemClick(item)">
+      <span [ngClass]="{'done' : item.done, 'text-danger': firstRecord, 'text-warning': lastRecotd, 'bg-info': evenRecord, 'bg-success': oddRecord}">
+        {{ recordIndex }} . {{ item.value }}
+      </span>
+    </label>
+    |
+    <a href="#" (click)="delete(item)">刪除</a>
+    <span *ngIf="item.done">(已完成)</span>
+    </li>
+</ul>
+```
+
+## 使用Service完成MVC架構的最後一塊拼圖
+
+文章中將 模板語言部分比喻為 MVC 中的 View ， Component 比喻為 Controller ， Service 比喻為 Model 。
+
+但總覺得怪怪的，Angular 似乎不像 ASP.NET MVC 那樣拆得那麼乾淨。
+
+![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/10.jpg)
+
+文章中原始的相依關係 ， 但我有點搞不懂 為何 delete item 的部分 為何需要 output 至 AppComponent ，
+
+所以我自己寫的部分是在 itemsComponent 內直接完成。
+
+![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/11.jpg)
+
+文章中希望藉由 Service 將架構改為如上圖 ，並將 @input @output 改為 Component 需要對外接口時使用，以下將用 todolist2 demo 。
+

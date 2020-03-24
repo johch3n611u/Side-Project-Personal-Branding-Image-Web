@@ -1,3 +1,23 @@
 .done {
     text-decoration: line-through;
 }
+
+.firstRecord::after {
+    content: '(第一筆)';
+    color: red;
+    background-color: greenyellow;
+}
+
+.lastRecotd::after {
+    content: '(最末筆)';
+    color: blue;
+    background-color: pink;
+}
+
+.evenRecord {
+    color: rgb(219, 20, 219);
+}
+
+.oddRecord {
+    color: green;
+}

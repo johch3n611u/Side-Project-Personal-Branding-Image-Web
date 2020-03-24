@@ -8,9 +8,9 @@
 <p>使用 " Template syntax " 經過編譯後 :</p>
 <ul>
     <!-- Template syntax *ngFor 類似 C# foreach -->
-    <li *ngFor="let item of items">
-        <label [ngClass]="{'done' : item.done}" htmlFor="chk_{{item.id}}">
-            <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemChk($event)"> {{ item.value }}
+    <li *ngFor="let item of items;let recordIndex = index;let firstRecord = first;let lastRecotd = last; let evenRecord = even; let oddRecord = odd">
+        <label [ngClass]="{'done' : item.done, 'firstRecord': firstRecord, 'lastRecotd': lastRecotd, 'evenRecord': evenRecord, 'oddRecord': oddRecord}" htmlFor="chk_{{item.id}}">
+            <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemChk($event)">{{ recordIndex }} - {{ item.value }}
         </label> |
         <a href="#" (click)="delTodo(item.id)"> 刪除 </a>
         <span *ngIf="item.done"> (已完成) </span>
