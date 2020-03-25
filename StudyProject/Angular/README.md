@@ -4,7 +4,7 @@
 
 <https://forum.angular.tw/>
 
-* [Sample1](#1) 基本 + Router
+* [Sample1](#1) 基本 + [Router](#4)
 * [Sample2](#2) Service 架構 + Pipe + Http + Directive
 * [Sample3](#3) 包裝 todolist2 為 NgModule 架構
 
@@ -1843,7 +1843,7 @@ imports: [
 
 透過將程式模組化，可以讓程式架構更加明確，搭配Angular CLI會自動幫你將模組化的內容收納在對應的資料夾下，見少無謂的重工，增強生產力；善用module，我們可以架構出更加清楚好維護的程式碼，也能夠更容易的將程式碼分享出去，實在是送人自用兩相宜的好工具阿！
 
-## Routing 從零開始的Angular前端開發系列 第 23 篇 fansen
+## Routing 從零開始的Angular前端開發系列 第 23 篇 fansen <a id='4' href='#'>Back to Top</a>
 
 <https://ithelp.ithome.com.tw/articles/10225687>
 
