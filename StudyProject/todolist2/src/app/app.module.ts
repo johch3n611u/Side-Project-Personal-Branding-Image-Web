@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoDonePipe } from './todo-done.pipe';
 import { BsButtonDirective } from './bs-button.directive';
+import { BsDirective } from './bs-button.directive';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { BsButtonDirective } from './bs-button.directive';
     AddFormComponent,
     TodoItemsComponent,
     TodoDonePipe,
-    BsButtonDirective
+    BsButtonDirective,
+    BsDirective
   ],
   imports: [
     BrowserModule,

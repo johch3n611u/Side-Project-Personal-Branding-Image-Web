@@ -64,6 +64,8 @@ Framework - Angular 2+ & .Net Core 2+
 
 <https://ithelp.ithome.com.tw/users/20119722/ironman/2145>
 
+<https://ithelp.ithome.com.tw/users/20119722/ironman/2145?page=3>
+
 ### .Net Core
 
 <https://ithelp.ithome.com.tw/users/20083151/ironman/856>

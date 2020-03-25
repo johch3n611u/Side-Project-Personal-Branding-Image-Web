@@ -1,2 +1,7 @@
 <input type="text" [(ngModel)]="text" [placeholder]="placeholderText">
-<button (click)="addTodo(text)">增加</button>
+<button appBsButton="info" (click)="addTodo(text)">增加</button>
+<button appBsButton="danger" mousedownclass="primary">Button (Danger <-> Primary)</button>
+<button appBsButton="info" mousedownclass="success">Button (Info <-> Success)</button>
+<div appBsButton=""> 我是 div appBsButton </div>
+<br/>自定義 directive style 好像有權重關係後寫的都蓋住前面的 ?
+<br/>但套用了 renderer2 後就分隔了，底層關係不知道是什麼 ...

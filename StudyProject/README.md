@@ -4,6 +4,10 @@
 
 <https://forum.angular.tw/>
 
+* [Sample1](#1) 基本
+* [Sample2](#2) Service 架構 + Pipe + Http + Directive
+* [Sample3](#3) 包裝 todolist2 為 NgModule 架構
+
 ## Angular cli
 
 > 習慣取代配置 -> Angular cli
@@ -197,7 +201,7 @@ declarations 宣告了 AppComponent
 
 bootstrap 宣告由 AppComponent 來啟動
 
-## Sample todolist1
+## Sample todolist1 基本 <a id='1' href='#'>Back to Top</a>
 
 ![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/3.JPG)
 
@@ -346,7 +350,7 @@ VSCode Debug 主要有兩種方式的樣子，一種是藉由瀏覽器所提供�
 
 ### 資料準備 TodoItem interface
 
-> ng g interface shared\TodoItem
+> ng g interface shared\todo-item
 
  原話 : interface 屬於 TypeScript 的語法，目的是用來賦予沒有強型別的 JavsScript 物件一個型別，如此一來在將 TypeScript 編譯成 JavaScript 時，就可以用來檢查我們傳入的物件是否有正確的屬性名稱；同時 IDE 如果支援的話，還可以藉此享受到 autocomplete 和即時檢查型別是否正確等等的方便功能
 
@@ -619,7 +623,9 @@ odd：布林值；代表目前資料的index是否為第奇數筆
 </ul>
 ```
 
-## 使用Service完成MVC架構的最後一塊拼圖
+## Sample todolist2 Service 架構 + Pipe + Http + Directive <a id='2' href='#'>Back to Top</a>
+
+## 使用 Service 完成 MVC 架構的最後一塊拼圖
 
 文章中將 模板語言部分比喻為 MVC 中的 View ， Component 比喻為 Controller ， Service 比喻為 Model 。
 
@@ -634,6 +640,8 @@ odd：布林值；代表目前資料的index是否為第奇數筆
 ![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/11.jpg)
 
 文章中希望藉由 Service 將架構改為如上圖 ，並將 @input @output 改為 Component 需要對外接口時使用，以下將用 todolist2 demo 。
+
+> ng g s todo-list
 
 * src/app/todo-list.service.ts
 
@@ -1511,7 +1519,7 @@ Impure Pipe會導致Angular非常頻繁的對Pipe傳入的資料進行變更偵�
 
 示範透過 directive 來為原來的 button 加上 bootstrap 的樣式，並且能透過 @Input 來傳遞參數給 directive ，讓設定更加靈活，我們的目標如下圖，每個按鈕可以套用不同的樣式，並且在案下時切換樣式，都只由一個 directive 搭配不同的參數來完成
 
-> ng g d bsButton
+> ng g d bs-button
 
 看來跟 pipe 一樣，全域的樣子，不用在 Component 特別去 import module，在 cli 時就會自動引進 AppModule，就可在所有 Component 使用。
 
@@ -1637,7 +1645,7 @@ export class BsButtonDirective implements OnInit {
 
 > 注意 renderer.setElementClass() 的第3個參數，設為 true 代表加入這個 class ，設為 false 則代表移除此 class ，稍後我們也會用到。
 
-### 加入@Input，讓Directive更有彈性
+### 加入@Input，讓 Directive 更有彈性
 
 ＠Input一樣擴充了屬性，但可以傳遞屬性的內容，接著我們來透過@Input，讓appBsButton可以加上其他樣式。
 
@@ -1737,17 +1745,103 @@ Angular 其中的一個設計目標是使瀏覽器與 DOM 獨立。DOM 是複雜
 >
 > <https://ithelp.ithome.com.tw/users/20103745/ironman/1270>
 
+## Sample todolist3 包裝 todolist2 為 NgModule 架構 <a id='3' href='#'>Back to Top</a>
+
 ## [ Angular 速成班] 透過 Module 組織管理你的程式
 
 <https://wellwind.idv.tw/blog/2017/02/18/angular-tutorial-16-module/>
 
->metadata物件的@NgModule裝飾的function，這些metadata物件告訴我們：
+> Angular Moduleg 是一隻由帶有相關 metadata 物件的 @NgModule 裝飾的 function ，這些 metadata 物件告訴我們：
 
-* 哪些components、directives和pipes屬於這個module
-* module下哪些類別是可以公開給外部使用的
-* 在這個module下，我們需要匯入哪些其他的module給我們的components、directives和pipes使用
-* 提供了哪些services是應用程式中所有的組件都可以使用的
+![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/12.jpg)
+
+* 哪些 components、directives 和 pipes 屬於這個 module
+* module 下哪些類別是可以公開給外部使用的
+* 在這個 module 下，我們需要匯入哪些其他的 module 給我們的 components、directives 和 pipes 使用
+* 提供了哪些 services 是應用程式中所有的組件都可以使用的
 
 把之前寫好的 TodoApp 封裝到一個 module 裡面，同時說明如何在 @NgModule 裡面
 
 宣告上述的4個部分，在完成後你將會發現我們的程式及目錄結構變得更加清楚！
+
+> ng g m todo-app
+
+src/app 下面多了一個 todo-app 的資料夾以及 todo-app.module.ts
+
+接著我們把跟 TodoApp 相關的程式都移進這個資料夾
+
+* src/app/todo-app
+  * /add-form
+  * /todo-items
+  * /todo-app.module.ts
+  * /todo-done.pipe.spec.ts
+  * /todo-list.service.spec.ts
+  * /todo-list.service.ts
+
+### 接著我們建立一個屬於 TodoAppModule 的 component
+
+> ng g c todo-app/todo-app
+
+指定的路徑已經包含了module的話，也會自動幫你把相關宣告放在module定義中
+
+> 如果一開始就規劃好 module 與 component 結構，就照著結構開發就好，就不需要手動搬動囉 !!!
+
+接著我們把 AddFormComponent 和 TodoItems 也加入 todo-app.module.ts 的 declarations 中，
+
+順便把 TodoDonePipe 也加入，並把 AppModule 裡面同樣的宣告移除掉
+
+* todo-app.module.ts
+
+```JSON
+declarations: [
+  TodoAppComponent,
+  AddFormComponent,
+  TodoItemsComponent,
+  TodoDonePipe
+]
+```
+
+### 將 TodoListService 加入 TodoAppModule
+
+* todo-app.module.ts
+
+```JSON
+ providers: [TodoListService]
+```
+
+### 將 TodoAppModule 加入 AppModule
+
+* app.module.ts
+
+```JavaScript
+imports: [
+  BrowserModule,
+  FormsModule,
+  HttpModule,
+  TodoAppModule
+],
+```
+
+> 在AddForm中我們使用到了 ngModel，這個指令放在 FormsModules 中；因此我們必須在 TodoAppModule 中匯入 FormsModule ，而 ngIf 和 ngFor 在 CommonModule 中，但在建立 module 時預設已經加入囉
+
+* TodoAppModule
+
+```JavaScript
+imports: [
+  CommonModule,
+  FormsModule
+]
+```
+
+> 今天我們學到了使用@NgModule來將程式模組化，@NgModule參數為一個metadata物件，內容如下：
+
+* declarations: []：哪些components、directives和pipes屬於這個module
+* exports:[]：module下哪些類別是可以公開給外部使用的
+* imports:[]：在這個module下，我們需要匯入哪些其他的module給我們的components、directives和pipes使用
+* providers:[]：提供了哪些services是應用程式中所有的組件都可以使用的
+
+透過將程式模組化，可以讓程式架構更加明確，搭配Angular CLI會自動幫你將模組化的內容收納在對應的資料夾下，見少無謂的重工，增強生產力；善用module，我們可以架構出更加清楚好維護的程式碼，也能夠更容易的將程式碼分享出去，實在是送人自用兩相宜的好工具阿！
+
+## Routing 從零開始的Angular前端開發系列 第 23 篇 fansen
+
+<https://ithelp.ithome.com.tw/articles/10225687>
