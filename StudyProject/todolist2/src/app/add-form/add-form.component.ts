@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoListService } from './../todo-list.service';
+import { TodoItem } from './../shared/todo-item';
 
 @Component({
   selector: 'app-add-form',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFormComponent implements OnInit {
 
-  constructor() { }
+  placeholderText = '請輸入代辦事項';
+
+  text = '';
+
+  constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void {
   }
 
+  addTodo(text) {
+    return this.todoListService.addTodo(text);
+  }
 }

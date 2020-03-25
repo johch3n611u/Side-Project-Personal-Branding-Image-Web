@@ -635,3 +635,1119 @@ odd：布林值；代表目前資料的index是否為第奇數筆
 
 文章中希望藉由 Service 將架構改為如上圖 ，並將 @input @output 改為 Component 需要對外接口時使用，以下將用 todolist2 demo 。
 
+* src/app/todo-list.service.ts
+
+### Service 原理
+
+```JavaScript
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class TodoListService {
+
+  constructor() { }
+
+}
+```
+
+@Injectable() 裝飾器 藉由 DI 方式注入讓 Component 使用，鬆綁程式之間的耦合性，
+
+原作這講解的並不深較多的是直接實作，不過大概跟 .NET Core 原理應該差不多，
+
+生成時會出現此註解，但我使用時沒出現不知道是不是 cli 版本問題，
+
+> WARNING Service is generated but not provided, it must be provided to be used
+
+Service已經產生了，但還沒準備好可以提供給任何其他程式進行注入
+
+必須在 @NgModule 內 providers 加入此 Service ，
+
+> Provider Pattern 提供者模式 : 为一个API进行定义和实现的分离。
+>
+> <https://www.cnblogs.com/rush/archive/2011/08/28/2156312.html>
+>
+> <https://blog.csdn.net/zty20100606/article/details/78847390>
+
+* src/app/app.module.ts
+
+```JavaScript
+// 先import我們的TodoListService
+import { TodoListService } from './todo-list.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    AddFormComponent,
+    TodoItemsComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [TodoListService], // 在providers中加入TodoListService
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+接著將需要抽出的資料與函式補進 Service
+
+藉這個機會來觀察一下原作者怎寫的，補註解。
+
+* src/app/todo-list.service.ts
+
+```JavaScript
+// interface 定義 todoitem 型別
+import { TodoItem } from './shared/todo-item';
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class TodoListService {
+
+// 假資料
+  todoItems: TodoItem[] = [{
+    id: 1,
+    value: 'Todo Item No.1',
+    done: false
+  }, {
+    id: 2,
+    value: 'Todo Item No.2',
+    done: true
+  }, {
+    id: 3,
+    value: 'Todo Item No.3',
+    done: false
+  }];
+
+  constructor() { }
+
+// 用於內嵌綁定或屬性綁定
+  getTodoList() {
+    return this.todoItems;
+  }
+
+// 用於事件傳遞 ?
+  addTodo(text) {
+    this.todoItems.push({
+      id: (new Date()).getTime(),
+      value: text,
+      done: false
+    });
+  }
+
+// 用於事件傳遞 ? filter 方法，寫法比我用 for 迴圈 splice 刪除高明好多!!!
+// filter() 方法會建立一個經指定之函式運算後，由原陣列中通過該函式檢驗之元素所構成的新陣列。
+// https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+  deleteItem(item: TodoItem) {
+    this.todoItems = this.todoItems.filter(todoItem => todoItem.id !== item.id);
+  }
+
+// toggle 好像打錯字 ?  toggle翻譯：扣件, 套索扣，栓扣釘, 電腦開關, 切換鍵
+// 這寫法也很高明，直接指定相反的內容回原內容。
+// 看來有時間必須把 w3c 的 JavaScript 看過一輪，就訂在 Angular 與 .Net Core SideProject 完成後。
+  toogleItemStatus(item: TodoItem) {
+    item.done = !item.done;
+  }
+}
+```
+
+> 關於在AppModule中加入TodoListService的小提示：Angular加入到Module後，所有相關的Component都可以進行注入Service的動作，
+> 而在Module中的Service都只會被產生一次，以免重複產生造成不必要的效能負擔，也能確保Service中的資料狀態一致性。
+
+### 接著重頭戲來了在 Component 中注入 Service
+
+在Angular/TypeScript中使用的注入方式為建構式注入
+
+* src/app/todo-items/todo-items.component.ts
+
+```JavaScript
+import { TodoListService } from './../todo-list.service';
+
+export class TodoItemsComponent implements OnInit {
+
+  // constructor 建構子 : 原理跟後端物件導向 class 內的建構子應該是相同的。
+  // 在初始化時執行注入動作，之後都可透過 this.todoListService 取用。
+  // https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes/constructor
+  constructor(private todoListService: TodoListService) { }
+}
+```
+
+### 在 Component 中使用 Service 把不必要的 @Input、@Output 都拿掉
+
+* todo-items.component.ts
+
+```JavaScript
+import { TodoListService } from './../todo-list.service';
+import { TodoItem } from './../shared/todo-item';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-todo-items',
+  templateUrl: './todo-items.component.html',
+  styleUrls: ['./todo-items.component.css']
+})
+export class TodoItemsComponent implements OnInit {
+  constructor(private todoListService: TodoListService) { }
+
+  ngOnInit() {
+  }
+
+  getTodoList() {
+    return this.todoListService.getTodoList();
+  }
+
+  itemClick(item: TodoItem) {
+    this.todoListService.toogleItemStatus(item);
+  }
+
+  delete(item: TodoItem) {
+    this.todoListService.deleteItem(item);
+  }
+}
+```
+
+感覺像是商業邏輯、資料都寫在 Service 內， Component 只是去操作他，並在包裝成方法供 View 使用，改寫部分 View 的資料綁定方式。
+
+* src/app/app.component.html
+
+```HTML
+<div class="wrap">
+    <app-header></app-header>
+    <app-add-form></app-add-form>
+    <app-todo-items></app-todo-items>
+</div>
+```
+
+* src/app/todo-items/todo-items.component.html
+
+```JavaScript
+```
+
+* src/app/todo-items/add-form.component.html
+
+```JavaScript
+```
+
+> 原文 : 透過Service我們可以把Component之間的行為進行集中的管理，但有些時候我們設計的Component還是需要透過@Input與@Output來與外部Component連接的，例如團隊開發時有共享的Component，但在一些參數的設定上有所不同時，就是@Input與@Output發威了時候啦！共享的Component不開放給外部的部分可透過內部的Service管理，剩下要由外部Component接手的部分則加入@Input及@Output，由別人去擔心，再次達到關注點分離！這樣的架構是不是明確又美麗阿！！
+
+## 開發Ajax程式不可或缺的重要關鍵 — Http Module
+
+透過Ajax與後端的API進行資料的存取
+
+### 開始使用 HttpModule
+
+最基本的 request 方法外，我們也可以使用 get、post、delete、put 等方法來傳送常見的 Http 方法   -> Restful API
+
+> 要使用 Http 類別我們一樣需要使用建構式注入的方式
+
+* AppModule(src/app/app.module.ts)
+
+```JavaScript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpModule } from '@angular/http';
+// Angulare官方第五版開始，將舊的 HttpModule被標示為不建議使用，建議改用 HttpClient
+// https://dotblogs.com.tw/H20/2018/04/18/143926
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { TodoItemsComponent } from './todo-items/todo-items.component';
+import { AddFormComponent } from './add-form/add-form.component';
+
+import { TodoListService } from './todo-list.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TodoItemsComponent,
+    AddFormComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+  providers: [TodoListService],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+```
+
+### 在assets目錄模擬後端程式
+
+在 src/assets 中加入一個 todo-list.json 的程式，來模擬後端取得TodoList的資料
+
+預設會將 src/assets 目錄裡的內容都當作靜態內容，將裡面的程式都移到輸出路徑的 /assets 裡面
+
+> Like -> D:\Desk\Side-Project-Self-Brand-Image-Web\StudyProject\todolist2\dist\todolist2\assets
+
+### 在 Service 中注入並使用 Http
+
+之前建立的TodoListService中加入使用Http從後端抓取資料的程式
+
+* src/app/todo-list.service.ts
+
+```JavaScript
+import { Http } from '@angular/http'; // 我們要使用的Http
+import 'rxjs/add/operator/toPromise'; // 幫助我們將RxJs轉為Promise
+
+@Injectable()
+export class TodoListService {
+
+  // 原來的資料移到assets/todo-list.json裡面去了
+  todoItems: TodoItem[];
+
+  // 建構式注入Http，你應該已經會用了
+  constructor(private http: Http) { }
+
+  // 使用http.get取得後端資料
+  // http.get會回傳 RxJS 的 Observable 物件
+  // 我們先用.toPromise()轉回我們會使用的ES6 Prmoise
+  // 並利用toPromise()轉成ES6的Promise
+
+  loadTodoList() {
+    this.http
+      .get('/assets/todo-list.json')
+      .toPromise()
+      .then(response => {
+        this.todoItems = response.json();
+      });
+  }
+  // 接著是之前已經完成的程式碼...省略
+}
+```
+
+## 番外篇 - 非同步(Asynchronous)與同步(Synchronous)
+
+以往都知道這個概念，但實際操作較少，這邊在記錄一次。
+
+Elsa Wang
+
+<https://medium.com/@hyWang/%E9%9D%9E%E5%90%8C%E6%AD%A5-asynchronous-%E8%88%87%E5%90%8C%E6%AD%A5-synchronous-%E7%9A%84%E5%B7%AE%E7%95%B0-c7f99b9a298a>
+
+>我：特性只是指同時做很多事嗎? (X)
+>
+>W：async = 發出要求～收到結果 這中間我可以去做其他事情
+>
+>W：你填好單子送到櫃檯，然後……
+>
+>W：他辦完再叫你的號碼 → Async
+>
+>W：要站在櫃檯等他辦完 → Sync
+>
+>W：因為不用站在櫃檯等，你就可以跑很多櫃檯、送很多張單子出去, 就有上面說的「圍毆」的效果。
+>
+>W：所以 sync / async 是在說單一櫃檯辦事員的運作模式。
+>
+>W：然後……
+>
+>W：在對方是 async 的前提下，有些事情還是要依序辦理，例如：先去開好戶頭，才把戶頭交給公司行政。
+>
+>W：那你腦內就要有個清單：
+>
+>W：等薪資戶開好，然後再去跟公司行政帳號。
+>
+>W：這個然後就是 promise 的 then
+>
+>W：再歸納一次：
+>
+>W：- sync/async 是指單一個要求or操作的運作方式。
+>
+>（你需不需要卡住等他做完）
+>
+>W：- promise 則是用來描述多個操作之間關係的方法。
+>
+>（可以應付 async，但也可以是 sync）
+
+* Promise : 物件代表一個即將完成、或失敗的非同步操作，以及它所產生的值。
+
+<https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise>
+
+Promise 物件處於以下幾種狀態：
+
+* 擱置（pending）：初始狀態，不是 fulfilled 與 rejected。
+* 實現（fulfilled）：表示操作成功地完成。
+* 拒絕（rejected）：表示操作失敗了。
+
+* RxJS : 是一個用於使用Observables進行反應式編程的庫，可以更輕鬆地編寫異步或基於回調的代碼。
+
+RxJS是Reactive Programming 的 JavaScript 實做，Reactive Programming 是另一種管理資料流的概念。
+
+希望是最淺顯易懂的 RxJS 教學 TechBridge 技術共筆部落格
+
+<https://blog.techbridge.cc/2017/12/08/rxjs/>
+
+---------------------------------------
+
+http.get() 會回傳一個 RxJS 的 Observable 物件，
+
+> 加入 import 'rxjs/add/operator/toPromise';
+
+在學習 RxJS 前，為 RxJS 擴充一個 .toPromise() 方法，把資料轉為的 ES6 的 Promise 語法。
+
+> 感覺 Angular 生命週期非常重要，現在使用 ng serve 都會像 live server 一樣，自動 refresh 也不知道是從新 Render 還是本地操作 ...
+
+### 在 Component 中要求 Service 來取得資料
+
+這部分的程式可以寫在 Component 的 ngOnInit() 方法中，在 Component 初始化時來執行
+
+* src/app/todo-items/todo-items.component.ts
+
+```JavaScript
+export class TodoItemsComponent implements OnInit {
+  // 建構式注入TodoListService，之前已經做過了
+  constructor(private todoListService: TodoListService) { }
+  // 在ngOnInit()中，要求TodoListService從後端抓取資料
+  ngOnInit() {
+    this.todoListService.loadTodoList();
+  }
+  // 以下是之前已經完成的程式碼...省略
+}
+```
+
+這裡就提到 Angular 的生命週期了，但原文章這就沒細講，所以先跳到原作者另外的文章先了解 Angular 生命週期 。
+
+## [Angular 大師之路] Day 03 - Angular 應用程式啟動過程
+
+<https://ithelp.ithome.com.tw/articles/10202823>
+
+覺得要知道生命週期方法前，需要先知道應用程式啟動過程，所以先補這篇。
+
+main.ts 所有程式"進入點"，指定根模組
+
+app.module.ts 第一個啟動的"根模組"，指定根元件
+
+app.component.ts 所有的畫面都是從"根元件"開始，綁定 selector、templateUrl、styleUrls
+
+---------------------------------------
+
+同時啟動多個根模組 platformBrowserDynamic().bootstrapModule(App2Module);
+
+同時啟動多個根元件 declarations: [AppComponent, HelloComponent, AnotherComponent],
+
+### 多個根模組或根元件的使用情境
+
+> 原話 :
+>
+> 當 index.html 中本來就有預期放入一個固定的 layout ，且畫面上會有兩個互不相關的程式時，就可以使用多個根模組或根元件來處理，而不是將整個 layout 放到單一個模組內，能夠更快地顯示出基本的畫面架構，再慢慢等待 JavaScript 檔載入就好，能讓使用者更快感覺到畫面有所呈現。
+>
+>當然壞處明顯的就是模組跟模組之間、元件跟元件之間是較難互相溝通的
+
+## [Angular 大師之路] Day 04 - 認識 Angular 的生命週期
+
+<https://ithelp.ithome.com.tw/articles/10203203>
+
+* 生命週期鉤子
+
+<https://angular.tw/guide/lifecycle-hooks>
+
+實用於有許多共用元件開發需求或整合第三方套件時
+
+### lifecycle hooks
+
+在 Angular 中對於生命週期的處理是用各種生命週期方法，不太像 .Net Core 的生命週期，感覺較不強制性。
+
+好像是用介面 interface 的強行別方式綁定在 @angular/core 中，在寫程式時避免人為疏失。
+
+### 元件的完整生命週期 (按照可能被呼叫的順序排序)
+
+| 鉤子                    | 用途及時機                                                                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ngOnChanges()           | 當 Angular（重新）設定資料繫結輸入屬性時響應。 該方法接受當前和上一屬性值的 SimpleChanges 物件，在 ngOnInit() 之前以及所繫結的一個或多個輸入屬性的值發生變化時都會呼叫。 |
+| ngOnInit()              | 在 Angular 第一次顯示資料繫結和設定指令/元件的輸入屬性之後，初始化指令/元件。在第一輪 ngOnChanges() 完成之後呼叫，只調用一次。                                           |
+| ngDoCheck()             | 檢測，並在發生 Angular 無法或不願意自己檢測的變化時作出反應。在每個變更檢測週期中，緊跟在 ngOnChanges() 和 ngOnInit() 後面呼叫。                                         |
+| ngAfterContentInit()    | 當 Angular 把外部內容投影進元件/指令的檢視之後呼叫。第一次 ngDoCheck() 之後呼叫，只調用一次。                                                                            |
+| ngAfterContentChecked() | 每當 Angular 完成被投影元件內容的變更檢測之後呼叫。ngAfterContentInit() 和每次 ngDoCheck() 之後呼叫。                                                                    |
+| ngAfterViewInit()       | 當 Angular 初始化完元件檢視及其子檢視之後呼叫。第一次 ngAfterContentChecked() 之後呼叫，只調用一次。                                                                     |
+| ngAfterViewChecked()    | 每當 Angular 做完元件檢視和子檢視的變更檢測之後呼叫。ngAfterViewInit() 和每次 ngAfterContentChecked() 之後呼叫。                                                         |
+| ngOnDestroy()           | 每當 Angular 每次銷毀指令/元件之前呼叫並清掃。 在這兒反訂閱可觀察物件和分離事件處理器，以防記憶體洩漏。在 Angular 銷毀指令/元件之前呼叫。                                |
+
+#### OnChanges
+
+> 當元件有 @Input() 且從外部有透過屬性綁定的方式將資料傳入時，當元件初始化時在 ngOnInit() 前呼叫 ngOnChanges() 方法；
+>
+> 且每當 @Input() 的值有變化時，都會呼叫此方法，藉此得知資料被改變了，如下程式：
+
+```JavaScript
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-price',
+  template: `<span>{{ price }}</span>`
+})
+export class PriceComponent implements OnInit, OnChanges {
+  @Input() price;
+
+  ngOnInit() {
+    console.log('Price Component Init');
+  }
+
+  ngOnChanges() {
+    console.log('Price Component Input Changed');
+  }
+}
+
+@Component({
+  selector: 'my-app',
+  template: `
+  <app-price [price]="value"></app-price>
+  `
+})
+export class AppComponent  {
+  value = 100;
+}
+```
+
+> !!! 注意如果沒有 @Input() 時，是不會有 ngOnChanges() 週期的。 !!!
+
+#### SimpleChange 型別
+
+> 是一個 key/value 的型別，key 代表的是每個 @Input() 的欄位名稱，而 value 都是 SimpleChange型別，用來得知以下資訊：
+
+* firstChange：boolean 值，只有在第一次呼叫時為 true，之後都是 false
+* previousValue：上次呼叫時的值
+* currentValue：這次變更時的值
+
+#### OnInit
+
+> 原話 : 在第一次執行完 ngOnChanges() 後(如果有的話)，就會進入 ngOnInit() 週期，大部分的初始化程式都建議在 ngOnInit() 週期中執行，而非在建構式處理，尤其是比較複雜程式或 ajax 呼叫，建議都在 ngOnInit() 中執行。
+>
+> 放在建構式中明顯的缺點是：撰寫單元測試時，由於建構式本身對外部程式的依賴太重，容易造成測試程式難以撰寫。
+
+#### DoCheck
+
+> ngDoCheck() 會在 Angular 核心程式執行變更偵測後呼叫，我們可以在這裡面額外撰寫程式來處理變更偵測所無法偵測到的部分。
+>
+> 參考位置(reference)不改變的狀況下 變更偵測時 Angular 認為 price 這個 @Input 並沒有變更，
+>
+> 要改變這個結果有兩種方式，一種是複製一個新的物件再改變新物件的內容，並把 price 指派為新的物件，此時因為物件的參考位置修改了，變更偵測就能夠認得；當然每次都建立新物件是有成本的，所以我們也能在 DoCheck 週期中自行判斷
+
+#### AfterContentInit 與 AfterContentChecked
+
+這邊範例用到了 &lt;ng-content>&lt;/ng-content> ，
+
+但是沒印象在哪有看過這個講解部分，有點茫 ...
+
+大略看是模板語言的類似相嵌 Layout 的用法，後續看到再補上吧先繼續 ...
+
+<https://ithelp.ithome.com.tw/articles/10187991>
+
+> 在 DoCheck 週期後，會立刻觸發 AfterContentInit 週期，之後每當有變更偵測發生時，在 DoCheck 後觸發 AfterContentChecked。
+
+使用 &lt;ng-content> 的元件內，我們可以使用 @ContentChild 來取得某個樣板參考變數實體或子元件，若父元件在使用時有加入符合 @ContentChild 設定的條件時，在 AfterContentInit 週期就可以取得其實體，若想取得多個實體，則可以使用 @ContentChildern 來取得一個包含所有實體的 QueryList 如下：
+
+```JavaScript
+import { AfterContentChecked, AfterContentInit,  ContentChild, ContentChildren, Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-block',
+  template: `
+  <div class="block">
+    <ng-content></ng-content>
+  </div>`,
+  styles: [
+    `.block { border: 1px solid black; }`
+  ]
+})
+export class BlockComponent {
+  @ContentChild('button') button;
+  @ContentChildren('button') buttons;
+
+  ngOnInit() {
+    // 此時還得不到 <ng-content> 裡面的內容
+    console.log('OnInit - The Button is', this.button);
+    console.log('OnInit - The Buttons are', this.buttons);
+  }
+
+  ngAfterContentInit() {
+    // 此時才能取得 <ng-content> 裡面的內容
+    console.log('AfterContentInit - The Button is', this.button);
+    console.log('AfterContentInit - The Buttons are', this.buttons);
+  }
+
+  ngAfterContentChecked() {
+    // 在 <ng-content> 內變更偵測都完成後觸發
+    console.log('AfterContentChecked - The Button is', this.button);
+    console.log('AfterContentChecked - The Buttons are', this.buttons);
+  }
+}
+
+@Component({
+  selector: 'my-app',
+  template: `
+  <button (click)="tab = 1">Tab 1</button>
+  <button (click)="tab = 2">Tab 2</button>
+  <button (click)="tab = 3">Tab 3</button>
+  <app-block *ngIf="tab === 1">
+    Tab 1
+    <button #button (click)="tab = 2">Next</button>
+  </app-block>
+  <app-block *ngIf="tab === 2">
+    Tab 2
+    <button #button (click)="tab = 3">Next</button>
+  </app-block>
+  <app-block *ngIf="tab === 3">
+    Tab 3
+    <button #button (click)="tab = 1">Tab 1</button>
+    <button #button (click)="tab = 2">Tab 2</button>
+  </app-block>
+  `
+})
+export class AppComponent{
+  tab = 1;
+}
+```
+
+#### AfterViewInit 與 AfterViewChecked
+
+> 在 AfterContentInit 觸發後，會觸發 AfterViewInit，之後觸發 AfterViewChecked，而在每次變更偵測後也會觸發 AfterViewChecked。
+
+在開發元件時，我們常常會使用 @ViewChild 取得樣板上的某個子元件宣告，如果想取得樣板上指定的某個子元件的所有宣告，則可以使用 @ViewChildren 取得一個包含所有子元件的 QueryList，這些子原件在其父元件的 OnInit 週期時還不會產生實體，必須在 AfterViewInit 之後，才能正確取得實體，如以下程式：
+
+```JavaScript
+import { AfterViewChecked, AfterViewInit, Component, OnInit, Input, ViewChild, ViewChildren, QueryList } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<div>Child {{ value }}</div>`,
+
+})
+export class ChildComponent {
+  @Input() value
+}
+
+@Component({
+  selector: 'my-app',
+  template: `
+  <button (click)="create()" #button>Create New Child</button>
+  <app-child *ngFor="let item of list" [value]="item"></app-child>
+  `
+})
+export class AppComponent implements OnInit, AfterViewInit, AfterViewChecked {
+  @ViewChild('button') button;
+  @ViewChild(ChildComponent) child;
+  @ViewChildren(ChildComponent) children: QueryList<ChildComponent>;
+
+  list = [0];
+
+  ngOnInit() {
+    // 在這裡可以使用 @ViewChild 取得某個原生的 DOM
+    // 但取不到子元件實體
+    console.log('Button in OnInit', this.button);
+    console.log('Child in OnInit', this.child);
+    console.log('Children in OnInit', this.children);
+  }
+
+  ngAfterViewInit() {
+    // 在 AfterViewInit 中可以取得子元件實體
+    // 使用 @ViewChild 時，永遠只會取到第一個子元件
+    console.log('Child in AfterViewInit', this.child);
+    console.log('Children in AfterViewInit', this.children);
+  }
+
+  ngAfterViewChecked() {
+    // 在每次樣板上元件的變更偵測都完成後觸發
+    console.log('Child in AfterViewChecked', this.child);
+    console.log('Children in AfterViewChecked', this.children);
+  }
+
+  create() {
+    this.list = [...this.list, this.list.length];
+  }
+
+}
+```
+
+#### OnDestroy
+
+> OnDestroy 會在元件不需要被使用時，觸發 ngOnDestroy() 方法。
+
+通常用來處理一些清理資料行為，若有些程式是不會在元件消失時被清除的，則需要在這個週期內額外處理，最常見的就是使用 RxJS 且有 subscribe 行為時，可能需要額外處理退訂的動作，以免重複訂閱或產生預期外的行為，如下程式：
+
+```JavaScript
+import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+
+@Component({
+  selector: 'app-timer',
+  template: `{{ counter }}`
+})
+export class TimerComponent implements OnInit {
+  counter = 0;
+
+  ngOnInit() {
+    interval(1000).subscribe(val => {
+      this.counter = val;
+      console.log(this.counter);
+    })
+  }
+}
+
+@Component({
+  selector: 'my-app',
+  template: `
+  Timer: <app-timer *ngIf="displayTimer"></app-timer>
+  <button (click)="displayTimer = !displayTimer">Toggle Display Timer</button>`
+})
+export class AppComponent{
+  displayTimer = true;
+}
+```
+
+## 看完文章後的結論
+
+相對於整個架構的生命週期，Angular 更像是各個元件之間的生命週期，
+
+且文章內提到了許多其他模板語言的操控方法與其他 Module 或 RxJS 的內容，
+
+對於我從後端開始的小嫩嫩來說，太多前端知識了 ... 看來還有蠻多地方需要補起來，
+
+而且作者也開發了 Angular 至少兩年才能匯集出這麼多的知識，看來我還有的提升 ...
+
+但至少要先能進入某間公司，不然連兩年都很難撐 ... GoGo 加油
+
+接續看
+
+> [Angular速成班]開發Ajax程式不可或缺的重要關鍵—Http Module
+
+先前版本的 Angular HttpModule 改為現在版本的 HttpClientModule 很多方法都有些差異，
+
+且要配合 Rxjs 或是一些比較深一點的 JavaScript ， 甚至是 TypeScript 適應的不是很好，
+
+但最後還是解決問題成功在當前版本下完成，原作者的內容了。
+
+接續 ...
+
+## [ Angular 速成班] 使用 Pipe 輕鬆改變 view 上的顯示內容(1)- Angular 內建 Pipe
+
+> 程式產生或從後端API撈取的資料未必就是我們希望呈現在畫面上的內容，這時候我們就必須自行撰寫程式來將資料轉換成要呈現的內容。
+
+### 如何使用 Pipe
+
+Pipe寫好後需要在View中直接使用，程式看起來大致會如下
+
+```C++
+{{ data | mypipe }}
+```
+
+以上的意思是，把data透過mypipe這個Pipe進行轉換
+
+### 為 Pipe 加上參數
+
+Pipe可以在後面加上一些參數，來調整要轉換的方式
+
+```C++
+{{ data | mypipe:para1:para2 }}
+```
+
+### 使用 Angular 內建的 Pipe
+
+<https://angular.io/api#!?query=pipe>
+
+#### DatePipe
+
+```JavaScript
+export class AppComponent {
+  today = new Date();
+}
+```
+
+<https://angular.io/api/common/DatePipe>
+
+#### JsonPipe
+
+> JsonPipe對於我們在前端想要debug物件的資料時很有幫助，雖然大多時間我們都會選擇使用 console.log() 來顯示資料，
+> 但在 View 上我們可以透過 JsonPipe 把資料物件直接顯示出來
+
+```JavaScript
+export class AppComponent {
+jsonObj: Object = {
+    name: 'wellwind',
+    age: 30,
+    sex: 'M'
+  };
+}
+```
+
+原作有個坑一定要給型別... <https://angular.io/api/common/JsonPipe>
+
+```C++
+{{ jsonObj | json }}
+```
+
+* 心得 : 前端大小寫是有差別的很容易錯 ... 感覺比後端難寫多了 ...
+
+## [ Angular 速成班] 使用 Pipe 輕鬆改變 view 上的顯示內容(2)-自訂 Pipe 讓內容顯示無死角
+
+> 轉換邏輯太複雜時：假設我們遇到一個複雜的轉換邏輯，沒個2~300行是無法完成的，寫在 Component 中可能會不小心造成一個太過肥大的 Component，這樣的程式是不易於維護的。當簡單的轉換邏輯因需求異動而漸漸變複雜時，也是個切出Pipe的良好時間點。
+>
+> 轉換邏輯在很多地方都需要使用時：我想這就不用多說了吧！如果只有單一個 Component 需要使用，邏輯又不複雜時，寫在 Component 中當作一個 Component 的 feature 也是完全沒問題的，但當重複使用的需求出現時，就是很好的切出 Pipe 的時機啦！
+
+### 開始使用Pipe
+
+在我們之前的TodoApp中，有一個顯示(已完成)的功能，程式碼如下：
+
+```HTML
+<span *ngif="item.done">(已完成)</span>
+```
+
+我們想要把他改成使用Pipe的方式來處理資料，希望變成如下的程式碼：
+
+```HTML
+<span>{{ item.done | todoDone:true }}</span>
+```
+
+> 其中 todoDone 就是我們即將要建立的 TodoDonePipe ，這個 Pipe 我們還帶了一個參數，當資料未完成時，若參數為 false，不顯示資料；若參數為 true 則顯示(未完成)。
+>
+> ng g p todo-done
+
+* src/app/todo-done.pipe.ts
+
+```JavaScript
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'todoDone'
+})
+export class TodoDonePipe implements PipeTransform {
+  transform(value: any, args?: any): any {
+    return null;
+  }
+}
+```
+
+@Pipe decorator
+
+Pipe 的 class
+
+有要轉換的邏輯必須寫在 transform() 裡面，把轉換後的結果回傳回去
+
+```TypeScript
+transform(todoDone: boolean, displayNotDone: boolean): any {
+  if (todoDone) {
+    return '(已完成)';
+  } else if (displayNotDone) {
+    return '(未完成)';
+  }
+  return '';
+}
+```
+
+> Pipe 為全域的樣子，不用在 Component 特別去 import module，在 cli 時就會自動引進 AppModule，就可在所有 Component 使用。
+
+## [ Angular 速成班] 使用 Pipe 輕鬆改變 view 上的顯示內容(3)- Impure Pipe 參數：關於 Pipe 最重要的小事
+
+自訂 Pipe 參數：pure
+
+預設情況下 Angular 只在以下兩種狀況發生時會偵測資料變更
+
+* JavaScript 基本（primitive）型別的資料變更時
+* 整個物件參考被變更時
+
+原作方法說 TodoListService.toogleItemStatus()
+
+其實只是改變了一個物件的屬性，而非整個物件參考改變，Pipe其實沒接收到正確的變更資料。
+
+但不知道為何，我寫的都直接就改變了 ... 以為是因為時間程式所以每秒都在重新渲染，結果移除了時間程式也還是一樣 ...
+
+修正方式有點看不懂語法 ... 後面 中括弧包 三個點 = = ? [ ] 中括弧，表示一個陣列，也可以理解為一個陣列物件。 但三個點 ?
+
+<https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/rest_spread.html>
+
+看來 ES6 懂得還是太淺了 ... 有時間真的要從 W3C JavaScript 開始看起
+
+```JavaScript
+toogleItemStatus(item: TodoItem) {
+  item.done = !item.done;
+  // 給予一個新的物件參考
+  this.todoItems = [...this.todoItems];
+}
+```
+
+### 關於 Pure Pipe
+
+> 在類別上方的＠Pipe decorator嗎？在這個decorator中主要有一個name的參數；但其實還有一個pure參數，預設值為true，代表這個Pipe是一個Pure Pipe
+> Angular的處理行為跟預設的變更偵測機制是一樣的，因此只有當整個傳入的基礎行別被變更﹑或是傳入的物件整個參考被改變時，才會重新執行Pipe裡面的transform()，因此假設我們調整一下我們之前的Pipe，把整個TodoItem傳入時，問題就會再次發生了
+
+???????????????????????? 還是沒觸發 不知道為啥 ...
+
+大概知道問題在哪了，作者似乎後面有些內容是省略的，所以有些 注入 或 綁定 的內容改變了，但沒有詳細說明 ...
+
+也有可能版本異動後，跟 2016 年時的版本內容有差異 ...傳入物件在 pipe 內做變更 還是有偵測到 = = ... 以後遇到再說了 ...
+
+### 關於 Impure Pipe
+
+```JavaScript
+@Pipe({
+  name: 'todoDone',
+  pure: false
+})
+```
+
+Impure Pipe會導致Angular非常頻繁的對Pipe傳入的資料進行變更偵測，這很容易會導致我們程式的效能變差，因此實際設計上最好：
+
+* 盡量使用Pure Pipe
+* 不要在Pipe內變更物件的狀態（ 因為Pure Pipe也不會偵測到… )
+
+### 關於 Async Pipe
+
+> AsyncPipe 可以接收一個 ES6 的 Promise 或 RxJs 的 Observable，並主動去處理 .then() 或主動為 Observable 進行 subscribe 的動作，由於內部的狀態是會變更的，因此 AsyncPipe 就是被設計成一個 Impure Pipe
+
+## [ Angular 速成班] 使用 attribute directive 擴充元件屬性
+
+透過 attribute directive，自行擴充原有的屬性( attribute )，來達到擴充原有的 DOM element、Component 甚至其他的 directive 沒有的功能！
+
+在 Angular 中，Directive 分成3種：
+
+* Components：也就是我們之前就介紹過的 Angular 畫面組成的基本單元。
+* Structural directives：主要用來改變 DOM 的配置，例如 ngIf 和 ngFor，他們會移除或加入某些 DOM 元素，來讓 DOM 結構產生變化。
+* Attribute directives：用來改變某個 DOM 元素、 Component 甚至是其他 directive 的顯示方式或行為。
+
+示範透過 directive 來為原來的 button 加上 bootstrap 的樣式，並且能透過 @Input 來傳遞參數給 directive ，讓設定更加靈活，我們的目標如下圖，每個按鈕可以套用不同的樣式，並且在案下時切換樣式，都只由一個 directive 搭配不同的參數來完成
+
+> ng g d bsButton
+
+看來跟 pipe 一樣，全域的樣子，不用在 Component 特別去 import module，在 cli 時就會自動引進 AppModule，就可在所有 Component 使用。
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appBsButton]'
+})
+export class BsButtonDirective {
+
+  constructor() { }
+
+}
+```
+
+@Directive、selector
+
+這個selector可以決定要套用的屬性名稱，例如目前是[appBsButton]，
+
+那麼 &lt;button appbsbutton="">...&lt;/button> 或是，
+
+&lt;div appbsbutton="">...&lt;/div>都 會套用，
+
+如果設定為 button[appBsButton] ，
+
+則只有 &lt;button appbsbutton="">...&lt;/button> 會生效。
+
+---------------------------------------
+
+接著我們要取得目前套用 @directive 的 element ，
+
+才能知道如何改變 element 的內容，
+
+我們可以注入 ElementRef ，來取得目前 @directive 所在的 element：
+
+### ElementRef
+
+ElementRef : 有點複雜，大致上是為了避免耦合，而定義的中間層，關聯到原生的 element，
+
+好用的地方在於我們可以很方便的取得原生地 DOM element 。
+
+> 結語 : 到這裡越來越不懂了 ... 開始有點知道 angular 的坎在哪了，不只很多 Module 還有一堆其他機制，不太確定是 ng 自己的還是 瀏覽器方面的 ...
+>
+> 目標還是定在，依照首篇文章所寫好的 Project 就開始找工作練等，不然連澳洲邊都摸不到 ...
+
+<https://jimmylin212.github.io/post/0013_exploring_angular_dom_manipulation/>
+<https://semlinker.com/ng-element-ref/>
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+import { ElementRef, Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appBsButton]'
+})
+export class BsButtonDirective {
+
+  constructor(private el: ElementRef) { }
+
+}
+```
+
+再來是既然是自定義屬性，試著在初始化 ngOnInit 時就指定，所以 :
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+import { ElementRef,  Directive,  OnInit} from '@angular/core';
+
+@Directive({
+  selector: '[appBsButton]'
+})
+export class BsButtonDirective implements OnInit {
+
+  constructor(private el: ElementRef) { }
+
+  ngOnInit() {
+    const button = (this.el.nativeElement as HTMLElement);
+    button.classList.add('btn');
+    button.classList.add('btn-primary');
+  }
+}
+
+```
+
+* src/app/header/add-form.component.html
+
+```HTML
+接著在HTML中套用這個directive
+<button appbsbutton="">Button with Attribute Directive</button>****
+```
+
+* 結果 就可以看到如下的結果啦！我們是透過directive的方式在程式中為button加入class，而非在button中直接加入class="btn btn-primary"；但結果是一樣的。
+
+### Renderer
+
+> 由於我們預先知道傳過來的 Element 是一個 HTMLElement ，所以透過 TypeScript 進行轉型，若不確定傳過來的是什麼，也有一個 Renderer 輔助類別，來幫助我們設定樣式，這個 Renderer 一樣需要透過注入的方式來使用，最終程式為：
+
+Renderer : 渲染器是 Angular 為我們提供的一種內建服務，用於執行 UI 渲染操作。在瀏覽器中，渲染是將模型對映到檢視的過程。模型的值可以是 JavaScript 中的原始資料型別、物件、陣列或其它的資料物件。然而檢視可以是頁面中的段落、表單、按鈕等其他元素，這些頁面元素內部使用 DOM (Document Object Model) 來表示。
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+import { Renderer, ElementRef, Directive, OnInit } from '@angular/core';
+
+@Directive({
+  selector: '[appBsButton]'
+})
+export class BsButtonDirective implements OnInit {
+
+  constructor(private el: ElementRef, private renderer: Renderer) { }
+
+  ngOnInit() {
+    this.renderer.setElementClass(this.el.nativeElement, 'btn', true);
+    this.renderer.setElementClass(this.el.nativeElement, 'btn-primary', true);
+  }
+}
+```
+
+> 注意 renderer.setElementClass() 的第3個參數，設為 true 代表加入這個 class ，設為 false 則代表移除此 class ，稍後我們也會用到。
+
+### 加入@Input，讓Directive更有彈性
+
+＠Input一樣擴充了屬性，但可以傳遞屬性的內容，接著我們來透過@Input，讓appBsButton可以加上其他樣式。
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+export class BsButtonDirective implements OnInit {
+
+  @Input() appBsButton;
+
+  constructor(private el: ElementRef, private renderer: Renderer) { }
+
+  ngOnInit() {
+    this.renderer.setElementClass(this.el.nativeElement, 'btn', true);
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.appBsButton || 'primary'}`, true);
+  }
+}
+```
+
+接著HTML中就可以使用appBsButton='primary'這樣的方式來設定樣式啦！
+
+* src/app/header/add-form.component.html
+
+```HTML
+<button appbsbutton="danger">Button (Danger)</button>
+<button appbsbutton="info">Button (Info)</button>
+```
+
+## 加入@HostListener，監聽來源Element的事件
+
+> 用addEventListener來監聽事件是沒有問題的，不過需要注意的是，由於Angular是一個SPA應用程式，因此Element隨時會動態的被產生或消滅，如果我們沒有在Element被消滅時取消監聽的話，長久下來容易造成memory leaks的問題，而@HostListener則可以幫我們解決這個問題，在Element被消滅時自動取消監聽！（順便多學一個decorator）
+
+加入 @HostListener ，完成最後的目標：在滑鼠按下時改變樣式；這個樣式我們一樣希望可以從 @Input 來取得，最終的程式碼改寫成：
+
+* src/app/bs-button.directive.ts
+
+```JavaScript
+import { HostListener, Renderer, ElementRef, Directive, OnInit, Input } from '@angular/core';
+
+@Directive({
+  selector: '[appBsButton]'
+})
+export class BsButtonDirective implements OnInit {
+
+  @Input() appBsButton;
+  @Input() mouseDownClass; // 額外的@Input
+
+  constructor(private el: ElementRef, private renderer: Renderer) { }
+
+  ngOnInit() {
+    this.appBsButton = this.appBsButton || 'primary';
+    this.mouseDownClass = this.mouseDownClass || 'danger';
+    this.renderer.setElementClass(this.el.nativeElement, 'btn', true);
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.appBsButton}`, true);
+  }
+
+  @HostListener('mousedown') onMouseDown() {
+    // 移除原來的樣式
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.appBsButton}`, false);
+    // 加入mousedown的樣式
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.mouseDownClass}`, true);
+  }
+
+  @HostListener('mouseup') onMouseUp() {
+    // 移除mousedown的樣式
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.mouseDownClass}`, false);
+    // 加入原來的樣式
+    this.renderer.setElementClass(this.el.nativeElement, `btn-${this.appBsButton}`, true);
+  }
+}
+```
+
+在HTML中可以使用appBsButton及mouseDownClass兩個屬性：
+
+* src/app/header/add-form.component.html
+
+```HTML
+<button appbsbutton="danger" mousedownclass="primary">Button (Danger <-> Primary)</button>
+<button appbsbutton="info" mousedownclass="success">Button (Info <-> Success)</button>
+```
+
+### AOP（Aspect-Oriented Programming） 剖面導向程式設計
+
+是電腦科學中的一種程式設計范型，旨在將橫切關注點與業務主體進行進一步分離，以提高程式碼的模組化程度。
+
+讓原來的 Element 不用去管需要擴充的細節，直接交給 directive 就好
+
+## 大重點
+
+Angular 其中的一個設計目標是使瀏覽器與 DOM 獨立。DOM 是複雜的，因此使元件與它分離，會讓我們的應用程式，更容易測試與重構。另外的好處是，由於這種解耦，使得我們的應用能夠執行在其它平臺 (比如：Node.js、WebWorkers、NativeScript 等)。
+
+為了能夠支援跨平臺，Angular 通過抽象層封裝了不同平臺的差異。比如定義了抽象類 Renderer、Renderer2 、抽象類 RootRenderer 等。此外還定義了以下引用型別：ElementRef、TemplateRef、ViewRef 、ComponentRef 和 ViewContainerRef 等。
+
+<https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/201840/>
+
+> 心得 : 之前有看過撰寫瀏覽器的 it幫幫忙文章，大概了解了其實 Angular 就是個 UI 框架，會去跟平臺(瀏覽器)對接使用瀏覽器所提供的相關服務，渲染引擎就是其一。
+>
+> <https://ithelp.ithome.com.tw/users/20103745/ironman/1270>
+
+## [ Angular 速成班] 透過 Module 組織管理你的程式
+
+<https://wellwind.idv.tw/blog/2017/02/18/angular-tutorial-16-module/>
+
+>metadata物件的@NgModule裝飾的function，這些metadata物件告訴我們：
+
+* 哪些components、directives和pipes屬於這個module
+* module下哪些類別是可以公開給外部使用的
+* 在這個module下，我們需要匯入哪些其他的module給我們的components、directives和pipes使用
+* 提供了哪些services是應用程式中所有的組件都可以使用的
+
+把之前寫好的 TodoApp 封裝到一個 module 裡面，同時說明如何在 @NgModule 裡面
+
+宣告上述的4個部分，在完成後你將會發現我們的程式及目錄結構變得更加清楚！

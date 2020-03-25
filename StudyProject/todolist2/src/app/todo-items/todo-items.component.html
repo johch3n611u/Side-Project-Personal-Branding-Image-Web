@@ -1,1 +1,13 @@
-<p>todo-items works!</p>
+<ul>
+    <!-- Template syntax *ngFor 類似 C# foreach -->
+    <li *ngFor="let item of getTodoList();let recordIndex = index;let firstRecord = first;let lastRecotd = last; let evenRecord = even; let oddRecord = odd">
+        <label [ngClass]="{'done' : item.done, 'firstRecord': firstRecord, 'lastRecotd': lastRecotd, 'evenRecord': evenRecord, 'oddRecord': oddRecord}" htmlFor="chk_{{item.id}}">
+            <input id="chk_{{item.id}}" type="checkbox" [checked]="item.done" (click)="itemClick(item)">
+                {{ recordIndex }} - {{ item.value }}
+        </label> |
+        <a href="#" (click)="delete(item)"> 刪除 </a>
+        <span *ngIf="item.done">*ngIf (已完成) </span>
+        <!-- <span>自訂 Pipe {{ item.done | todoDone:true }}</span> -->
+        <span>{{ item | todoDone:true }}</span>
+    </li>
+</ul>
