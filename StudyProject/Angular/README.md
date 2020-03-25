@@ -4,7 +4,7 @@
 
 <https://forum.angular.tw/>
 
-* [Sample1](#1) 基本
+* [Sample1](#1) 基本 + Router
 * [Sample2](#2) Service 架構 + Pipe + Http + Directive
 * [Sample3](#3) 包裝 todolist2 為 NgModule 架構
 
@@ -1846,3 +1846,309 @@ imports: [
 ## Routing 從零開始的Angular前端開發系列 第 23 篇 fansen
 
 <https://ithelp.ithome.com.tw/articles/10225687>
+
+* index.html
+
+```HTML
+<!-- index.html-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SpongeWebsite</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
+
+* &lt;base href="/"> 如果你的網頁有超連結設定成相對路徑，那麼就會導向以 &lt;base> 設定為基底的URL。"/"會指定該html所屬的目錄。
+
+比方我們在 body 裡建立一個超連結的標籤:
+
+&lt;a href="test.com">Link&lt;/a>
+
+ URL 就會導向 http://localhost:4200/test.com
+
+ 如果設成絕對路徑：
+
+  &lt;a href="http://www.google.com">Link&lt;/a>
+
+就能正確導向www.google.com，而不會經過base的URL。
+
+### 設定路由
+
+Angular 建立範本專案時，會詢問要不要建立 RoutingModule，選 y 的話就會建立一個 app-routing.module.ts。
+
+由於我們在建立專案時沒有加入 RoutingModule，所以現在要手動建立他。我們遵循 Angular，名字固定叫 app-routing 比較好：
+
+> ng g m app-routing --flat
+
+--flat 將文件放入src/app而不是其自己的文件夾中。
+
+--module=app 告訴CLI在imports 數組中註冊它 AppModule 。
+
+* app-routing.module.ts
+
+```JavaScript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+routes 是一個 Route 的陣列，裡面放我們等等要定義的路由資訊。
+
+import: [RouterModule.forRoot(routes)]，
+
+這邊將 routes 資訊載入到 RouterModule，由於我們這個 module 是要匯出給 AppModule 使用，
+
+而 AppModule 是 root module，
+
+所以要用forRoot()，如果是 root module 以外的 module 就用 forChild()。
+
+* app.module.ts 匯入：
+
+```JavaScript
+import { AppRoutingModule } from './app-routing.module';
+
+...
+imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ...
+    ],
+    ...
+```
+
+也可以把這些程式碼寫在 AppModule 中，不過我覺得這樣分成兩個檔案比較乾淨。
+
+* app-routing.module.ts
+
+```JavaScript
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomepageComponent},
+];
+```
+
+第一筆的 path: '' 就是相對於 &lt;base href="/"> 的根位置： http://localhost:4200/。
+
+redirectTo 設定要導向哪個 URL，這邊是導向 /home 這個位址。
+
+pathMatch: 'full' 是設定輸入的網址要與 path 設定的位址一樣，才會做 redirect。所以我一定要輸入http://localhost:4200/，才會正確導到 http://localhost:4200/home。
+
+而如果是設定 pathMatch: 'prefix' 的話，只要 url 符合 path 的 prefix，就會幫忙導向。而這邊的 path 是空字串，所以設定 prefix 的話，無論 url 後面輸入甚麼，都會導到 /home 底下。
+
+第二筆的 component 即是指，如果我在 http://localhost:4200/home，要顯示 HomepageComponent 這個元件。
+
+### 路由插座
+
+顯示顯示，到底要顯示在哪裡呢？
+
+我們要使用 &lt;router-outlet>&lt;/router-outlet> 這個標籤。它被稱作路由插座，
+
+當進入我們的網頁時，Angular 的 Router 會查看我們配置的 routes 陣列，並在這邊顯示對應的 Component。
+
+所以要在 app.component.html 加入 &lt;router-outlet>&lt;/router-outlet>：
+
+* app.component.html
+
+```JavaScript
+<app-navigation-bar></app-navigation-bar>
+<router-outlet></router-outlet>
+```
+
+在 import module 的地方加入{ enableTracing: true }，Angular 就會在 console 印出路由的訊息，debug時可以用。
+
+* app-routing.module.ts
+
+```JavaScript
+imports: [RouterModule.forRoot(routes, { enableTracing: true })]
+```
+
+### routerLink 屬性
+
+將 href 改成 Angular 提供的 routerLink，注意 Link 的 L 要大寫：
+
+* demo
+
+```HTML
+<ul>
+  <li><a routerLink="home">Home</a></li>
+
+  <ng-container *ngIf="!islogin">
+    <li><a routerLink="/register">Register</a></li>
+    <li><a routerLink="/login">Login</a></li>
+  </ng-container>
+
+  <ng-container *ngIf="islogin">
+    <li><a routerLink="/chart">Chart</a></li>
+    <li><a routerLink="/logout">Logout</a></li>
+  </ng-container>
+
+</ul>
+```
+
+許多操作方式
+
+```JavaScript
+routerLink="['/login']"
+
+// 導向/account/login
+routerLink="/account/login"
+routerLink="['/account', 'login']"
+routerLink="['/account/login']"
+// 搭配 Property Binding 使用
+[routerLink]="['/account', 'login', id , 'info']"
+// id = 5 -> /account/login/5/info
+```
+
+### 定義 routes 時要注意的事情
+
+path 的地方不能用 / 開頭，否則一定會報錯
+
+redirectTo 只能重導向一次
+
+```JavaScript
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', redirectTo: 'login' },
+  { path: 'login', component: LoginComponent },
+];
+```
+
+### 萬用路由 **
+
+可以在 routes 最後加入
+
+{ path: '**', component: &lt;COMPONENT> }
+
+當設定的所有 path 都不能匹配時，就一定會匹配到 ** 這個萬用路由
+
+404 頁面不存在
+
+### children 子路由
+
+```JavaScript
+const routes: Routes = [
+{
+    path: 'account', children: [
+        { path: 'register', component: RegisterComponent},
+        { path: 'changepassword', component: ChangePasswordComponent},
+    ]
+  }
+]
+// 1. account/register
+// 2. account/changepassword
+```
+
+### 路由參數
+
+ { path: 'home/:id', component:  HomepageComponent}
+
+ :id 不能為空
+
+### 路由 Query string
+
+在網址後面用問號串接，並以 & 分隔每一個參數
+
+需要用到 ActivatedRoute 這個 Service
+
+在 ngOnit() 加入取得參數的程式碼
+
+```JavaScript
+ import { ActivatedRoute, ParamMap} from '@angular/router';
+   constructor(private route: ActivatedRoute) { }
+
+     name;
+
+  ngOnInit() {
+    this.name = this.route.snapshot.queryParamMap.get('name');
+}
+
+  ngOnInit() {
+    this.name = this.route.snapshot.paramMap.get('name');
+}
+```
+
+參數還有一種格式，是使用分號分隔的 <http://localhost:4200/home;name=fansen;number=123;>
+
+用 paramMap 取代 queryParamMap，就可以吃這種格式的參數
+
+### 路由導航 -> 登入成功後轉向首頁或是其他頁面
+
+讓Angular 幫我們自動轉向頁面 使用另一個 Service Router
+
+調用 navigate() 這個 function
+
+第一個參數要傳入陣列，跟之前 routerLink 的概念一樣，如果網址是/login/name/info 的話，
+
+就傳入 ['/login','name','info']，當然也可以夾入變數
+
+然後 binding　到一個 button 上：
+
+這樣點擊按鈕就會轉向 http://localhost:4200/login 了：
+
+```JavaScript
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+constructor(private route: ActivatedRoute, private router: Router) { }
+ navigate() {
+    this.router.navigate(['/login']);
+  }
+
+//HTML
+  <button (click)="navigate()">Navigate To Login</button>
+
+//或傳入字串直接導向
+   navigateURL() {
+    this.router.navigateByUrl('/login');
+  }
+
+// 導向新頁面時，想要將 Query String 加進去
+queryString = '?name=name123&naumber=1'
+url = '/login' + queryString
+// 有了 NavigationExtras 物件，就不需要這麼麻煩了，把 Query String 像物件一樣一組一組擺進去
+navigate() {
+    const options: NavigationExtras  = {
+      queryParams : {
+        name: 'name123',
+        number: 1
+      }
+    };
+    this.router.navigate(['/login'], options);
+
+// queryParams 也可以和 routerLink 一起用：
+<a routerLink="/login" [queryParams]="{ name: 'name123', number: 1}"></a>
+
+// 不想讓別人看到路由位址的話，可以在 NavigationExtras 加入 skipLocationChange: true
+// 跳轉頁面時，URL就不會改變，但是 queryParams 的參數一樣會傳送出去
+const options: NavigationExtras  = {
+      queryParams : {
+        name: 'name123',
+        number: 1
+      },
+      skipLocationChange: true
+    };
+
+// 搭配 routerLink 的話，在屬性加入 skipLocationChange 即可：
+<a routerLink="/login" [queryParams]="{ name: 'name123', number: 1}"　skipLocationChange></a>
+
+以上
+```
+
+結論 : 好了到這先結尾，其實有看到一個最完美的配置
+前端 NG 後端 CORE 搭 MSSQL & DOCK 、 PWA ... 等等 且 SEO 也可顧到，但看來那還要蠻長時間學習 ...
+
+https://github.com/TrilonIO/aspnetcore-angular-universal

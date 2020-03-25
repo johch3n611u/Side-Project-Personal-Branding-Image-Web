@@ -22,6 +22,24 @@ Framework - Angular 2+ & .Net Core 2+
 
 資料庫部分則靠上班實作所累積的基礎。
 
+以下鏈結所架構為我到現在看到感覺最完善的框架版本
+
+<https://github.com/TrilonIO/aspnetcore-angular-universal>
+
+***ASP.NET Core & Angular Universal advanced starter***
+
+- PWA w/ server-side rendering for SEO,
+- Bootstrap,
+- i18n internationalization,
+- TypeScript,
+- unit testing,
+- WebAPI REST setup,
+- SignalR,
+- Swagger docs,
+- and more!
+
+By @TrilonIO
+
 ## 緣由
 
 想做個人品牌網頁，
