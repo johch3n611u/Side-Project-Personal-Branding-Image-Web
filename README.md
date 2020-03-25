@@ -4,7 +4,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 方式
 
-以 MVC5 的知識為底學習 .NET Core
+以 ASP.NET MVC5 的知識為底學習 .NET Core
 
 以 EasyUi、JQ 的知識為底學習 Angular
 
@@ -18,9 +18,9 @@ Framework - Angular 2+ & .Net Core 2+
 
 所以優先把以下參考看完或實做，
 
-.Net MVC 與 C# 相對於前端較熟所以可能多花點時間在 Angular，
+.Net、MVC、C# 相對於前端較熟所以可能多花點時間在 Angular，
 
-資料庫部分則靠上班實作。
+資料庫部分則靠上班實作所累積的基礎。
 
 ## 緣由
 
