@@ -8,24 +8,16 @@ import { TodoDonePipe } from './todo-done.pipe';
 import { BsButtonDirective } from './bs-button.directive';
 import { TodoListService } from './todo-list.service';
 
-
-
 @NgModule({
   declarations: [
-    TodoAppComponent,
-    AddFormComponent,
-    TodoItemsComponent,
-    TodoDonePipe,
-    BsButtonDirective,
+
   ],
   imports: [
-    CommonModule,
-    FormsModule,
+
   ],
-  providers: [TodoListService],
+  providers: [],
   exports: [
-    AddFormComponent,
-    TodoItemsComponent
+
   ]
 })
 export class TodoAppModule {

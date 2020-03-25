@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoDonePipe } from './todo-done.pipe';
 import { BsButtonDirective } from './bs-button.directive';
 import { BsDirective } from './bs-button.directive';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BsDirective } from './bs-button.directive';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CommonModule,
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]

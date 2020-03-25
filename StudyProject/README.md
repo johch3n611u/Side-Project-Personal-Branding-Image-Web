@@ -1835,10 +1835,11 @@ imports: [
 
 > 今天我們學到了使用@NgModule來將程式模組化，@NgModule參數為一個metadata物件，內容如下：
 
-* declarations: []：哪些components、directives和pipes屬於這個module
-* exports:[]：module下哪些類別是可以公開給外部使用的
-* imports:[]：在這個module下，我們需要匯入哪些其他的module給我們的components、directives和pipes使用
-* providers:[]：提供了哪些services是應用程式中所有的組件都可以使用的
+* declarations: []：這個Module內部Components/Directives/Pipes的列表，聲明這個Module的內部成員
+* exports:[]：控制module下哪些內部成員是可以公開給外部使用的
+* imports:[]：在這個module下，我們需要匯入哪些其他的Angular提供的或第三方提供的Angular資源庫（如FormsModule、HttpModule等）。
+* providers:[]：提供了哪些services，在此宣告後所有下面的元件都可以直接使用這個服務。
+* bootstrap[]：這個屬性只有根模組需要設定，在此設定在一開始要進入的模組成員是那一個。
 
 透過將程式模組化，可以讓程式架構更加明確，搭配Angular CLI會自動幫你將模組化的內容收納在對應的資料夾下，見少無謂的重工，增強生產力；善用module，我們可以架構出更加清楚好維護的程式碼，也能夠更容易的將程式碼分享出去，實在是送人自用兩相宜的好工具阿！
 
