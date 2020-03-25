@@ -1,4 +1,4 @@
-# Self Brand Image Web
+# Personal Branding Image Web
 
 Framework - Angular 2+ & .Net Core 2+
 
