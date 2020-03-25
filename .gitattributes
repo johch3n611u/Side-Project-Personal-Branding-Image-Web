@@ -1,0 +1,5 @@
+*.pb linguist-language=c#
+*.pbi linguist-language=c#
+*.pbf linguist-language=c#
+*.pbp linguist-language=c#
+*.pbv linguist-language=c#
