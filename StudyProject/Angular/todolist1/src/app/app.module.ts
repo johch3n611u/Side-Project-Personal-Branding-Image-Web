@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
 import { AddFormComponent } from './add-form/add-form.component';
 
+import { AppRoutingModule } from './app-routing.module';
 import { OtherPageComponent } from './other-page/other-page.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { OtherPageComponent } from './other-page/other-page.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
