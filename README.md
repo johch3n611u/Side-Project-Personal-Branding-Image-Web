@@ -134,7 +134,6 @@ By @TrilonIO
 
 <https://ithelp.ithome.com.tw/users/20119722/ironman/2145?page=3>
 
-
 ### .Net Core
 
 <https://ithelp.ithome.com.tw/users/20083151/ironman/856>
@@ -168,3 +167,9 @@ By @TrilonIO
 ### other
 
 <https://softwareengineering.stackexchange.com/questions/278686/having-a-production-branch-or-using-master>
+
+<https://medium.com/@harivigneshjayapalan/life-of-a-unicorn-developer-d442b6655399>
+
+<http://www.ditldesign.com/news/2014/12/19/ditktalk2014nov20hsieh>
+
+<http://www.adhamdannaway.com/>
