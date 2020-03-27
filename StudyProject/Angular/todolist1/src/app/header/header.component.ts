@@ -13,29 +13,34 @@ export class HeaderComponent implements OnInit {
 
   // getDate() { return (new Date()); }
 
-  getDate() {
-    var today = new Date();
-    var hh = today.getHours();
-    var mm = today.getMinutes();
-    var ss = today.getSeconds();
-    mm = this.checkTime(mm);
-    ss = this.checkTime(ss);
-    var datetime = hh + ":" + mm + ":" + ss;
-    var timeoutId = setTimeout(this.getDate, 500);
-    return datetime
-  }
-
-  checkTime(i) {
-    if (i < 10) {
-      i = "0" + i;
-    }
-    return i;
-  }
+  today;
+  hh;
+  datetime;
+  timeoutId;
 
   constructor() { }
 
   ngOnInit(): void {
-
+    function getDate() {
+      this.today = new Date();
+      this.hh = this.today.getHours();
+      let mm = this.today.getMinutes();
+      let ss = this.today.getSeconds();
+      mm = checkTime(mm);
+      ss = checkTime(ss);
+      this.datetime = this.hh + ':' + mm + ':' + ss;
+      this.timeoutId = setTimeout(this.getDate, 500);
+      return this.datetime;
+    }
   }
 
+  // reallyGettime() { return '5566' + this.datetime; }
+
+}
+
+function checkTime(i) {
+  if (i < 10) {
+    i = '0' + i;
+  }
+  return i;
 }

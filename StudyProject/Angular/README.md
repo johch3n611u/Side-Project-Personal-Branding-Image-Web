@@ -2054,11 +2054,11 @@ const routes: Routes = [
 // 2. account/changepassword
 ```
 
-### 路由參數
+### path 參數
 
  { path: 'home/:id', component:  HomepageComponent}
 
- :id 不能為空
+ :id 不能為空 這邊要輸入 home/123、home/AAA ... 等等的 URL，才能成功比對路由位址
 
 ### 路由 Query string
 
@@ -2073,7 +2073,7 @@ const routes: Routes = [
    constructor(private route: ActivatedRoute) { }
 
      name;
-
+// 這樣就會抓到第一次載入這個 component 時的變數 name。
   ngOnInit() {
     this.name = this.route.snapshot.queryParamMap.get('name');
 }
@@ -2148,7 +2148,22 @@ const options: NavigationExtras  = {
 以上
 ```
 
-結論 : 好了到這先結尾，其實有看到一個最完美的配置
+結論 :
+
+好了到這先結尾，其實有看到一個最完美的配置
+
+<https://github.com/TrilonIO/aspnetcore-angular-universal>
+
 前端 NG 後端 CORE 搭 MSSQL & DOCK 、 PWA ... 等等 且 SEO 也可顧到，但看來那還要蠻長時間學習 ...
 
-https://github.com/TrilonIO/aspnetcore-angular-universal
+最後 timeOut 出現 ExpressionChangedAfterItHasBeenCheckedError ，
+
+查了半天還是完全不知道怎麼解，還是對 ng 渲染畫面那部分的 生命週期太模糊 ...
+
+看完以下文章大概知道是什麼原因了，但會耽誤到原來計畫時間，先記著等 sideproject 完成後再來解決。
+
+<https://medium.com/better-programming/expressionchangedafterithasbeencheckederror-in-angular-what-why-and-how-to-fix-it-c6bdc0b22787>
+
+<https://www.learn-it-with-examples.com/development/html-css-javascript/angular/settimeout-angular-example.html>
+
+> ng build --prod 改使用AOT編譯

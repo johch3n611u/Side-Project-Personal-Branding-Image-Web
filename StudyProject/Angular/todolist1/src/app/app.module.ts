@@ -13,6 +13,8 @@ import { AddFormComponent } from './add-form/add-form.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { OtherPageComponent } from './other-page/other-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { OtherPageComponent } from './other-page/other-page.component';
     TodoItemsComponent,
     AddFormComponent,
     OtherPageComponent,
+    HomePageComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

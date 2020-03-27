@@ -1,12 +1,17 @@
 <div class="wrap">
-    <app-header></app-header>
-
-    <!-- 向 add-form.Component 傳遞 addTodo($event) 事件 -->
-    <app-add-form (addTodoItem)="addTodo($event)"></app-add-form>
-
-    <!-- 向 todo-items.Component 傳遞 todoItems 資料 -->
-    <app-todo-items [items]="todoItems"></app-todo-items>
-
-    <a routerLink="/other">other</a>
+    <p>App works!</p>
+    <a routerLink="/home">home</a> |
+    <a routerLink="/introduction">introduction</a> |
+    <a routerLink="/other">other</a> |
+    <a routerLink="/ssssss">ssssss</a> |
+    <a routerLink="/sss">sss</a> |
+    <a routerLink="/xxx">xxx</a> |
+    <a routerLink="/account/register">register</a> |
+    <a routerLink="['/account','changepassword']">changepassword</a> |
+    <a routerLink="['/account/changepassword']">changepassword</a> |
+    <a routerLink="/home/5478">home參數</a> |
+    <a [routerLink]="['/home', PID]">Property Binding</a> |
+    <a routerLink="/other" [queryParams]="{name:'Allen'}">Query string 參數</a>
+    <a routerLink="/other" [queryParams]="{name:'Allen'}" skipLocationChange>skipLocationChange</a>
     <router-outlet></router-outlet>
 </div>
