@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Angular Material 內建樣式 */
+
+
+/* ~ 代表的是去 node_modules 去尋找是否有安裝對應的套件，有的話就把套件目錄下指定的位置內容加進來 */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+/* @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+
+/* @import "../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+
+
+/* @import "../node_modules/@angular/material/prebuilt-themes/purple-green.css"; */

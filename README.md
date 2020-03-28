@@ -108,7 +108,27 @@ By @TrilonIO
 
 期待能成為一個 斜槓獨角獸。
 
-## 參考
+## 問題分析
+
+1. 資料繁雜需要分門別類呈現
+2. 系統化上架專案並統一管理
+3. 特色內容需要專案呈現
+
+## 解決方案 - 參考範例
+
+特色進入頁面
+
+<<http://www.adhamdannaway.com/>
+
+分門別類專案與新聞系統
+
+<https://big.dk/#projects>
+
+後台管理系統
+
+<https://ithelp.ithome.com.tw/articles/10193290?sc=iThelpR>
+
+## 參考文章
 
 ### Angular
 
@@ -172,4 +192,6 @@ By @TrilonIO
 
 <http://www.ditldesign.com/news/2014/12/19/ditktalk2014nov20hsieh>
 
-<http://www.adhamdannaway.com/>
+### 規劃設計
+
+<https://www.youtube.com/watch?v=MFropqypz3M&t=13s>
