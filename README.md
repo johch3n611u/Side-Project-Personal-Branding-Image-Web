@@ -204,6 +204,8 @@ By @TrilonIO
 
 <https://dbdiagram.io/home>
 
+<https://challenge.thef2e.com/works?stage=6&orderBy=created_at&sort=desc>
+
 ### 規劃設計
 
 <https://www.youtube.com/watch?v=MFropqypz3M&t=13s>
