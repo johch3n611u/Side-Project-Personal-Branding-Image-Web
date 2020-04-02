@@ -128,6 +128,10 @@ By @TrilonIO
 
 <https://ithelp.ithome.com.tw/articles/10193290?sc=iThelpR>
 
+## Wireframe
+
+<https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Untitled?node-id=0%3A1>
+
 ## 參考文章
 
 ### Angular
@@ -191,6 +195,14 @@ By @TrilonIO
 <https://medium.com/@harivigneshjayapalan/life-of-a-unicorn-developer-d442b6655399>
 
 <http://www.ditldesign.com/news/2014/12/19/ditktalk2014nov20hsieh>
+
+<https://www.youtube.com/watch?v=L4IIbEI8PtM>
+
+<https://www.figma.com/>
+
+<https://segmentfault.com/q/1010000002418878>
+
+<https://dbdiagram.io/home>
 
 ### 規劃設計
 
