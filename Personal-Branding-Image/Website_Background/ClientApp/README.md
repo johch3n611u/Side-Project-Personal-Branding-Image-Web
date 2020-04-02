@@ -4,69 +4,57 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 已更新至以下版本
 
->     _                      _                 ____ _     ___
+> Angular CLI: 9.1.0-rc.0
 >
->    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+> Node: 12.16.1
 >
->   / ??\ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+> OS: win32 x64
 >
->  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+> Angular: 9.1.0
 >
-> /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+> ... animations, common, compiler, compiler-cli, core, forms
 >
->                |___/
-
-Angular CLI: 9.1.0-rc.0
-
-Node: 12.16.1
-
-OS: win32 x64
-
-Angular: 9.1.0
-
-... animations, common, compiler, compiler-cli, core, forms
-
-... language-service, platform-browser, platform-browser-dynamic
-
-... platform-server, router
-
-Ivy Workspace: Yes
-
-Package                                    Version
+> ... language-service, platform-browser, platform-browser-dynamic
+>
+> ... platform-server, router
+>
+> Ivy Workspace: Yes
+>
+> Package                                    Version
 
 --------------------------------------------------------------------
 
-@angular-devkit/architect                  0.901.0
-
-@angular-devkit/build-angular              0.901.0
-
-@angular-devkit/build-optimizer            0.901.0
-
-@angular-devkit/build-webpack              0.901.0
-
-@angular-devkit/core                       9.1.0
-
-@angular-devkit/schematics                 9.1.0-rc.0
-
-@angular/cdk                               9.2.0
-
-@angular/cli                               9.1.0-rc.0
-
-@angular/material                          9.2.0
-
-@ngtools/webpack                           9.1.0
-
-@nguniversal/module-map-ngfactory-loader   8.1.1
-
-@schematics/angular                        9.1.0-rc.0
-
-@schematics/update                         0.901.0-rc.0
-
-rxjs                                       6.5.3
-
-typescript                                 3.8.3
-
-webpack                                    4.42.0
+> @angular-devkit/architect                  0.901.0
+>
+> @angular-devkit/build-angular              0.901.0
+>
+> @angular-devkit/build-optimizer            0.901.0
+>
+> @angular-devkit/build-webpack              0.901.0
+>
+> @angular-devkit/core                       9.1.0
+>
+> @angular-devkit/schematics                 9.1.0-rc.0
+>
+> @angular/cdk                               9.2.0
+>
+> @angular/cli                               9.1.0-rc.0
+>
+> @angular/material                          9.2.0
+>
+> @ngtools/webpack                           9.1.0
+>
+> @nguniversal/module-map-ngfactory-loader   8.1.1
+>
+> @schematics/angular                        9.1.0-rc.0
+>
+> @schematics/update                         0.901.0-rc.0
+>
+> rxjs                                       6.5.3
+>
+> typescript                                 3.8.3
+>
+> webpack                                    4.42.0
 
 ## Development server
 
