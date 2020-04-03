@@ -50,4 +50,4 @@
 46. 版本 8 -> 9 .NET Core Angular cli 搭建似乎有 bug -> 詳見 <https://github.com/angular/angular/issues/34970>
 47. 查看了 Angular Material 文章，發現裡面內容較繁雜需要較多時間，此部分先中斷，改為 <https://ithelp.ithome.com.tw/m/articles/10202189>
 48. 目的是利用 Angular Material 實作，前台文章上架的後台內容，且前後台藉由 .NET Core API 溝通資料 CRUD 。
-49. 屆時再決定功能要多完整，還是只有 CRUD 功能 Demo 即可，否則可能還會涉及資安等等內容也會過於耗時，轉至 -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
+49. 屆時再決定功能要多完整，還是只有 CRUD 功能 Demo 即可，否則可能還會涉及資安等等內容也會過於耗時，轉至 -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>

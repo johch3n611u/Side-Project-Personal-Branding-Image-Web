@@ -1,9 +1,5 @@
 # Hello, world
 
-## Wireframe
-
-<https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=52%3A2>
-
 ## Database Diagram
 
 <https://dbdiagram.io/d/5e86e0544495b02c3b89305d>
