@@ -447,7 +447,6 @@ found 2 low severity vulnerabilities
 ```
 
 93. "@angular/animations": "~9.0.7" -> package.json
-94.
-
-95. 接著先重新整理 Angular 架構，如下圖:
+94. 接續著成功處理了前幾天卡住的步驟，而架構整理則是將共用 module data function style 等等抽出 ...
+95. 
 
