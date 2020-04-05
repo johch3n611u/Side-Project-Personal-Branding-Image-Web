@@ -23,8 +23,8 @@
 19. cd 專案目錄 -> 移動至目錄。
 20. npm install --save @angular/material @angular/cdk 。
 21. npm install --save @angular/animations -> 動畫特效套件，使用 Web Animations API 。
-22. import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; -> AppModule 引入特效模組。
-23. import { NoopAnimationsModule } from '@angular/platform-browser/animations'; -> AppModule 引入取消特效模組
+22. import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; -> AppModule 引入 imports 特效模組。
+23. import { NoopAnimationsModule } from '@angular/platform-browser/animations'; -> AppModule 引入 imports 取消特效模組
 24. Web Animations API -> <https://zhuanlan.zhihu.com/p/27867539>。
 25. polyfill -> 是在不支持該功能的Web瀏覽器上實現該功能的代碼，API 墊片。
 26. npm install --save web-animations-js -> Web Animation API 不是所有瀏覽器都有支援必須引入函式庫。
