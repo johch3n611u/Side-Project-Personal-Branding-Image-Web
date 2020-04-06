@@ -456,4 +456,15 @@ found 2 low severity vulnerabilities
 98. 發現一個現象，看範例與一些網路文章，都會把 HTML 直接寫在 TS 檔內的 template 內，不知為何不是強調 MVC ... ?
 99. Form login sample -> <https://stackblitz.com/edit/angular-material-login-form?file=src%2Fapp%2Flogin-form.component.ts>
 100. 改為先用 VS Code 將 ng 完成，在進 VS 完成 .NET Core API。
-
+101. <https://stackoverflow.com/questions/39152071/cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form>
+102. 以往都寫的程式都是用 server side render ， ng 專案則改為 client side render ，所以新的驗證,傳遞資料方式還要花時間研究一下 <https://dotblogs.com.tw/topcat/2017/07/12/115753>
+103. More than one module matches. Use skip-import option to skip importing the component into the closest module. <https://stackoverflow.com/questions/46174863/error-more-than-one-module-matches-use-skip-import-option-to-skip-importing-th>
+104. ng g c Home --skipTests false --module app
+105. http 更新至 httpClient 所以範本內容需要改寫，不然就要找更高階版本來看。先嘗試自己改改看，可以順道了解 module 操作方式。
+106. <https://blog.miniasp.com/post/2019/01/20/Angular-HttpClient-Pitfall-and-Tricks>
+107. <https://angular.io/guide/http>
+108. HttpClientModule NGMODULE 與 HttpClient CLASS 是兩個不同的東西 ... 在這邊卡很久。
+109. 且如果引入參數名稱與 tslint 提供的不一樣，程式可以跑但 VS Code 還是會顯示錯誤 ... 且不會有提示字。
+110. 這邊遇到一個新問題是，因為是 login 需要的就不只是假資料 get json ，可行的方法有兩種 1.先用 get json 畫面先出來後續再改寫 2. post .NET Core API 那也要同步動工
+111. 這邊選擇第二種避免重工，但就要在更多一些時間了，因為 .NET Core API 那就會涉及資料庫部分，就換要先處理環境跟建置問題。
+112. 先轉移至 VS 編輯 .NET Core API <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
