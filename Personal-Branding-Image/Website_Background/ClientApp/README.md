@@ -66,6 +66,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=52%3A2>
 
+--------------------------------
+
 1-50 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material>
 
 50. ng new AngularTri --style=scss -> 預設 style 風格吃 .scss 檔
@@ -448,5 +450,10 @@ found 2 low severity vulnerabilities
 
 93. "@angular/animations": "~9.0.7" -> package.json
 94. 接續著成功處理了前幾天卡住的步驟，而架構整理則是將共用 module data function style 等等抽出 ...
-95. 
+95. ng g component [name] --spec false -> spec為false不會建立測試程式，依照 Wireframe 切出 Component。
+96. spec 改為 skipTests -> <https://angular.io/cli/generate>
+97. ng g service shared
+98. 發現一個現象，看範例與一些網路文章，都會把 HTML 直接寫在 TS 檔內的 template 內，不知為何不是強調 MVC ... ?
+99. Form login sample -> <https://stackblitz.com/edit/angular-material-login-form?file=src%2Fapp%2Flogin-form.component.ts>
+100. 改為先用 VS Code 將 ng 完成，在進 VS 完成 .NET Core API。
 

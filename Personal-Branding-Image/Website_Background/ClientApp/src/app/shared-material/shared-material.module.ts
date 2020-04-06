@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
-
+const MatModules = [
+  MatCardModule,
+  MatInputModule,
+  MatButtonModule
+];
 
 @NgModule({
   declarations: [],
   imports: [
-    MatIconModule,
+    MatModules,
   ],
   exports: [
-    MatIconModule,
+    MatModules,
   ]
 })
 export class SharedMaterialModule { }
