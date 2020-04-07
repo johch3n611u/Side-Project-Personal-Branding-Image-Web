@@ -46,7 +46,7 @@ export class SharedService {
   doLogin() {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     console.log(this.LoginIn);
-    this.http.post()
 
   }
+}
 
