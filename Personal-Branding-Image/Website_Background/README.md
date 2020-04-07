@@ -23,7 +23,7 @@
 127. 原作似乎只處理了 CORS 問題，並且在伺服器端存了一組 Token 但也只反傳驗證成功的 Success 字句 ... 不懂這啥操作，但還沒看到後面可能 SPA 那會有其他處理方式。
 128. [Bind("Username,Password")] Users? Users 似乎 Post 的 JSON 檔案，必須是 Users 物件，也不知道指定格式為何，單一變數綁定就成功了先使用單一變數。
 129. 注意事項 Postman 模擬 Post 必須注意 1.方法 2.RouterPath 3.header text type must JSON 第三點卡很久，不然不吃 -> <https://blog.walterlv.com/post/use-postman-to-debug-asp-net-core-api.html>
-130. 登入後端這邊告一段落 <https://localhost:44367/api/LogIn> { "Username":"liu","Password":"12345"} -> Status 201 , success 。
+130. 登入後端這邊告一段落 <https://localhost:44367/api/Signin> { "Username":"liu","Password":"12345"} -> Status 201 , success 。
 131. 接著 <https://dotblogs.com.tw/topcat/2017/07/12/115753> 前端 Component 部分。
 132. back to <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 

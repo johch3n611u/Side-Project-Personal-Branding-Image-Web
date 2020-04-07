@@ -2,7 +2,7 @@
 
 namespace Website_Background.Models
 {
-    public class LogIn
+    public class SingIn
     {
 
         //https://stackoverflow.com/questions/12870478/how-to-convert-vb-net-function-to-c

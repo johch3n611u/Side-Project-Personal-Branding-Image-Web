@@ -475,3 +475,13 @@ found 2 low severity vulnerabilities
 117. 這裡看起來很像是後端 server render 常會在頁面渲染前，判斷暫存驗證的機制。 <https://pvt5r486.github.io/f2e/20190609/1487025750/>
 118. 這個範例的前端經驗看起來至少要個半年以上 ... 很多底層知識跟不上，也沒寫註解 GG ...
 119. 改為參考 <https://ithelp.ithome.com.tw/articles/10195391>
+120. getter setter -> <https://ithelp.ithome.com.tw/articles/10194798>
+121. 重新整理思路，第一篇是將 cookie 方法獨立出來一個 ts 檔，主要是藉由 dologin 進行 api 驗證，並用剛獨立出來的方法 setcookie 存入 utoken。
+122. <https://dotblogs.com.tw/topcat/2017/07/12/115753#AppModule>
+123. 這邊要修改的地方是， cookie 一樣要存但是不需要儲存 utoken ，主要是用來 guard component 使用，其中會涉及 rxjs Observable 必須看懂。
+124. <https://ithelp.ithome.com.tw/articles/10192030>
+125. 第二篇則是涉及到 input 的 getter 與 setter 似乎也不是一定需要，驗證方面也先不要，似乎相較於第一篇後續更雜 ...
+126. 所以還是先回到簡化第一篇並將不足的內容補上。首先先補足 cookie-util.ts 。 cookie 通用方法。
+127. http RequestOptions 已棄用需要改成新方法 <https://angular.tw/api/http/RequestOptions>
+128. http post subscribe 新寫法 <https://blog.miniasp.com/post/2019/01/20/Angular-HttpClient-Pitfall-and-Tricks>
+129. constructor public service <https://stackoverflow.com/questions/43141576/property-x-is-private-and-only-accessible-within-class-xyzcomponent>

@@ -7,8 +7,9 @@ namespace Angular.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LogInController : ControllerBase
+    public class SignInController : ControllerBase
     {
+        // Postman https://localhost:44367/api/LogIn Post{ "Username":"liu","Password":"12345"}
         [HttpPost]
         public IActionResult verification([FromBody] Users ?Users)
         {
@@ -18,9 +19,9 @@ namespace Angular.Controllers
             //https://docs.microsoft.com/zh-tw/dotnet/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions
             try
             {
-                var WB_LogIn = new Website_Background.Models.LogIn();
+                var WB_SingIn = new Website_Background.Models.SingIn();
                 var verificationInfo = "failure";
-                verificationInfo = WB_LogIn.verification(Users.Username, Users.Password);
+                verificationInfo = WB_SingIn.verification(Users.Username, Users.Password);
                 // https://stackoverflow.com/questions/10286056/what-is-the-command-to-exit-a-console-application-in-c 
                 return CreatedAtAction("verification", verificationInfo);
 

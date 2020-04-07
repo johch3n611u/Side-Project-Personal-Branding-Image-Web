@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedMaterialModule } from '../app/shared-material/shared-material.module';
+import { SharedMaterialModule } from './shared/shared-material.module';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 import { SharedService } from '../app/shared.service';
@@ -13,13 +13,13 @@ import { SharedService } from '../app/shared.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
+
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    HomeComponent
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     SharedMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
