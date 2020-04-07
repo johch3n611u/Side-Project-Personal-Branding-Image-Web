@@ -468,3 +468,10 @@ found 2 low severity vulnerabilities
 110. 這邊遇到一個新問題是，因為是 login 需要的就不只是假資料 get json ，可行的方法有兩種 1.先用 get json 畫面先出來後續再改寫 2. post .NET Core API 那也要同步動工
 111. 這邊選擇第二種避免重工，但就要在更多一些時間了，因為 .NET Core API 那就會涉及資料庫部分，就換要先處理環境跟建置問題。
 112. 先轉移至 VS 編輯 .NET Core API <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
+113. 接續後端 API 部分，繼續前端 service 的部分 <https://blog.miniasp.com/post/2019/01/20/Angular-HttpClient-Pitfall-and-Tricks>
+114. 這邊要用新版的 http 方法處理，舊版的要改寫，主要先確認。 <https://dotblogs.com.tw/topcat/2017/07/12/115753>
+115. 因為不是全不學原作操作，而是更簡化版，並沒有利用到 UToken 機制作驗證，所以這邊先邊跳邊補。
+116. 這邊要用到一個新的 NG Component guard -> ng g guard LogInGuard -> canActivate
+117. 這裡看起來很像是後端 server render 常會在頁面渲染前，判斷暫存驗證的機制。 <https://pvt5r486.github.io/f2e/20190609/1487025750/>
+118. 這個範例的前端經驗看起來至少要個半年以上 ... 很多底層知識跟不上，也沒寫註解 GG ...
+119. 改為參考 <https://ithelp.ithome.com.tw/articles/10195391>
