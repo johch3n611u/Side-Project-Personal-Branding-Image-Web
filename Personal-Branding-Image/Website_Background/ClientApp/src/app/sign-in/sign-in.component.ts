@@ -11,20 +11,23 @@ export class SignInComponent implements OnInit {
 
   constructor(private formbilder: FormBuilder, public sharedservice: SharedService) { }
 
-  ngOnInit(): void {
-  }
-
   form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    Username: new FormControl(''),
+    Password: new FormControl(''),
   });
+
+  error: string | null ;
 
   submit() {
     if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+      const sharedserviceSignIn = this.sharedservice.SignIn(this.form.value);
+      console.log('this.sharedservice.SignIn' + sharedserviceSignIn);
+      this.error = sharedserviceSignIn;
     }
   }
-  @Input() error: string | null;
 
-  @Output() submitEM = new EventEmitter();
+  ngOnInit(): void {
+  }
+
+
 }
