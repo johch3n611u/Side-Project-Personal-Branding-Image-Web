@@ -160,6 +160,8 @@ By @TrilonIO
 
 <https://ithelp.ithome.com.tw/users/20119722/ironman/2145?page=3>
 
+<https://dotblogs.com.tw/topcat/2017/07/12/115753#AppModule>
+
 ### .Net Core
 
 <https://ithelp.ithome.com.tw/users/20083151/ironman/856>
@@ -189,6 +191,12 @@ By @TrilonIO
 ### Angular Universal
 
 <https://pvt5r486.github.io/f2e/20190809/2128364955/>
+
+### RxJS
+
+<https://ithelp.ithome.com.tw/articles/10195391>
+
+<https://rxjs-dev.firebaseapp.com/>
 
 ### other
 

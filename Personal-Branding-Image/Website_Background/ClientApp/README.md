@@ -486,4 +486,5 @@ found 2 low severity vulnerabilities
 128. http post subscribe 新寫法 <https://blog.miniasp.com/post/2019/01/20/Angular-HttpClient-Pitfall-and-Tricks>
 129. constructor public service <https://stackoverflow.com/questions/43141576/property-x-is-private-and-only-accessible-within-class-xyzcomponent>
 130. 有時間要把這個看完，蠻基礎的內容。<https://ithelp.ithome.com.tw/articles/10187416>
-131.
+131. 終於完成與 API 連動的 Signin Component 其中的技術與坑一言難盡，就看程式碼吧，有用到的檔案架構如下圖。
+132.
