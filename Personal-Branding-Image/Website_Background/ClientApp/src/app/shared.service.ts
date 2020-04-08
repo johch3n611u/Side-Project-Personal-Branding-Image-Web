@@ -15,7 +15,7 @@ export class SharedService {
   ResponseVerificationInfo = '';
 
   SignIn(form) {
-    
+
     const apiurl = 'https://localhost:44367/api/SignIn';
     const headers = new HttpHeaders({
       'Content-Type': 'text/json'
@@ -41,8 +41,8 @@ export class SharedService {
           console.log('Response:' + value);
           this.result = 'This background is for private use !!!';
         }
-    );
-    return this.result
+      );
+    return this.result;
   }
 
   checkSignIn(): Observable<boolean> {
@@ -55,7 +55,7 @@ export class SharedService {
       this.cookieutil.setCookie('verificationInfo', CookieVerificationInfo, 20 * 60 * 1000);
     }
 
-    if (CookieVerificationInfo == '"success"') {
+    if (CookieVerificationInfo === '"success"') {
       return Observable.throw(true);
     } else {
       alert('!!! Please SignIn Below !!!');

@@ -471,7 +471,7 @@ found 2 low severity vulnerabilities
 113. 接續後端 API 部分，繼續前端 service 的部分 <https://blog.miniasp.com/post/2019/01/20/Angular-HttpClient-Pitfall-and-Tricks>
 114. 這邊要用新版的 http 方法處理，舊版的要改寫，主要先確認。 <https://dotblogs.com.tw/topcat/2017/07/12/115753>
 115. 因為不是全不學原作操作，而是更簡化版，並沒有利用到 UToken 機制作驗證，所以這邊先邊跳邊補。
-116. 這邊要用到一個新的 NG Component guard -> ng g guard LogInGuard -> canActivate
+116. 這邊要用到一個新的 NG Component guard -> ng g guard [NAME] -> canActivate
 117. 這裡看起來很像是後端 server render 常會在頁面渲染前，判斷暫存驗證的機制。 <https://pvt5r486.github.io/f2e/20190609/1487025750/>
 118. 這個範例的前端經驗看起來至少要個半年以上 ... 很多底層知識跟不上，也沒寫註解 GG ...
 119. 改為參考 <https://ithelp.ithome.com.tw/articles/10195391>
@@ -487,4 +487,4 @@ found 2 low severity vulnerabilities
 129. constructor public service <https://stackoverflow.com/questions/43141576/property-x-is-private-and-only-accessible-within-class-xyzcomponent>
 130. 有時間要把這個看完，蠻基礎的內容。<https://ithelp.ithome.com.tw/articles/10187416>
 131. 終於完成與 API 連動的 Signin Component 其中的技術與坑一言難盡，就看程式碼吧，有用到的檔案架構如下圖。
-132.
+132. canActivate:[Guard Name]
