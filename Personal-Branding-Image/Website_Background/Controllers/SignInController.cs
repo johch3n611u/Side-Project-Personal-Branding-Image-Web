@@ -9,7 +9,7 @@ namespace Angular.Controllers
     [Route("api/[controller]")]
     public class SignInController : ControllerBase
     {
-        // Postman https://localhost:44367/api/LogIn Post{ "Username":"liu","Password":"12345"}
+        // Postman https://localhost:44367/api/SignIn Post{ "Username":"liu","Password":"12345"}
         [HttpPost]
         [Produces("application/json")]
         public IActionResult verification([FromBody] Users ?Users)
@@ -19,14 +19,17 @@ namespace Angular.Controllers
             // https://blog.walterlv.com/post/use-postman-to-debug-asp-net-core-api.html
             // 必須吃 FromBody 物件才好處理
             //https://docs.microsoft.com/zh-tw/dotnet/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions
+
             try
             {
                 var WB_SingIn = new Website_Background.Models.SingIn();
                 var verificationInfo = "failure";
                 verificationInfo = WB_SingIn.verification(Users.Username, Users.Password);
+
                 // https://stackoverflow.com/questions/10286056/what-is-the-command-to-exit-a-console-application-in-c 
                 //https://docs.microsoft.com/zh-tw/aspnet/core/web-api/advanced/formatting?view=aspnetcore-3.1
                 //https://stackoverflow.com/questions/42360139/asp-net-core-return-json-with-status-code
+
                 return Ok(verificationInfo);
 
             }
@@ -34,7 +37,6 @@ namespace Angular.Controllers
             {
                 return NotFound(e.Message);
             }
-            //return "success";
         }
     }
 }

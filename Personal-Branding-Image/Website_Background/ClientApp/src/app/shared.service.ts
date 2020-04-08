@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable ,of } from 'rxjs';
 import { Router } from '@angular/router';
 // import { Http, RequestOptions, Headers, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,7 +14,7 @@ export class SharedService {
   cookieutil = new CookieUtil();
   ResponseVerificationInfo = '';
 
-  SignIn(form) {
+  SignIn(form):string|null {
 
     const apiurl = 'https://localhost:44367/api/SignIn';
     const headers = new HttpHeaders({
@@ -27,13 +27,14 @@ export class SharedService {
     const body = JSON.stringify(form);
     this.http.post<any>(apiurl, body, options)
       .subscribe(
-        (value: Response) => {
+        (value) => {
           console.log('Response:' + value);
           // https://stackoverflow.com/questions/32459512/extracting-a-string-from-a-response-text
-          if (JSON.stringify(value) === '"success"') {
+          if (value == "success") {
             this.cookieutil.setCookie('verificationInfo', value, 20 * 60 * 1000);
-            this.ResponseVerificationInfo = JSON.stringify(value);
+            this.ResponseVerificationInfo = value;
             this.router.navigate(['/Home']);
+            return this.result;
           } else {
             this.result = 'Error Password, Please try again !!!';
           }
@@ -41,7 +42,7 @@ export class SharedService {
           console.log('Response:' + value);
           this.result = 'This background is for private use !!!';
         }
-      );
+    );
     return this.result;
   }
 
@@ -50,16 +51,16 @@ export class SharedService {
 
     console.log('verificationInfo:' + CookieVerificationInfo);
 
-    if (CookieVerificationInfo === '') {
+    if (CookieVerificationInfo == '') {
       CookieVerificationInfo = this.ResponseVerificationInfo;
       this.cookieutil.setCookie('verificationInfo', CookieVerificationInfo, 20 * 60 * 1000);
     }
 
-    if (CookieVerificationInfo === '"success"') {
-      return Observable.throw(true);
+    if (CookieVerificationInfo == 'success') {
+      return of(true);
     } else {
       alert('!!! Please SignIn Below !!!');
-      return Observable.throw(false);
+      return of(false);
     }
 
   }

@@ -13,8 +13,7 @@ export class SignInGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-    const resolt = this.sharedservice.checkSignIn();
+    let resolt = this.sharedservice.checkSignIn();
     return resolt;
   }
 

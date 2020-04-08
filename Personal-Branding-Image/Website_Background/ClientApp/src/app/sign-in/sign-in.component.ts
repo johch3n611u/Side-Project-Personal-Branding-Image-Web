@@ -12,8 +12,8 @@ export class SignInComponent implements OnInit {
   constructor(private formbilder: FormBuilder, public sharedservice: SharedService) { }
 
   form: FormGroup = new FormGroup({
-    Username: new FormControl(''),
-    Password: new FormControl(''),
+    Username: new FormControl('liu'),
+    Password: new FormControl('12345'),
   });
 
   error: string | null ;
@@ -28,6 +28,5 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
 }
