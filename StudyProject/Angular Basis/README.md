@@ -173,7 +173,7 @@ Component內屬性綁定selector、template、style。
 
 src/app/app.component.ts
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/0.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/0.JPG)
 
 decorator 裝飾 AppComponent 這個 class
 
@@ -183,7 +183,7 @@ decorator 裝飾 AppComponent 這個 class
 >
 >而是 building 時，透過 webpack 自動幫我們把打包好的程式加入。
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/1.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/1.JPG)
 
 ---------------------------------------
 
@@ -193,7 +193,7 @@ decorator 裝飾 AppComponent 這個 class
 
 src/app/app.module.ts 是程式最主要的 module
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/2.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/2.JPG)
 
 import { AppComponent } from './app.component' 引入了 component
 
@@ -203,13 +203,13 @@ bootstrap 宣告由 AppComponent 來啟動
 
 ## Sample todolist1 基本 <a id='1' href='#'>Back to Top</a>
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/3.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/3.JPG)
 
 ---------------------------------------
 
 > ng g c header
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/4.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/4.JPG)
 
 header.component.spec.ts 是用來寫unit test
 
@@ -217,13 +217,13 @@ header.component.spec.ts 是用來寫unit test
 
 src/app/app.module.ts 內 cli 自動將 HeaderComponent 寫入 declarations
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/5.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/5.JPG)
 
 ---------------------------------------
 
 header.component.ts
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/6.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/6.JPG)
 
 > constructor（建構子）是個隨著 class 一同建立並初始化物件的特殊方法。
 >
@@ -249,11 +249,11 @@ header.component.ts 內寫的 selector &lt;app-header&gt;&lt;/app-header&gt;
 
 > ng serve 即可看到 app 內容
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/7.JPG)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/7.JPG)
 
 ## Data Binding 資料綁定
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/8.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/8.JPG)
 
 ### 內崁binding (Interpolation)
 
@@ -409,7 +409,7 @@ TodoItemsComponent class 補上 @Input() items: TodoItem[]; 即可接收資料�
 
 這邊可以看到，雖然編譯過為 HTML 後 Angular 有寫非常詳盡的註解，但整個感覺很肥大不知道為什麼，甚至比 Razor 或 TagHelpers ，差別大概只在前端編譯或後端編譯了... 就要看如果是正式 build 會不會簡化到最原始。
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/9.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/9.JPG)
 
 ### 使用@Output讓元件間的事件進行傳遞
 
@@ -631,13 +631,13 @@ odd：布林值；代表目前資料的index是否為第奇數筆
 
 但總覺得怪怪的，Angular 似乎不像 ASP.NET MVC 那樣拆得那麼乾淨。
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/10.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/10.JPG)
 
 文章中原始的相依關係 ， 但我有點搞不懂 為何 delete item 的部分 為何需要 output 至 AppComponent ，
 
 所以我自己寫的部分是在 itemsComponent 內直接完成。
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/11.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/11.JPG)
 
 文章中希望藉由 Service 將架構改為如上圖 ，並將 @input @output 改為 Component 需要對外接口時使用，以下將用 todolist2 demo 。
 
@@ -1753,7 +1753,7 @@ Angular 其中的一個設計目標是使瀏覽器與 DOM 獨立。DOM 是複雜
 
 > Angular Moduleg 是一隻由帶有相關 metadata 物件的 @NgModule 裝飾的 function ，這些 metadata 物件告訴我們：
 
-![Image](https://github.com/johch3n611u/Side-Project-Self-Brand-Image-Web/blob/master/StudyProject/img/12.jpg)
+![Image](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/img/12.JPG)
 
 * 哪些 components、directives 和 pipes 屬於這個 module
 * module 下哪些類別是可以公開給外部使用的
