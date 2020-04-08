@@ -491,4 +491,5 @@ found 2 low severity vulnerabilities
 
 ![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/assets/Architecture.png)
 
-133.
+133. 接下來就是重頭戲了Home Component 的  Web API CRUD ，後台主要是 C 建立、 U 更新、 D 刪除，前台主要是 R 就快完成了。
+134. 整體功能完成後才來處理景觀建築設計系的作品整理與一些樣式上的細修。
