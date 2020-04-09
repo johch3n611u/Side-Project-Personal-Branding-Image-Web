@@ -30,8 +30,37 @@
 145. 建置 news db <https://dbdiagram.io/d/5e86e0544495b02c3b89305d>
 146. 一樣藉由 .net core 套件管理器主控台 建置 db first -> Scaffold-DbContext "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 147. 這次再利用 git 觀察新增了哪些程式碼 <https://docs.microsoft.com/zh-tw/ef/core/miscellaneous/cli/dotnet>
-148. 
+148. dotnet cli <https://dotblogs.com.tw/jakeuj/2019/07/23/EFCoreMigrations> -> dotnet ef database update
+149. 有時間要再把 dotnet 看熟 ... ef cli -> <https://ithelp.ithome.com.tw/articles/10207773>
+150. dotnet tool install --global dotnet-ef <https://docs.microsoft.com/zh-tw/ef/core/miscellaneous/cli/dotnet>
 
+```CMD
+您可以使用下列命令來叫用工具: dotnet-ef
+已成功安裝工具 'dotnet-ef' ('3.1.3' 版)。
+```
+
+151. dotnet ef database update ... -> 指令能用了但沒反應 ...
+
+```CMD
+Build started...
+Build succeeded.
+No migrations were applied. The database is already up to date.
+Done.
+```
+
+152. dotnet add package Microsoft.EntityFrameworkCore.Design
+153. dotnet ef migrations add InitialCreate -> 成功砍掉 Context.cs 內容
+154.
+```CMD
+Build started...
+Build succeeded.
+Done. To undo this action, use 'ef migrations remove'
+```
+155. dotnet ef database update -> 重新建置了 Context.cs 但還是只有 user.cs 資料表 ... 三小
+156. dotnet ef dbcontext scaffold "Data Source=DESKTOP-E9P91EA;Initial Catalog=Website_Background;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
+157. 砍了重下指令... 記得要先把錯誤的地方都先註解，否則 cli 會 failed <https://stackoverflow.com/questions/38961115/build-failed-on-database-first-scaffold-dbcontext>
+158. 測試使用 VS 模板，利用模型建置 API Controller CRUD 感覺還蠻方便的只要細修一些客製化內容即可。
+159. <https://stackoverflow.com/questions/40900414/asp-net-core-dependency-injection-error-unable-to-resolve-service-for-type-whil>
 ---------------------------
 
 Welcome to your new single-page application, built with:

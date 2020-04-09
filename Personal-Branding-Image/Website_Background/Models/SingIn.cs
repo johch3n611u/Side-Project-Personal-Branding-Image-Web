@@ -23,7 +23,8 @@ namespace Website_Background.Models
                      .Where(Users => Users.Username == Username)
                      .FirstOrDefault();
 
-                if (queryResponse != null) { 
+                if (queryResponse != null)
+                {
                     queryPassword = queryResponse.Password;
                 }
 

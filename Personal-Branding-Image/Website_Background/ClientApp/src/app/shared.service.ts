@@ -36,7 +36,7 @@ export class SharedService {
             this.router.navigate(['/Home/Management']);
             return this.result;
           } else {
-            this.result = 'Error Password, Please try again !!!';
+            this.result = 'Error Username or Password, Please try again!';
           }
         }, (value) => {
           console.log('Response:' + value);

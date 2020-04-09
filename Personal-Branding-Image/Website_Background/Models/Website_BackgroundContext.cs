@@ -15,6 +15,7 @@ namespace Website_Background.Models
         {
         }
 
+        public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,6 +29,52 @@ namespace Website_Background.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<News>(entity =>
+            {
+                entity.ToTable("news");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.ContentHtml)
+                    .IsRequired()
+                    .HasColumnName("content_html")
+                    .HasColumnType("text");
+
+                entity.Property(e => e.ContentText)
+                    .IsRequired()
+                    .HasColumnName("content_text")
+                    .HasColumnType("text");
+
+                entity.Property(e => e.CreatedAt)
+                    .IsRequired()
+                    .HasColumnName("created_at")
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.Property(e => e.ImgUrl)
+                    .HasColumnName("img_url")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Sort)
+                    .IsRequired()
+                    .HasColumnName("sort")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Subtitle)
+                    .IsRequired()
+                    .HasColumnName("subtitle")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasColumnName("title")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Users>(entity =>
             {
                 entity.ToTable("users");
@@ -40,15 +87,15 @@ namespace Website_Background.Models
                     .IsRowVersion()
                     .IsConcurrencyToken();
 
-                entity.Property(e => e.Username)
-                    .IsRequired()
-                    .HasColumnName("username")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .HasColumnName("password")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasColumnName("username")
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
