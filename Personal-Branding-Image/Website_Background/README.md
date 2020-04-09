@@ -28,8 +28,9 @@
 132. back to <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 144. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 145. 建置 news db <https://dbdiagram.io/d/5e86e0544495b02c3b89305d>
-146. 一樣藉由 .net core 終端 cmd 建置 db first -> Scaffold-DbContext "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
-147. 這次再利用 git 觀察新增了哪些程式碼
+146. 一樣藉由 .net core 套件管理器主控台 建置 db first -> Scaffold-DbContext "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+147. 這次再利用 git 觀察新增了哪些程式碼 <https://docs.microsoft.com/zh-tw/ef/core/miscellaneous/cli/dotnet>
+148. 
 
 ---------------------------
 
