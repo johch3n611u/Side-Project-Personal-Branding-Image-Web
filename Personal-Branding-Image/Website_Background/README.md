@@ -16,7 +16,7 @@
 120. <https://stackoverflow.com/questions/1948987/whats-the-equivalent-of-vb-readonly-property-in-c>
 121. 首先是要連線上設定好的 MS SQL Serve -> <https://ithelp.ithome.com.tw/m/articles/10201333>
 122. 報錯 Scaffold-DbContext : 無法辨識 'Scaffold-DbContext' 詞彙是否為 Cmdlet、函數、指令檔或可執行程式的名稱。 -> <https://dotblogs.com.tw/mis2000lab/2020/02/05/ASPnet_Core_Scaffold-DbContext_Error>
-123. Scaffold-DbContext "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+123. Scaffold-DbContext "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -> <https://ithelp.ithome.com.tw/articles/10201333>
 124. <https://blog.darkthread.net/blog/ef-core-notes-4/>
 125. 以往 Server render 登入後都是將憑證暫存至 Server 端，提供每次 render 頁面的憑證，但改由 Client 端勢必也需要類似的憑證，且要藉由定時 Cookie 等一系列措施防止資安問題。
 126. 但昨日光搞版本與函式庫與 Router 問題就搞了一整天，所以這邊先看懂但不實作。
