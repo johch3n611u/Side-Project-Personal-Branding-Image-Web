@@ -2,21 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from '../app/sign-in/sign-in.component';
 import { HomeComponent } from '../app/home/home.component';
-// import { SignInGuard } from './sign-in/sign-in.guard' ;
+ import { SignInGuard } from './sign-in/sign-in.guard' ;
 import { ManagementComponent } from '../app/home/mangement/management.component';
 
 
 // ### Original
-// const routes: Routes = [
-//   {
-//     path: 'Home', component: HomeComponent,
-//     children: [
-//       { path: 'Management', component: ManagementComponent }
-//     ]
-//   }, //canActivate: [SignInGuard]
-//   { path: 'SignIn', pathMatch: 'full', component: SignInComponent, },
-//   { path: '**', pathMatch: 'full', redirectTo: '/SignIn' },
-// ];
+ const routes: Routes = [
+   {
+     path: 'Home',
+     component: HomeComponent,
+     canActivate: [SignInGuard],
+
+     children: [
+       { path: 'Management', component: ManagementComponent }
+     ]
+   }, 
+   { path: 'SignIn', pathMatch: 'full', component: SignInComponent, },
+   { path: '**', pathMatch: 'full', redirectTo: '/SignIn' },
+ ];
 
 // ### Template https://forum.angular.tw/t/topic/1758/2
 // const routes: Routes = [
@@ -33,19 +36,19 @@ import { ManagementComponent } from '../app/home/mangement/management.component'
 //   { path: 'login', component: LoginComponent },
 // ];
 
-const routes: Routes = [
-  {
-    path: '',
-    // canActivate: [SignInGuard],
-    component: HomeComponent,
-    children: [
-      { path: '', redirectTo: 'SignIn', pathMatch: 'full' },
-      { path: 'Management', component: ManagementComponent },
-    ],
-  },
-  { path: 'SignIn', component: SignInComponent },
-  { path: '**', redirectTo: 'SignIn', pathMatch: 'full' },
-];
+//const routes: Routes = [
+//  {
+//    path: '',
+//    canActivate: [SignInGuard],
+//    component: HomeComponent,
+//    children: [
+//      { path: '', redirectTo: 'SignIn', pathMatch: 'full' },
+//      { path: 'Management', component: ManagementComponent },
+//    ],
+//  },
+//  { path: 'SignIn', component: SignInComponent },
+//  { path: '**', redirectTo: 'SignIn', pathMatch: 'full' },
+//];
 
 
 

@@ -18,9 +18,15 @@ namespace Website_Background.Models
 
             using (var WB_Context = new Website_BackgroundContext())
             {
-                queryPassword = WB_Context.Users
-                    .Where(Users => Users.Username == Username)
-                    .FirstOrDefault().Password;
+
+                var queryResponse = WB_Context.Users
+                     .Where(Users => Users.Username == Username)
+                     .FirstOrDefault();
+
+                if (queryResponse != null) { 
+                    queryPassword = queryResponse.Password;
+                }
+
                 if (queryPassword == Password)
                 {
                     verificationInfo = "success";
