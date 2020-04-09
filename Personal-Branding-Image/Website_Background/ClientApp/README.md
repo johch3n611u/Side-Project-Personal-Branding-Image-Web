@@ -493,3 +493,7 @@ found 2 low severity vulnerabilities
 
 133. 接下來就是重頭戲了Home Component 的  Web API CRUD ，後台主要是 C 建立、 U 更新、 D 刪除，前台主要是 R 就快完成了。
 134. 整體功能完成後才來處理景觀建築設計系的作品整理與一些樣式上的細修。
+135. Home component side nav <https://ithelp.ithome.com.tw/m/articles/10193290>
+136. ng g c FunctionBar --module=Home --flat -> <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=52%3A3>
+137. 這邊覺得奇怪的地方是 mat-sidenav 設計上似乎就應該直接套用在 Home Component 上而不需再另增一個 component 不然感覺違背用法。本身就是 Master Page 的感覺。
+138. &lt;a [routerLink]="" (click)="function()">Click me&lt;/a> <https://stackoverflow.com/questions/35639174/passive-link-in-angular-2-a-href-equivalent> 。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/todolist1/src/app/app.component.html>

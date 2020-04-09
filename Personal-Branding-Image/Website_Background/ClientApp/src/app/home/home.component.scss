@@ -1,0 +1,18 @@
+mat-sidenav {
+    background-color: rgb(181, 202, 160);
+}
+
+.function_bar {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.function_bar_box {
+    margin: 30% 0;
+}
+
+.function_bar_box>a {
+    text-decoration: none;
+    color: black;
+}

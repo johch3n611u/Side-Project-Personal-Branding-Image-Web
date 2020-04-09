@@ -1,1 +1,25 @@
-<p>home works!</p>
+<mat-sidenav-container>
+    <mat-sidenav opened="true" mode="side">
+        <div class="function_bar">
+            <div class="function_bar_box">
+                <!-- https://stackoverflow.com/questions/35639174/passive-link-in-angular-2-a-href-equivalent -->
+                <h1>Management</h1>
+                <a [routerLink]="[{ outlets: { sidebar: ['Management'] } }]">
+                    <h3>Posts</h3>
+                </a>
+            </div>
+            <div class="function_bar_box">
+                <h1>Stats</h1>
+                <h3>Under construction</h3>
+            </div>
+            <div class="function_bar_box">
+                <h1>Help</h1>
+                <h3>Under construction</h3>
+            </div>
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet name='sidebar'></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
