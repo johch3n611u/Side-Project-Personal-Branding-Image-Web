@@ -3,12 +3,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/Sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const MatModules = [
   MatCardModule,
   MatInputModule,
   MatButtonModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatToolbarModule
 ];
 
 @NgModule({
