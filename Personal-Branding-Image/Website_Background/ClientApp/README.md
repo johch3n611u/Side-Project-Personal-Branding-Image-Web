@@ -497,3 +497,6 @@ found 2 low severity vulnerabilities
 136. ng g c FunctionBar --module=Home --flat -> <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=52%3A3>
 137. 這邊覺得奇怪的地方是 mat-sidenav 設計上似乎就應該直接套用在 Home Component 上而不需再另增一個 component 不然感覺違背用法。本身就是 Master Page 的感覺。
 138. &lt;a [routerLink]="" (click)="function()">Click me&lt;/a> <https://stackoverflow.com/questions/35639174/passive-link-in-angular-2-a-href-equivalent> 。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/todolist1/src/app/app.component.html>
+139. router-outlet 遇到問題，還問到社群去了，解決中。 <https://github.com/leochen0818/NestSample>
+140. 不太確定之前巢狀 router 遇到什麼問題，不過解決了，現在則是要實作 Data Tables ，不過這部分需要跳回 Web API 中的 API 功能。
+141. 實作 Web API <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>

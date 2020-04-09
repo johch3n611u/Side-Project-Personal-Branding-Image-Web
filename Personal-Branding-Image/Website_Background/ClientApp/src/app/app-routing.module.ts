@@ -6,9 +6,13 @@ import { HomeComponent } from '../app/home/home.component';
 import { ManagementComponent } from '../app/home/mangement/management.component';
 
 const routes: Routes = [
-  { path: 'Management', pathMatch: 'full', component: ManagementComponent, outlet: 'sidebar' },
-  { path: 'Home', pathMatch: 'full', component: HomeComponent, }, //canActivate: [SignInGuard]
-  { path: 'SignIn', pathMatch: 'full', component: SignInComponent },
+  {
+    path: 'Home', component: HomeComponent,
+    children: [
+      { path: 'Management', component: ManagementComponent }
+    ]
+  }, //canActivate: [SignInGuard]
+  { path: 'SignIn', pathMatch: 'full', component: SignInComponent, },
   { path: '**', pathMatch: 'full', redirectTo: '/SignIn' },
 ];
 

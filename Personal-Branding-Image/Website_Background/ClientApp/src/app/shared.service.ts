@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable ,of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 // import { Http, RequestOptions, Headers, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -14,7 +14,7 @@ export class SharedService {
   cookieutil = new CookieUtil();
   ResponseVerificationInfo = '';
 
-  SignIn(form):string|null {
+  SignIn(form): string | null {
 
     const apiurl = 'https://localhost:44367/api/SignIn';
     const headers = new HttpHeaders({
@@ -33,7 +33,7 @@ export class SharedService {
           if (value == "success") {
             this.cookieutil.setCookie('verificationInfo', value, 20 * 60 * 1000);
             this.ResponseVerificationInfo = value;
-            this.router.navigate(['/Home']);
+            this.router.navigate(['/Home/Management']);
             return this.result;
           } else {
             this.result = 'Error Password, Please try again !!!';
@@ -42,7 +42,7 @@ export class SharedService {
           console.log('Response:' + value);
           this.result = 'This background is for private use !!!';
         }
-    );
+      );
     return this.result;
   }
 

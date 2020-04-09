@@ -6,6 +6,14 @@
 @import "../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";*/
 
+app-root {
+    background-color: rgb(189, 192, 186);
+}
+
+mat-sidenav-content {
+    background-color: rgb(189, 192, 186);
+}
+
 body {
     display: flex;
     justify-content: center;

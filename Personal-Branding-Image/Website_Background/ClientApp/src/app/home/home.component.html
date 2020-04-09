@@ -4,7 +4,7 @@
             <div class="function_bar_box">
                 <!-- https://stackoverflow.com/questions/35639174/passive-link-in-angular-2-a-href-equivalent -->
                 <h1>Management</h1>
-                <a [routerLink]="[{ outlets: { sidebar: ['Management'] } }]">
+                <a routerLink="/Home/Management">
                     <h3>Posts</h3>
                 </a>
             </div>
@@ -20,6 +20,6 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <router-outlet name='sidebar'></router-outlet>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
