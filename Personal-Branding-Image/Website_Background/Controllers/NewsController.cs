@@ -13,25 +13,19 @@ namespace Website_Background.Controllers
     [ApiController]
     public class NewsController : ControllerBase
     {
-        private readonly Website_BackgroundContext _context;
-
-        public NewsController(Website_BackgroundContext context)
-        {
-            _context = context;
-        }
-
+        public Website_BackgroundContext WB_Context = new Website_BackgroundContext();
         // GET: api/News
         [HttpGet]
         public async Task<ActionResult<IEnumerable<News>>> GetNews()
         {
-            return await _context.News.ToListAsync();
+            return await WB_Context.News.ToListAsync();
         }
 
         // GET: api/News/5
         [HttpGet("{id}")]
         public async Task<ActionResult<News>> GetNews(int id)
         {
-            var news = await _context.News.FindAsync(id);
+            var news = await WB_Context.News.FindAsync(id);
 
             if (news == null)
             {
@@ -52,11 +46,11 @@ namespace Website_Background.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(news).State = EntityState.Modified;
+            WB_Context.Entry(news).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await WB_Context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -79,8 +73,8 @@ namespace Website_Background.Controllers
         [HttpPost]
         public async Task<ActionResult<News>> PostNews(News news)
         {
-            _context.News.Add(news);
-            await _context.SaveChangesAsync();
+            WB_Context.News.Add(news);
+            await WB_Context.SaveChangesAsync();
 
             return CreatedAtAction("GetNews", new { id = news.Id }, news);
         }
@@ -89,21 +83,21 @@ namespace Website_Background.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<News>> DeleteNews(int id)
         {
-            var news = await _context.News.FindAsync(id);
+            var news = await WB_Context.News.FindAsync(id);
             if (news == null)
             {
                 return NotFound();
             }
 
-            _context.News.Remove(news);
-            await _context.SaveChangesAsync();
+            WB_Context.News.Remove(news);
+            await WB_Context.SaveChangesAsync();
 
             return news;
         }
 
         private bool NewsExists(int id)
         {
-            return _context.News.Any(e => e.Id == id);
+            return WB_Context.News.Any(e => e.Id == id);
         }
     }
 }
