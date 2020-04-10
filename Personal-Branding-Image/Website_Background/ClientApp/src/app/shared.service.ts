@@ -9,7 +9,7 @@ import { CookieUtil } from './shared/cookie-util';
   providedIn: 'root'
 })
 export class SharedService {
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private httpclient: HttpClient, private router: Router) { }
   result: string | null = null;
   cookieutil = new CookieUtil();
   ResponseVerificationInfo = '';
@@ -25,7 +25,7 @@ export class SharedService {
     };
     console.log(form);
     const body = JSON.stringify(form);
-    this.http.post<any>(apiurl, body, options)
+    this.httpclient.post<any>(apiurl, body, options)
       .subscribe(
         (value) => {
           console.log('Response:' + value);

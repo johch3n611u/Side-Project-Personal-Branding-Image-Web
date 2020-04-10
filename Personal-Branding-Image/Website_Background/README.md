@@ -62,6 +62,7 @@ Done. To undo this action, use 'ef migrations remove'
 158. 測試使用 VS 模板，利用模型建置 API Controller CRUD 感覺還蠻方便的只要細修一些客製化內容即可。
 159. <https://stackoverflow.com/questions/40900414/asp-net-core-dependency-injection-error-unable-to-resolve-service-for-type-whil>
 160. 沒用到 inject 時，記得將 api 模板產生的 controller 調整一下否則 request 無法訪問 <https://stackoverflow.com/questions/46930090/unable-to-resolve-service-for-type-while-attempting-to-activate/46930161>
+161. 這裡先告一段落，接續處理 ng crud table 等內容。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 
 ---------------------------
 

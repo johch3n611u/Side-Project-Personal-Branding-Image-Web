@@ -8,10 +8,9 @@ import { ManagementComponent } from './mangement/management.component';
   declarations: [
     HomeComponent,
     ManagementComponent,
-  ],
-  imports: [
+  ], imports: [
     AppRoutingModule,
-    SharedMaterialModule
+    SharedMaterialModule,
   ], exports: [
     HomeComponent
   ]

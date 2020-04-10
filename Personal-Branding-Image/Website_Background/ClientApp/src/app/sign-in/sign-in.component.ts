@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class SignInComponent implements OnInit {
     Password: new FormControl('12345'),
   });
 
-  error: string | null ;
+  error: string | null;
 
   submit() {
     if (this.form.valid) {
