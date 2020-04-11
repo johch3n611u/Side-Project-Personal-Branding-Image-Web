@@ -13,7 +13,8 @@ const routes: Routes = [
     component: HomeComponent,
     // canActivate: [SignInGuard],
     children: [
-      { path: 'Management', component: ManagementComponent }
+      { path: 'Management', component: ManagementComponent },
+      { path: '**', pathMatch: 'full', redirectTo: '/Home' }
     ]
   },
   { path: 'SignIn', pathMatch: 'full', component: SignInComponent, },
@@ -34,22 +35,6 @@ const routes: Routes = [
 //   },
 //   { path: 'login', component: LoginComponent },
 // ];
-
-//const routes: Routes = [
-//  {
-//    path: '',
-//    canActivate: [SignInGuard],
-//    component: HomeComponent,
-//    children: [
-//      { path: '', redirectTo: 'SignIn', pathMatch: 'full' },
-//      { path: 'Management', component: ManagementComponent },
-//    ],
-//  },
-//  { path: 'SignIn', component: SignInComponent },
-//  { path: '**', redirectTo: 'SignIn', pathMatch: 'full' },
-//];
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: true })],

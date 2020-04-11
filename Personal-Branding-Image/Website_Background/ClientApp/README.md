@@ -504,3 +504,34 @@ found 2 low severity vulnerabilities
 143. 實作 Web API <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
 162. <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background> API 利用樣板產生告一段落，接著處理 table,sort_header,paginator-> <https://ithelp.ithome.com.tw/m/articles/10196731>
 163. fakedata -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/todolist2/src/app/todo-list.service.ts>
+164. new MatTableDataSource&lt;any>(); -> 提供給 mat table 的資料必須是此型態。
+165. ts 檔案內嘗試使用 template `` 而不是 templateURL ''。
+166. 主要外層為　matTable 內分為　定義表格的欄位及資料呈現部分與顯示資料列部分
+167. ###　定義表格的欄位及資料呈現　###
+168. &lt;ng-container matColumnDef="colname">&lt;mat-header-cell *matHeaderCellDef>&lt;/mat-header-cell>&lt;mat-cell *matCellDef="let row">{{ row.dataname }}&lt;/mat-cell>&lt;/ng-container> -> 定義表格呈現與資料欄位，使用方式蠻像 ASP Webform 的 ...
+169. &lt;mat-header-cell *matHeaderCellDef>realtitledisplay&lt;/mat-header-cell> -> 資料在標題列 cell 內容。
+170. &lt;mat-cell *matCellDef="let row">{{ row.dataname }}&lt;/mat-cell> -> 實際呈現資料的 cell 。
+171. ###　顯示資料列　###
+172. &lt;mat-header-row *matHeaderRowDef="['colname','colname'...]"> -> matColumnDef='colname' 標題列顯示。
+173. &lt;mat-row *matRowDef="let Row; columns: ['colname', 'colname'...]">&lt;/mat-row> -> matRowDef 每一列的資料列名稱 , columns 實際上要呈現的資料欄位名稱。
+174. 因為 timestamp 資料型態必須做多一次的轉內容，又沒其他地方需要用到 timestamp 型態，所以從根本上 SQL Server 直接做修改。<https://pjchender.github.io/2017/12/27/js-javascript-date-time-method-%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93/>。<https://dotblogs.com.tw/kevinya/2014/09/05/146474>
+175. matTable 是依照 flexbox 排版組合，所以客製化樣式，ng 會依照 matColumnDef 將 class 產生，只要寫入 CSS 即可 Sample 如下。 -> class="mat-header-cell cdk-header-cell cdk-column-id mat-column-id ng-star-inserted"
+
+```CSS
+.mat-column-user {
+  max-width: 100px;
+}
+
+.mat-header-cell.mat-column-user {
+  color: red;
+}
+
+.mat-cell.mat-column-user {
+  font-weight: bold;
+  text-decoration: underline dashed #000;
+  cursor: pointer;
+}
+```
+
+176. 資料顯示設定完後是結合另外兩個元件的用法， NG 在這方面拆得非常開，另外兩個元件也可以在別處使用不局限於 matTable ，分頁元件與排序元件。
+177. 再來是進階應用的 data source filter。以上使用方式都直接看程式碼較方便理解。<https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/mangement/management.component.ts>

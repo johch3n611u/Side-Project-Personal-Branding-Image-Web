@@ -16,3 +16,23 @@ mat-sidenav {
     text-decoration: none;
     color: black;
 }
+
+.PAGE404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2em;
+}
+
+.PAGE404>.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    margin: 20%;
+    padding: 2%;
+    border-radius: 5%;
+    box-shadow: 5px 5px #aaaaaa;
+}

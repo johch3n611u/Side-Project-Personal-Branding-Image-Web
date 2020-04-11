@@ -1,4 +1,6 @@
-<!-- <mat-table [dataSource]="NewsDataSourse">
+<!-- ### Template https://ithelp.ithome.com.tw/m/articles/10196731 ###
+
+  <mat-table [dataSource]="emailsDataSource">
     <ng-container matColumnDef="user">
         <mat-header-cell *matHeaderCellDef>寄件人</mat-header-cell>
         <mat-cell *matCellDef="let row">{{ row.user.login }}</mat-cell>
@@ -21,3 +23,17 @@
         </mat-cell>
     </ng-container>
 </mat-table> -->
+
+<!-- ### Template JSON
+{
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "message": "The listed users and repositories cannot be searched either because the resources do not exist or you do not have permission to view them.",
+      "resource": "Search",
+      "field": "q",
+      "code": "invalid"
+    }
+  ],
+  "documentation_url": "https://developer.github.com/v3/search/"
+}-->
