@@ -1,13 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { Observable } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-management',
   template: `
-     <mat-table [dataSource]="NewsDataSourse">
+  <div class="management_box">
+
+     <mat-paginator #paginator
+               [length]="length"
+               [pageSize]="14"
+               [pageSizeOptions]="[5, 10, 15]">
+     </mat-paginator>
+
+     <mat-form-field>
+        <input matInput #filter placeholder="Search">
+     </mat-form-field>
+
+     <mat-table [dataSource]="NewsDataSourse" matSort #sortTable="matSort">
        <ng-container matColumnDef="id">
-           <mat-header-cell *matHeaderCellDef>id</mat-header-cell>
+           <mat-header-cell *matHeaderCellDef mat-sort-header>id</mat-header-cell>
            <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
        </ng-container>
        <ng-container matColumnDef="sort">
@@ -22,7 +38,7 @@ import { HttpClient } from '@angular/common/http';
            <mat-header-cell *matHeaderCellDef>subtitle</mat-header-cell>
            <mat-cell *matCellDef="let row">{{ row.subtitle }}</mat-cell>
        </ng-container>
-       <ng-container matColumnDef="createdAt">
+       <ng-container matColumnDef="createdAt" >
            <mat-header-cell *matHeaderCellDef>createdAt</mat-header-cell>
            <mat-cell *matCellDef="let row">{{ row.createdAt }}</mat-cell>
        </ng-container>
@@ -40,12 +56,17 @@ import { HttpClient } from '@angular/common/http';
        <mat-row *matRowDef="let row; columns: ['id','sort','title','subtitle','createdAt','management']"></mat-row>
 
      </mat-table>
+  </div>
 `,
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements OnInit {
 
   NewsDataSourse = new MatTableDataSource<any>();
+  length: number | null;
+  @ViewChild('paginator') paginator: MatPaginator;
+  @ViewChild('sortTable') sort: MatSort;
+  @ViewChild('filter') filter: ElementRef;
 
   constructor(private httpclient: HttpClient) { }
 
@@ -53,8 +74,18 @@ export class ManagementComponent implements OnInit {
     this.httpclient.get<any>(
       '/assets/fack.json'
     ).subscribe(data => {
-      this.NewsDataSourse = data;
+      this.NewsDataSourse.data = data;
+      this.length = data.length;
+      this.NewsDataSourse.paginator = this.paginator;
+      this.NewsDataSourse.sort = this.sort;
     });
+
+    Observable.fromEvent(this.filter.nativeElement, 'keyup')
+      .debounceTime(300)
+      .distinctUntilChanged()
+      .subscribe(() => {
+        this.NewsDataSourse.filter = (this.filter.nativeElement as HTMLInputElement).value;
+      });
   }
 
   try(abc) { console.log(abc); }

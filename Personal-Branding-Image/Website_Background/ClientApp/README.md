@@ -535,3 +535,14 @@ found 2 low severity vulnerabilities
 
 176. 資料顯示設定完後是結合另外兩個元件的用法， NG 在這方面拆得非常開，另外兩個元件也可以在別處使用不局限於 matTable ，分頁元件與排序元件。
 177. 再來是進階應用的 data source filter。以上使用方式都直接看程式碼較方便理解。<https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/mangement/management.component.ts>
+178. 分頁 mat-paginator -> 因為參數涉及到必須傳至 API 做一些查詢參數上的操作，故先用資料一次查詢至前端再分頁的方式。
+179. @ViewChild -> <https://lawrencetech.blogspot.com/2017/06/angular-viewchild-contentchild.html?m=1>
+180. MatPaginatorModule 與 MatPaginator 又是不同東西 ... 跟之前遇到狀況一樣 -> <https://medium.com/itsems-frontend/angular-material-table-pagination-sorting-filtering-httpclient-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-part-1-9f924e78df4f>
+181. ERROR TypeError: Cannot read property 'length' of undefined while accessing length property -> <https://stackoverflow.com/questions/47258260/angular4-error-typeerror-cannot-read-property-length-of-undefined-while-acce>
+182. mat-paginator 與 mat-table 是兩個不同的 component 還以為可以把分頁元件放入表格元件內搞了半天 ...
+183. 接著排序功能，首先在 &lt;mat-table> 中加入 matSort ，接著在要排序欄位的 &lt;mat-header-cell> 加入 mat-sort-header 這個 directive 即可。部分無法排序的欄位不會報錯但會直接不顯示畫面。
+184. 也一樣可以透過把資料傳遞給後端的方式來進行排序，只需要在加入matSort的來源(也就是 &lt;mat-table> )加入一個matSortChange事件即可，當使用者按下欄位排序時，會傳入一個Sort型別的變數。
+185. &lt;mat-table [dataSource]="emailsDataSource" matSort #sortTable="matSort" (matSortChange)="changeSort($event)">&lt;/mat-table> -> active：選擇要排序的欄位。 direction：包含 asc ， desc 和空字串，代表要如何進行排序。
+186. DataSource.filter -> &lt;mat-form-field>&lt;input matInput #filter placeholder="搜尋">&lt;/mat-form-field> -> <https://ithelp.ithome.com.tw/m/articles/10196827> -> <https://ithelp.ithome.com.tw/articles/10195100>
+187. Error: mat-form-field must contain a MatFormFieldControl. -> <https://stackoverflow.com/questions/46705101/mat-form-field-must-contain-a-matformfieldcontrol>
+188. Rxjs 上也有版本更替的問題 ... -> <https://xbuba.com/questions/50571550>

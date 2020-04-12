@@ -4,7 +4,7 @@ import { SignInComponent } from '../app/sign-in/sign-in.component';
 import { HomeComponent } from '../app/home/home.component';
 import { SignInGuard } from './sign-in/sign-in.guard';
 import { ManagementComponent } from '../app/home/mangement/management.component';
-
+import { PostsComponent } from '../app/home/posts/posts.component';
 
 // ### Original
 const routes: Routes = [
@@ -13,6 +13,8 @@ const routes: Routes = [
     component: HomeComponent,
     // canActivate: [SignInGuard],
     children: [
+      { path: 'Edit', component: PostsComponent },
+      { path: 'Publish', component: PostsComponent },
       { path: 'Management', component: ManagementComponent },
       { path: '**', pathMatch: 'full', redirectTo: '/Home' }
     ]
@@ -37,7 +39,9 @@ const routes: Routes = [
 // ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes
+    // , { enableTracing: true }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

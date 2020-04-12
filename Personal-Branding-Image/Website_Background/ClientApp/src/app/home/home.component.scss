@@ -2,6 +2,10 @@ mat-sidenav {
     background-color: rgb(181, 202, 160);
 }
 
+mat-sidenav-content {
+    position: relative;
+}
+
 .function_bar {
     margin: 50px;
     display: flex;
@@ -18,11 +22,12 @@ mat-sidenav {
 }
 
 .PAGE404 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 25%;
     height: 100vh;
     font-size: 2em;
+    z-index: -1000000000;
 }
 
 .PAGE404>.box {
@@ -34,5 +39,5 @@ mat-sidenav {
     margin: 20%;
     padding: 2%;
     border-radius: 5%;
-    box-shadow: 5px 5px #aaaaaa;
+    box-shadow: 0px 0px 30px 5px #aaaaaa;
 }
