@@ -10,9 +10,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 步驟
 
-以此教學為架構並構思 UML、Sitemap、Wireframe、Prototype，建置 Sideproject，
-
-<https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008>
+以[此教學](https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008)為架構並構思 UML、Sitemap、Wireframe、Prototype，建置 Sideproject，
 
 發現以上對於剛接觸的人可能會不瞭解 Angular 架構，
 
@@ -26,9 +24,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 以下鏈結所架構為我到現在看到感覺最完善的框架版本。
 
-<https://github.com/TrilonIO/aspnetcore-angular-universal>
-
-***ASP.NET Core & Angular Universal advanced starter***
+***[ASP.NET Core & Angular Universal advanced starter](https://github.com/TrilonIO/aspnetcore-angular-universal)***
 
 - PWA w/ server-side rendering for SEO,
 - Bootstrap,
@@ -44,7 +40,11 @@ By @TrilonIO
 
 ## 緣由
 
-想做個人品牌網頁，是從景觀建築系轉職網路工程師前，
+<details><summary>想做個人品牌網頁，是從 ... ( 廢話很多欲閱請點擊觀看 )</summary>
+
+_
+
+景觀建築系轉職網路工程師前，
 
 最初就讀義守資訊管理系，確實要往網頁工程師職業前進，
 
@@ -80,9 +80,7 @@ By @TrilonIO
 
 利用大學四年來學到的分析規劃自己的職涯，
 
-找到了 104 薪資情報相關的資訊，
-
-<https://www.104.com.tw/jb/wage/view?wf=alertbar>
+找到了 [104 薪資情報相關的資訊](https://www.104.com.tw/jb/wage/view?wf=alertbar)，
 
 思考了可信度與未來性，閱讀許多資料，像是非本科系要如何轉職? 職訓局或資策會利弊?
 
@@ -100,13 +98,21 @@ By @TrilonIO
 
 到 MIS / DevOps / SRE ，
 
-覺得從 視覺 / 多媒體 / 模型 / 分析 / 規劃 / 行銷 技能較斜槓的我，
+覺得從 視覺 / 多媒體 / 模型 / 分析 / 規劃 / 行銷 技能，
 
-轉往前端是蠻適合的，理清思路，也看上 .Net Core 開源與 Angular 適合團隊合作的框架，
+又習得 ASP.NET MVC C# 等前後端綜合技能 ... 詳見 -> [行動商務系統設計與開發課程 iCAP認證課程](https://github.com/johch3n611u/Course-of-Mobile-Commerce-System-Design-and-Development)
 
-決定把斜槓技能整理整理，所以就藉由這個人品牌網站，磨練技能並整理技能，
+是需要理清思路整理所學，也看上 .Net Core 開源與 Angular 適合團隊合作的框架，
 
-期待能成為一個 斜槓獨角獸。
+_
+
+</details>
+
+>_
+>
+>決定把斜槓技能整理整理，所以就藉由這個人品牌網站，磨練技能並整理技能，
+>
+>期待能成為一個 斜槓獨角獸。
 
 ## 問題分析
 
@@ -114,21 +120,22 @@ By @TrilonIO
 2. 系統化上架專案並統一管理
 3. 特色內容需要專案呈現
 
-## 解決方案 - 參考範例
+## 解決方案
 
-特色進入頁面
+[Site_Reception](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception) 靜態網站串上 AJAX 從 .NET Core Web API 取顯示資料。
 
-<<http://www.adhamdannaway.com/>
+[Website_Background](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background) - .NET Core Web API + Angular Material 後台 SPA 管理儀錶板。
 
-分門別類專案與新聞系統
 
-<https://big.dk/#projects>
+## 參考範例
 
-後台管理系統
+- [特色進入頁面](http://www.adhamdannaway.com/)
 
-<https://ithelp.ithome.com.tw/articles/10193290?sc=iThelpR>
+- [分門別類專案與新聞系統](https://big.dk/#projects)
 
-<https://www.blogger.com/u/1/blogger.g?blogID=7103485025860384377#create>
+- [後台管理系統](https://ithelp.ithome.com.tw/articles/10193290?sc=iThelpR)
+
+- [後台管理介面](https://www.blogger.com/u/1/blogger.g?blogID=7103485025860384377#create)
 
 ## Wireframe
 
