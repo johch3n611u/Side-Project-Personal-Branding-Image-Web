@@ -548,4 +548,5 @@ found 2 low severity vulnerabilities
 188. Rxjs 上也有版本更替的問題 ... -> <https://xbuba.com/questions/50571550>
 189. 使用上直接查關鍵字看 Rxjs 官網。 -> <https://rxjs-cn.github.io/learn-rxjs-operators/operators/creation/fromevent.html>
 190. TypeError: Cannot read property 'nativeElement' of undefined -> <https://segmentfault.com/a/1190000008653690> 基本搜尋功能完成 !
-191. 接著先處理 Delete 與 Mananege 真實資料 management Read Web API 的部分。
+191. 進階功能就先不實作了接著先處理 Delete 與 Mananege 真實資料 management Read Web API 的部分。-> <https://ithelp.ithome.com.tw/m/articles/10196827>
+192.

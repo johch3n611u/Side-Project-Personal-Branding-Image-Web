@@ -14,7 +14,7 @@ import { fromEvent } from 'rxjs';
      <mat-paginator #paginator
                [length]="length"
                [pageSize]="14"
-               [pageSizeOptions]="[5, 10, 15]">
+               [pageSizeOptions]="[14, 25, 50]">
      </mat-paginator>
 
      <mat-form-field>
