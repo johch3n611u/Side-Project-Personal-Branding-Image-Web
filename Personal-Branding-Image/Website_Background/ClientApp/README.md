@@ -546,3 +546,6 @@ found 2 low severity vulnerabilities
 186. DataSource.filter -> &lt;mat-form-field>&lt;input matInput #filter placeholder="搜尋">&lt;/mat-form-field> -> <https://ithelp.ithome.com.tw/m/articles/10196827> -> <https://ithelp.ithome.com.tw/articles/10195100>
 187. Error: mat-form-field must contain a MatFormFieldControl. -> <https://stackoverflow.com/questions/46705101/mat-form-field-must-contain-a-matformfieldcontrol>
 188. Rxjs 上也有版本更替的問題 ... -> <https://xbuba.com/questions/50571550>
+189. 使用上直接查關鍵字看 Rxjs 官網。 -> <https://rxjs-cn.github.io/learn-rxjs-operators/operators/creation/fromevent.html>
+190. TypeError: Cannot read property 'nativeElement' of undefined -> <https://segmentfault.com/a/1190000008653690> 基本搜尋功能完成 !
+191. 接著先處理 Delete 與 Mananege 真實資料 management Read Web API 的部分。

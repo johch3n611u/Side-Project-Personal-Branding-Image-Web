@@ -3,7 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 
 @Component({
@@ -79,13 +79,13 @@ export class ManagementComponent implements OnInit {
       this.NewsDataSourse.paginator = this.paginator;
       this.NewsDataSourse.sort = this.sort;
     });
-
-    Observable.fromEvent(this.filter.nativeElement, 'keyup')
-      .debounceTime(300)
-      .distinctUntilChanged()
-      .subscribe(() => {
-        this.NewsDataSourse.filter = (this.filter.nativeElement as HTMLInputElement).value;
-      });
+    setTimeout(() => {
+      fromEvent<any>(this.filter.nativeElement, 'keyup')
+        .pipe(debounceTime(300), distinctUntilChanged())
+        .subscribe(() => {
+          this.NewsDataSourse.filter = (this.filter.nativeElement as HTMLInputElement).value;
+        });
+    }, 0);
   }
 
   try(abc) { console.log(abc); }
