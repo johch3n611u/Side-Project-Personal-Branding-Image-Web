@@ -1,20 +1,30 @@
-<mat-card>
-    <mat-card-title>SignIn</mat-card-title>
-    <mat-card-content>
-        <form class="form_posts">
-            <p>
-                <mat-form-field class='full_width'>
-                    <input type="text" matInput placeholder="Username" formControlName="Username">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <input type="password" matInput placeholder="Password" formControlName="Password">
-                </mat-form-field>
-            </p>
-            <div class="button">
-                <button type="submit" mat-button>Submit</button>
-            </div>
-        </form>
-    </mat-card-content>
-</mat-card>
+<div class="posts">
+    <mat-card>
+        <!-- <mat-card-title>Publish</mat-card-title> -->
+        <mat-card-title>Edit</mat-card-title>
+        <mat-card-content>
+            <form class="form_posts">
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="sort" formControlName="sort">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="img_url" formControlName="img_url">
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="title" formControlName="title">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="subtitle" formControlName="subtitle">
+                    </mat-form-field>
+                </p>
+                <div class="button">
+                    <button type="text" mat-button>Submit</button>
+                </div>
+                <div class="editor" id="editor"></div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

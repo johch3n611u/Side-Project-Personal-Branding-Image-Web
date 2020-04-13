@@ -124,7 +124,7 @@ export class ManagementComponent implements OnInit {
             console.log('delete error :' + value)
             alert('delete error !!!');
           }
-        )
+        );
     }
   }
 

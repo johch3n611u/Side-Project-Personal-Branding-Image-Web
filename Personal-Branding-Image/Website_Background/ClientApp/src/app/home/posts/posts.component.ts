@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Editor from 'cl-editor';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-posts',
@@ -9,7 +11,18 @@ export class PostsComponent implements OnInit {
 
   constructor() { }
 
+  Publish = true;
+
   ngOnInit(): void {
+
+    const editor = new Editor({
+      target: document.getElementById('editor'),
+      props: {
+        height: '480px',
+      }
+    });
+
+    $('.cl-button').attr('type', 'button');
   }
 
 }

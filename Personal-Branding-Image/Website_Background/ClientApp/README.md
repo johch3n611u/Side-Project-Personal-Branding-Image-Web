@@ -552,4 +552,148 @@ found 2 low severity vulnerabilities
 192. 跳至 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 193. 接續切 Creat 和 Update 的版 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
 194. 選擇了一個較小較簡易的線上編輯器 Library -> npm i @types/jquery.cleditor --save ->　每個用 npm 安裝的套件，一律放在 node_modules 資料夾裡
-195.
+195. 跟著一步一步做　<https://premiumsoftware.net/cleditor/gettingstarted>
+
+<details><summary>node_modules\cl-editor\README.md</summary>
+
+## Lightweight text editor
+
+typescript + svelte (no external dependencies)
+
+#### File size (bundle includes css, html and js)
+
+* min: 28kb
+* gzip: 9kb
+
+## Installation
+
+#### npm:
+
+```bash
+npm install --save cl-editor
+```
+
+#### HTML:
+
+```html
+<head>
+  ...
+</head>
+<body>
+  ...
+  <div id="editor"></div>
+  ...
+</body>
+```
+
+#### Usage
+```js
+import Editor from 'cl-editor';
+// or
+const Editor = require('cl-editor');
+```
+```js
+// Initialize editor
+const editor = new Editor({
+    // <HTMLElement> required
+    target: document.getElementById('editor'),
+    // optional
+    data: {
+        // <Array[string | Object]> string if overwriting, object if customizing/creating
+        // available actions:
+        // 'viewHtml', 'undo', 'redo', 'b', 'i', 'u', 'strike', 'sup', 'sub', 'h1', 'h2', 'p', 'blockquote',
+        // 'ol', 'ul', 'hr', 'left', 'right', 'center', 'justify', 'a', 'image', 'forecolor', 'backcolor', 'removeFormat'
+        actions: [
+            'b', 'i', 'u', 'strike', 'ul', 'ol',
+            {
+                name: 'copy', // required
+                icon: '<b>C</b>', // string or html string (ex. <svg>...</svg>)
+                title: 'Copy',
+                result: () => {
+                    // copy current selection or whole editor content
+                    const selection = window.getSelection();
+                    if (!selection.toString().length) {
+                        const range = document.createRange();
+                        range.selectNodeContents(editor.refs.editor);
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                    }
+                    editor.exec('copy');
+                }
+            },
+            'h1', 'h2', 'p'
+        ],
+        // default 300px
+        height: '300px',
+        // initial html
+        html: '',
+        // remove format action clears formatting, but also removes some html tags.
+        // you can specify which tags you want to be removed.
+        removeFormatTags: ['h1', 'h2', 'blackquote'] // default
+    }
+})
+```
+
+#### API
+```js
+// Methods
+editor.exec(cmd: string, value?: string) // execute document command (document.executeCommand(cmd, false, value))
+editor.getHtml(sanitize?: boolean) // returns html string from editor. if passed true as argument, html will be sanitized before return
+editor.getText() // returns text string from editor
+editor.setHtml(html: string, sanitize?: boolean) // sets html for editor. if second argument is true, html will be sanitized
+editor.saveRange() // saves current editor cursor position or user selection
+editor.restoreRange() // restores cursor position or user selection
+// saveRange and restoreRange are useful when making custom actions
+// that demands that focus is shifted from editor to, for example, modal window.
+```
+* For list of available _**exec**_ command visit [https://codepen.io/netsi1964/pen/QbLLG](https://codepen.io/netsi1964/pen/QbLLGW)
+```js
+// Events
+editor.on('change', (html) => console.log(html)) // on every keyup event
+editor.on('blur', (event) => console.log(event)) // on editor blur event
+```
+```js
+// Props
+editor.refs.<editor | raw | modal | colorPicker> // references to editor, raw (textarea), modal and colorPicker HTMLElements
+```
+
+#### Run demo
+```bash
+git clone https://github.com/nenadpnc/cl-text-editor.git cl-editor
+cd cl-editor
+npm i
+npm run dev
+```
+
+#### This library is inspired by https://github.com/Alex-D/Trumbowyg and https://github.com/jaredreich/pell
+
+## Licence
+
+ MIT License
+</details>
+
+## ↑ Details pls Read ↓ Easy Sample pls Read
+
+```JavaScript
+(alias) new Editor(options: {
+    target: Element;
+    props?: {
+        actions?: (string | {
+            name: string;
+            title?: string;
+            icon?: string;
+            result?: Function;
+        })[];
+        height?: string;
+        html?: string;
+        removeFormatTags?: string[];
+    };
+}): Editor
+import Editor
+```
+
+196.畫面 ok 但編輯器按鈕一按 reflash ... DevTools failed to load SourceMap: Could not load content for chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/include.postload.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+197. npm install jquery --save -> $('.cl-button').attr('type', 'button'); 成功解決 button 預設 type submit 問題
+198. npm install @types/jquery --save -> <https://stackoverflow.com/questions/48639564/cannot-find-name-in-component-ts>
+199. 本來 cl editor 放進 mat-form-field 也能解決 button 問題，但會造成這個 component mat-form-field 效果消失，連 img button 問題也解決了...
+200.
