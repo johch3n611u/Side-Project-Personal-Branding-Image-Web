@@ -205,7 +205,25 @@ _
 
 <https://rxjs-dev.firebaseapp.com/>
 
-### other
+### Library
+
+<https://ckeditor.com/>
+
+<https://www.tiny.cloud/>
+
+<https://premiumsoftware.net/cleditor/>
+
+<https://demo.tc/post/%E8%B6%85%E8%BC%95%E9%87%8F%E5%AF%8C%E6%96%87%E6%9C%AC%E7%B7%A8%E8%BC%AF%E5%99%A8%20cleditor>
+
+<https://training.pada-x.com/docs/article.jsp?key=node-npm-simple-reference>
+
+<https://www.npmjs.com/package/@types/jquery.cleditor>
+
+<https://github.com/DefinitelyTyped/DefinitelyTyped#readme>
+
+<https://medium.com/html-test/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E4%BD%BF%E7%94%A8npm%E5%A5%97%E4%BB%B6-317beefdf182>
+
+### Other
 
 <https://softwareengineering.stackexchange.com/questions/278686/having-a-production-branch-or-using-master>
 

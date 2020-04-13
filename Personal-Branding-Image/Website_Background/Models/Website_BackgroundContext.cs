@@ -36,20 +36,19 @@ namespace Website_Background.Models
                 entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.ContentHtml)
-                    .IsRequired()
                     .HasColumnName("content_html")
                     .HasColumnType("text");
 
                 entity.Property(e => e.ContentText)
-                    .IsRequired()
                     .HasColumnName("content_text")
                     .HasColumnType("text");
 
                 entity.Property(e => e.CreatedAt)
                     .IsRequired()
                     .HasColumnName("created_at")
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasDefaultValueSql("(CONVERT([varchar],getdate(),(120)))");
 
                 entity.Property(e => e.ImgUrl)
                     .HasColumnName("img_url")
@@ -57,19 +56,16 @@ namespace Website_Background.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Sort)
-                    .IsRequired()
                     .HasColumnName("sort")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Subtitle)
-                    .IsRequired()
                     .HasColumnName("subtitle")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Title)
-                    .IsRequired()
                     .HasColumnName("title")
                     .HasMaxLength(50)
                     .IsUnicode(false);

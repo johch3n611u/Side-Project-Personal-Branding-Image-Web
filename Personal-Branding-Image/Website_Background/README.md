@@ -63,6 +63,12 @@ Done. To undo this action, use 'ef migrations remove'
 159. <https://stackoverflow.com/questions/40900414/asp-net-core-dependency-injection-error-unable-to-resolve-service-for-type-whil>
 160. 沒用到 inject 時，記得將 api 模板產生的 controller 調整一下否則 request 無法訪問 <https://stackoverflow.com/questions/46930090/unable-to-resolve-service-for-type-while-attempting-to-activate/46930161>
 161. 這裡先告一段落，接續處理 ng crud table 等內容。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
+193. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
+194. 上一次 creat_at timestamp -> varchar(50) 有動到 SQL Service 可能造成 EF Models 有問題，所以先嘗試解決。( 確定就是此問題 )
+195. 真實資料 GET 接著處理 Delete ， 成功刪除但是無更新 table 且為了新增測試資料又動了一次 SQL Service ... 似乎有更動到 BackgroundContext 所以果斷重新執行一次 ef cli
+196. 覆蓋需要下強制指令 dotnet ef dbcontext scaffold "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Models --force
+197. 重複 get 一次資料更新 table 但是寫了重複的程式碼，趕時間所以先繼續，有機會再重構。
+198. 接著要處理 Creat 與 Update 的頁面回到 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 
 ---------------------------
 

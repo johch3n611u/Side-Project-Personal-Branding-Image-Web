@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -46,8 +46,8 @@ import { fromEvent } from 'rxjs';
        <ng-container matColumnDef="management">
            <mat-header-cell *matHeaderCellDef>management</mat-header-cell>
            <mat-cell *matCellDef="let row">
-             <button mat-raised-button (click)="try(row)">Edit</button>
-             <button mat-raised-button >Delete</button>
+             <button mat-raised-button (click)="upd(row)">Edit</button>
+             <button mat-raised-button (click)="del(row)">Delete</button>
            </mat-cell>
        </ng-container>
 
@@ -72,7 +72,8 @@ export class ManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpclient.get<any>(
-      '/assets/fack.json'
+      'https://localhost:44367/api/News'
+      //'/assets/fack.json'
     ).subscribe(data => {
       this.NewsDataSourse.data = data;
       this.length = data.length;
@@ -88,6 +89,43 @@ export class ManagementComponent implements OnInit {
     }, 0);
   }
 
-  try(abc) { console.log(abc); }
+  upd(row) { console.log(row); }
+
+  del(row) {
+    console.log(row);
+    if (confirm('Sure to delete id : ' + row.id + ' ?')) {
+
+      const apiurl = 'https://localhost:44367/api/News/' + row.id;
+      const headers = new HttpHeaders({
+        'Content-Type': 'text/json'
+      });
+      const options = {
+        headers
+      };
+
+      this.httpclient.delete<any>(apiurl, options)
+        .subscribe(
+          (value) => {
+            console.log('delete success :' + value)
+
+            alert('delete success !!!');
+
+            this.httpclient.get<any>(
+              'https://localhost:44367/api/News'
+              //'/assets/fack.json'
+            ).subscribe(data => {
+              this.NewsDataSourse.data = data;
+              this.length = data.length;
+              this.NewsDataSourse.paginator = this.paginator;
+              this.NewsDataSourse.sort = this.sort;
+            });
+
+          }, (value) => {
+            console.log('delete error :' + value)
+            alert('delete error !!!');
+          }
+        )
+    }
+  }
 
 }

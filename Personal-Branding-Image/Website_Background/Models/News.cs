@@ -12,6 +12,6 @@ namespace Website_Background.Models
         public string ContentText { get; set; }
         public string ContentHtml { get; set; }
         public string ImgUrl { get; set; }
-        public byte[] CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
     }
 }

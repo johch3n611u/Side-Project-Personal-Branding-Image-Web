@@ -1,3 +1,20 @@
-<div style="height: 100vh;background-color: brown;">
-    <p>posts works!</p>
-</div>
+<mat-card>
+    <mat-card-title>SignIn</mat-card-title>
+    <mat-card-content>
+        <form class="form_posts">
+            <p>
+                <mat-form-field class='full_width'>
+                    <input type="text" matInput placeholder="Username" formControlName="Username">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" formControlName="Password">
+                </mat-form-field>
+            </p>
+            <div class="button">
+                <button type="submit" mat-button>Submit</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

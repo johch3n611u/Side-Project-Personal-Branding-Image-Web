@@ -549,4 +549,7 @@ found 2 low severity vulnerabilities
 189. 使用上直接查關鍵字看 Rxjs 官網。 -> <https://rxjs-cn.github.io/learn-rxjs-operators/operators/creation/fromevent.html>
 190. TypeError: Cannot read property 'nativeElement' of undefined -> <https://segmentfault.com/a/1190000008653690> 基本搜尋功能完成 !
 191. 進階功能就先不實作了接著先處理 Delete 與 Mananege 真實資料 management Read Web API 的部分。-> <https://ithelp.ithome.com.tw/m/articles/10196827>
-192.
+192. 跳至 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
+193. 接續切 Creat 和 Update 的版 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
+194. 選擇了一個較小較簡易的線上編輯器 Library -> npm i @types/jquery.cleditor --save ->　每個用 npm 安裝的套件，一律放在 node_modules 資料夾裡
+195.

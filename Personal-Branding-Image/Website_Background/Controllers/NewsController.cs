@@ -12,7 +12,8 @@ namespace Website_Background.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class NewsController : ControllerBase
-    {
+    {   
+        //https://localhost:44367/
         public Website_BackgroundContext WB_Context = new Website_BackgroundContext();
         // GET: api/News
         [HttpGet]
