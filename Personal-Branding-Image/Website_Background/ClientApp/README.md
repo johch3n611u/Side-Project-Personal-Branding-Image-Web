@@ -705,3 +705,4 @@ import Editor
 206. 這邊涉及 cleditor, FormBuilder Module 混合使用，特別標註 Program sequence run 因為必須動態將 formControlName 屬性塞至 cleditor 渲染後內部的 textarea <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/posts/posts.component.ts>
 207. 成功塞 formControlName 至 textarea ，但遇到一個問題是 cleditor 內容居然在另一個 div cl-content 內，且是 innerHTML 方式存在。
 208. 改為 $('.cl-content').innerText ; 與 $('.cl-content').innerHTML; 都是必要欄位 可能 display none 一個 div input 傳送至 api 。
+209. Property 'innerText' does not exist on type 'Element'. <https://stackoverflow.com/questions/57551589/property-innertext-does-not-exist-on-type-element>

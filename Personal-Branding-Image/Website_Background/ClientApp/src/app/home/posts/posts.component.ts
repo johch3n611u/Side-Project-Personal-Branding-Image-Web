@@ -87,12 +87,12 @@ export class PostsComponent implements OnInit {
 
   apiurl = '';
 
-  ngOnChanges() { }
+  // ngOnChanges() { }
 
   // Program sequence run 7
   ngDoCheck() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    console.log('ngDoCheck=>id=' + this.id);
+    // console.log('ngDoCheck=>id=' + this.id);
     if (this.id == 0) { this.title = 'Publish'; }
   }
 
@@ -118,7 +118,10 @@ export class PostsComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      this.form.value.Sort = document.getElementsByClassName('hidden')[0].innerHTML;
+      this.form.value.ContentText = ((document.getElementsByClassName('cl-content')[0]) as HTMLElement).innerText;
+      console.log('ContentText=' + this.form.value.ContentText)
+      this.form.value.ContentHtml = document.getElementsByClassName('cl-content')[0].innerHTML;
+      console.log('ContentHtml=' + this.form.value.ContentHtml)
       this.postRequest(this.form.value)
     }
   }
