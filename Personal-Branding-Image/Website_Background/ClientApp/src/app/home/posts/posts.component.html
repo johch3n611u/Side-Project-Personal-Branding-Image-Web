@@ -1,9 +1,11 @@
 <div class="posts">
     <mat-card>
-        <!-- <mat-card-title>Publish</mat-card-title> -->
-        <mat-card-title>Edit</mat-card-title>
+        <div class="posts_title">
+            <mat-card-title>Edit</mat-card-title>
+            <button type="text" mat-button form="posts">Submit</button>
+        </div>
         <mat-card-content>
-            <form class="form_posts">
+            <form id="posts">
                 <p>
                     <mat-form-field>
                         <input type="text" matInput placeholder="sort" formControlName="sort">
@@ -20,9 +22,7 @@
                         <input type="text" matInput placeholder="subtitle" formControlName="subtitle">
                     </mat-form-field>
                 </p>
-                <div class="button">
-                    <button type="text" mat-button>Submit</button>
-                </div>
+
                 <div class="editor" id="editor"></div>
             </form>
         </mat-card-content>

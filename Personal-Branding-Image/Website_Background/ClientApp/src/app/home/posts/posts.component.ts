@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Editor from 'cl-editor';
 import * as $ from 'jquery';
 
@@ -23,6 +23,9 @@ export class PostsComponent implements OnInit {
     });
 
     $('.cl-button').attr('type', 'button');
+
   }
+
+  
 
 }

@@ -696,4 +696,9 @@ import Editor
 197. npm install jquery --save -> $('.cl-button').attr('type', 'button'); 成功解決 button 預設 type submit 問題
 198. npm install @types/jquery --save -> <https://stackoverflow.com/questions/48639564/cannot-find-name-in-component-ts>
 199. 本來 cl editor 放進 mat-form-field 也能解決 button 問題，但會造成這個 component mat-form-field 效果消失，連 img button 問題也解決了...
-200.
+200. 畫面完成接著回 management 處理 output id 至 posts input request 接收 response 顯示 -> <https://medium.com/@jscinin/angular-output-%E4%BD%BF%E7%94%A8-2a3f18ed93bf>
+201. 本來是想 management matTable 內參數藉由 output 至 sidenav 再利用 router-outlet 帶參數傳入 posts 用 input 接，但好像不能這樣搞 ... <https://stackoverflow.com/questions/37662456/angular-2-output-from-router-outlet>
+202. Input 與 Output 應該是父子關係跟路由插頭似乎不能這樣混用，搞了半天沒有進度... <https://lawrencetech.blogspot.com/2017/06/angular-input-or-output.html?m=1>。<https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/todolist1/src/app/home-page/home-page.component.html>
+203. 後來躺床一想應該照老模式，不管是靜態還是動態網頁還是 MVC 記得這種功能都是藉由網址帶參數過去才對，所以參考這篇 -> <https://medium.com/chikuwa-tech-study/angular-%E7%AC%AC9%E8%AA%B2-%E8%B7%AF%E7%94%B1%E6%94%9C%E5%B8%B6%E5%8F%83%E6%95%B8-39a4d4f05448>
+204. layout form 與 submit 分開 <https://jiepeng.me/2018/03/05/submit-form-using-outside-form-tag>
+205. 版型大致完成接著先完成 Creat 在完成 Update 涉及 api 轉至 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>

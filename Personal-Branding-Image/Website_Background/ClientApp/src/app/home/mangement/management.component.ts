@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
@@ -89,7 +89,9 @@ export class ManagementComponent implements OnInit {
     }, 0);
   }
 
-  upd(row) { console.log(row); }
+  upd(row) {
+    console.log(row.id);
+  }
 
   del(row) {
     console.log(row);
