@@ -4,6 +4,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SharedMaterialModule } from '../shared/shared-material.module';
 import { ManagementComponent } from './mangement/management.component';
 import { PostsComponent } from './posts/posts.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { PostsComponent } from './posts/posts.component';
   ], imports: [
     AppRoutingModule,
     SharedMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ], exports: [
     HomeComponent
   ]

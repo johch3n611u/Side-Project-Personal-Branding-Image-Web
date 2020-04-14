@@ -692,7 +692,7 @@ npm run dev
 import Editor
 ```
 
-196.畫面 ok 但編輯器按鈕一按 reflash ... DevTools failed to load SourceMap: Could not load content for chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/include.postload.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+196. 畫面 ok 但編輯器按鈕一按 reflash ... DevTools failed to load SourceMap: Could not load content for chrome-extension://gighmmpiobklfepjocnamgkkbiglidom/include.postload.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
 197. npm install jquery --save -> $('.cl-button').attr('type', 'button'); 成功解決 button 預設 type submit 問題
 198. npm install @types/jquery --save -> <https://stackoverflow.com/questions/48639564/cannot-find-name-in-component-ts>
 199. 本來 cl editor 放進 mat-form-field 也能解決 button 問題，但會造成這個 component mat-form-field 效果消失，連 img button 問題也解決了...
@@ -702,3 +702,6 @@ import Editor
 203. 後來躺床一想應該照老模式，不管是靜態還是動態網頁還是 MVC 記得這種功能都是藉由網址帶參數過去才對，所以參考這篇 -> <https://medium.com/chikuwa-tech-study/angular-%E7%AC%AC9%E8%AA%B2-%E8%B7%AF%E7%94%B1%E6%94%9C%E5%B8%B6%E5%8F%83%E6%95%B8-39a4d4f05448>
 204. layout form 與 submit 分開 <https://jiepeng.me/2018/03/05/submit-form-using-outside-form-tag>
 205. 版型大致完成接著先完成 Creat 在完成 Update 涉及 api 轉至 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
+206. 這邊涉及 cleditor, FormBuilder Module 混合使用，特別標註 Program sequence run 因為必須動態將 formControlName 屬性塞至 cleditor 渲染後內部的 textarea <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/posts/posts.component.ts>
+207. 成功塞 formControlName 至 textarea ，但遇到一個問題是 cleditor 內容居然在另一個 div cl-content 內，且是 innerHTML 方式存在。
+208. 改為 $('.cl-content').innerText ; 與 $('.cl-content').innerHTML; 都是必要欄位 可能 display none 一個 div input 傳送至 api 。

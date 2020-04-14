@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-management',
@@ -68,7 +69,7 @@ export class ManagementComponent implements OnInit {
   @ViewChild('sortTable') sort: MatSort;
   @ViewChild('filter') filter: ElementRef;
 
-  constructor(private httpclient: HttpClient) { }
+  constructor(private httpclient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.httpclient.get<any>(
@@ -91,6 +92,7 @@ export class ManagementComponent implements OnInit {
 
   upd(row) {
     console.log(row.id);
+    this.router.navigate(['/Home/Edit/'+row.id]);
   }
 
   del(row) {

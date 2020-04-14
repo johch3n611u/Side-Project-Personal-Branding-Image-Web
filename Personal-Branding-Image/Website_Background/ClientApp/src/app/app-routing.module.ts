@@ -13,8 +13,8 @@ const routes: Routes = [
     component: HomeComponent,
     // canActivate: [SignInGuard],
     children: [
-      { path: 'Edit', component: PostsComponent },
-      { path: 'Publish', component: PostsComponent },
+      { path: 'Edit/:id', component: PostsComponent },
+      { path: 'Publish', redirectTo: '/Home/Edit/0' },
       { path: 'Management', component: ManagementComponent },
       { path: '**', pathMatch: 'full', redirectTo: '/Home' }
     ]
@@ -40,7 +40,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes
-    , { enableTracing: true }
+    //, { enableTracing: true }
   )],
   exports: [RouterModule]
 })
