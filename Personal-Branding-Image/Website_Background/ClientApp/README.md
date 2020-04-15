@@ -713,3 +713,4 @@ import Editor
 214. 解決了，但是 cleditor 的值好像還是要用 jQ 塞值解決 -> 當 Form 的結構確定下來後，剩下的就是將值放進去，所以會是這樣子處裡 this.form.setValue(value); kevin... <https://forum.angular.tw/t/topic/1764/2>
 215. 最後遇到一點小問題也解決了，總結
 216. 整體為了初學體驗此架構寫程式與考慮時程問題，程式碼架構較亂且也無考慮資安問題，但最後基本後台 crud 功能完成，接著靠此後台整理景觀建築設計專案文章，接著就進入最後前台 AJAX 顯示畫面了，弄完此架構會再回去整理履歷，就可以開始面試了預計是下個禮拜。
+217. 先確定那些頁面哪些內容需要用到 API 資料，大概是什麼類型，才能確定如何整理景觀建築設計資料。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
