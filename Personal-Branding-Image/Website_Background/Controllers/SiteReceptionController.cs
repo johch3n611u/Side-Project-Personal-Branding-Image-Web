@@ -26,6 +26,7 @@ namespace Website_Background.Controllers
                 return NotFound();
             }
 
+
             return news;
         }
 
