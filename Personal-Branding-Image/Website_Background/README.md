@@ -82,7 +82,7 @@ Done. To undo this action, use 'ef migrations remove'
 224. 1 aboutmepage 四篇內容，四張圖，四則純文字與文章 id，
 225. 2 productspage 年份月份 sort 每年分月份文章數量 隨機渲染顏色 icon 與副標題小字與 id ， (年份月份或純年份依照整理出來的文章數量待訂)
 226. 3 所有文章數量 與 圖片連結與文章純文字與 id 
-227. postspage 內容則直接使用舊 api/News/id 做直接查詢顯示 ，這裡查詢與組合條件較複雜，想藉由 Dapper 使用純 SSMS TSQL 處理，順道幫 SSMS 安裝 <https://www.devart.com/> 應該是這個 conplete 有點忘記是不是。 <>
+227. postspage 內容則直接使用舊 api/News/id 做直接查詢顯示 ，這裡查詢與組合條件較複雜，想藉由 Dapper 使用純 SSMS TSQL 處理，順道幫 SSMS 安裝 <https://www.devart.com/> 應該是這個 conplete 有點忘記是不是。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/Controllers/SiteReceptionController.cs>
 
 ---------------------------
 
