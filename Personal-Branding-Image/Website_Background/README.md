@@ -50,12 +50,14 @@ Done.
 
 152. dotnet add package Microsoft.EntityFrameworkCore.Design
 153. dotnet ef migrations add InitialCreate -> 成功砍掉 Context.cs 內容
-154.
+154. ef migrations remove
+
 ```CMD
 Build started...
 Build succeeded.
 Done. To undo this action, use 'ef migrations remove'
 ```
+
 155. dotnet ef database update -> 重新建置了 Context.cs 但還是只有 user.cs 資料表 ... 三小
 156. dotnet ef dbcontext scaffold "DBConnectionString" Microsoft.EntityFrameworkCore.SqlServer -o Models
 157. 砍了重下指令... 記得要先把錯誤的地方都先註解，否則 cli 會 failed <https://stackoverflow.com/questions/38961115/build-failed-on-database-first-scaffold-dbcontext>
@@ -75,6 +77,12 @@ Done. To undo this action, use 'ef migrations remove'
 209. 先利用 jq 將 cleditor 容器刪除一變再 new 還是空... ? <https://zhidao.baidu.com/question/562543561>
 210. 嘗試各種生命週期還是無用，最後靠 router 轉址硬卡參數才成功 <https://angular.tw/guide/lifecycle-hooks>
 211. 雖然複雜的 cleditor 渲染放在不同的生命週期會整個報錯，但是 title 還是要藉由不同生命週期去調整，最後終於完成連動 ... 洗個澡要來寫串接 api 功能了。
+222. 接著 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
+223. 不再前端組合查詢語言，只有單一 api 接口與單一參數 get 固定內容，首先 
+224. 1 aboutmepage 四篇內容，四張圖，四則純文字與文章 id，
+225. 2 productspage 年份月份 sort 每年分月份文章數量 隨機渲染顏色 icon 與副標題小字與 id ， (年份月份或純年份依照整理出來的文章數量待訂)
+226. 3 所有文章數量 與 圖片連結與文章純文字與 id 
+227. postspage 內容則直接使用舊 api/News/id 做直接查詢顯示 ，這裡查詢與組合條件較複雜，想藉由 Dapper 使用純 SSMS TSQL 處理，順道幫 SSMS 安裝 <https://www.devart.com/> 應該是這個 conplete 有點忘記是不是。 <>
 
 ---------------------------
 
