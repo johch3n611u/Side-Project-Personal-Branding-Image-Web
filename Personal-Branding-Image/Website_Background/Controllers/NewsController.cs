@@ -47,6 +47,8 @@ namespace Website_Background.Controllers
                 return BadRequest();
             }
 
+            news.CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
             WB_Context.Entry(news).State = EntityState.Modified;
 
             try

@@ -705,4 +705,9 @@ import Editor
 206. 這邊涉及 cleditor, FormBuilder Module 混合使用，特別標註 Program sequence run 因為必須動態將 formControlName 屬性塞至 cleditor 渲染後內部的 textarea <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/posts/posts.component.ts>
 207. 成功塞 formControlName 至 textarea ，但遇到一個問題是 cleditor 內容居然在另一個 div cl-content 內，且是 innerHTML 方式存在。
 208. 改為 $('.cl-content').innerText ; 與 $('.cl-content').innerHTML; 都是必要欄位 可能 display none 一個 div input 傳送至 api 。
-209. Property 'innerText' does not exist on type 'Element'. <https://stackoverflow.com/questions/57551589/property-innertext-does-not-exist-on-type-element>
+209. Property 'innerText' does not exist on type 'Element'. <https://stackoverflow.com/questions/57551589/property-innertext-does-not-exist-on-type-element> 。 <https://stackoverflow.com/questions/17896746/document-getelementsbyclassname-innerhtml-always-returns-undefined>
+210. update creatat -> <https://gogo1119.pixnet.net/blog/post/28140411>
+211. 要初始化 update 介面的 form value ... 生命週期不清楚很麻煩，看起來是初始化後才呼叫 api ...，半夜了明日在解決...
+212. 整個 ts 似乎都是非同步(異步)的，service 還沒 response 時 client formgroup 就已經渲染完成 ...
+213. 但 rxjs 還沒搞懂 ... 只好降慢 client render 時間 ...這樣後續肯定會有弊端的，畢竟無法預測 request 的 db 查詢時間...
+214. 解決了，但是 cleditor 的值好像還是要用 jQ 塞值解決 -> 當 Form 的結構確定下來後，剩下的就是將值放進去，所以會是這樣子處裡 this.form.setValue(value); kevin... <https://forum.angular.tw/t/topic/1764/2>

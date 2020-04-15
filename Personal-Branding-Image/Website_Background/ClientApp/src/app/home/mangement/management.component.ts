@@ -40,7 +40,7 @@ import { Router } from '@angular/router';
            <mat-cell *matCellDef="let row">{{ row.subtitle }}</mat-cell>
        </ng-container>
        <ng-container matColumnDef="createdAt" >
-           <mat-header-cell *matHeaderCellDef>createdAt</mat-header-cell>
+           <mat-header-cell *matHeaderCellDef mat-sort-header arrowPosition="before" start="desc">createdAt</mat-header-cell>
            <mat-cell *matCellDef="let row">{{ row.createdAt }}</mat-cell>
        </ng-container>
 
