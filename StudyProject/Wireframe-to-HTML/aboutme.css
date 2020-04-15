@@ -117,7 +117,7 @@ body {
     display: flex;
     margin: 5px;
     padding: 50px;
-    background-color: rgb(55, 60, 56);
+    background-color: rgb(86, 108, 115);
     color: floralwhite;
     border-radius: 20px;
     height: 98vh;
@@ -426,7 +426,7 @@ body {
     display: flex;
     margin: 5px;
     padding: 50px;
-    background-color: rgb(67, 67, 67);
+    background-color: rgb(11, 16, 19);
     color: floralwhite;
     border-radius: 20px;
     height: 90vh;
@@ -454,7 +454,7 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+    box-shadow: 0 0 1em 0 rgba(255, 255, 255, 1);
 }
 
 .container {
