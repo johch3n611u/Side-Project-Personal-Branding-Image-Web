@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 已更新至以下版本
 
-<details><summary> ng version </summary>
+<details><summary> ng version msg </summary>
 
 ```JavaScript
 Angular CLI: 9.1.0-rc.0
@@ -84,7 +84,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 57. 看到以下文章發現似乎在去年就有類似問題且官方已修正?如果透過 dotnet run 似乎可以成功運行。 <https://developercommunity.visualstudio.com/content/problem/234150/the-angular-cli-process-did-not-start-listening-fo.html>
 58. 所以直接刪除整個專案重新測試
 
-<details><summary> CMD </summary>
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 D:\Desk\Side-Project-Personal-Branding-Image-Web\Personal-Branding-Image>cd Website_Background
@@ -146,7 +146,7 @@ D:\Desk\Side-Project-Personal-Branding-Image-Web\Personal-Branding-Image\Website
 64. Data path ".projects['Website_Background']" should NOT have additional properties(@schematics/angular:component).
 65. 似乎只能改除了 schematics 外的東西，不知道會不會影響到其他問題。重新起了一次專案重新執行 1-50 步驟
 
-<details><summary> ng version </summary>
+<details><summary> ng version msg </summary>
 
 ```JavaScript
 Your global Angular CLI version (9.0.7) is greater than your local
@@ -196,7 +196,7 @@ UPDATE src/app/app.module.ts (1250 bytes)
 75. 結果發現 VS ng 專案，安裝了一堆東西 ... 果斷先不看
 76. npm install --save @angular/material @angular/cdk -> 有點慘版本太高依賴高版本 ng core
 
-<details><summary> CMD </summary>
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 npm
@@ -227,7 +227,9 @@ found 78 vulnerabilities (77 low, 1 moderate)
 
 </details>
 
-77. <details><summary> ng update </summary>
+77.  ng update 
+
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 Your global Angular CLI version (9.0.7) is greater than your local
@@ -263,6 +265,8 @@ Found 40 dependencies.
 
 78. ng update --all --force -> 不知道為何就是強制更新不了 ...
 79. ng update @angular/cli @angular/core --allow-dirty --force -> <https://stackoverflow.com/questions/56773528/repository-is-not-clean-please-commit-or-stash-any-changes-before-updating-in-a>
+
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 Your global Angular CLI version (9.0.7) is greater than your local
@@ -374,7 +378,11 @@ Your project has been updated to Angular version 9!
 For more info, please see: https://v9.angular.io/guide/updating-to-version-9
 ```
 
+</details>
+
 80. 終於更新上 v9 ... 似乎跟 where npm ，npm install .msi 安裝版本有關係 npm 更新的 package 並不支援 npm update 指令安裝位置。
+
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 
@@ -415,8 +423,12 @@ typescript                                 3.8.3
 webpack                                    4.42.0
 ```
 
+</details>
+
 81. 以上就再說吧，看來最好的配置應該是前端專案與後端拆開，後端單純 API 即可 Angular Universal SEO 就要再研究看看原理是啥。
 82. ng update @angular/animations --allow-dirty --force
+
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 Repository is not clean. Update changes will be mixed with pre-existing changes.Using package manager: 'npm'
@@ -427,12 +439,16 @@ Fetching dependency metadata from registry...
 Package '@angular/animations' is already up to date.
 ```
 
+</details>
+
 83. 結果編譯還是不行#@$#$@!#@# ... 現在問題是 angular material 新版本，需要較高的 ng core 依存，但似乎只是警告不是報錯 ...
 84. 只好刪除不更新先寫 demo 不然拖太久 ...不過在先刪除前嘗試之前在網路上看到的方法，刪除 ClientApp 用 Cli 起一個乾淨的試試看。
 85. 第一階段刪除槓掉有關部分但沒資料夾就會報錯，新增後 API 正常運行。看了資料夾後新增了一個 package-lock.json <https://ithelp.ithome.com.tw/articles/10191888>
 86. 哀新手被坑，可能大概是有鎖 package 依賴，所以才會在環境方面搞半天 ... <https://www.itread01.com/content/1543392248.html>
 87. ng new ClientApp --routing  --style=scss
 88. 成功了但是還是有以下異常，可能整個 npm 都要整理一下。
+
+<details><summary> Error msg </summary>
 
 ```JavaScript
 Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/common : es2015 as esm2015
@@ -442,10 +458,14 @@ Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/platform-browser : e
 Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/platform-browser-dynamic : es2015 as esm2015
 ```
 
+</details>
+
 89. <https://stackoverflow.com/questions/55406292/timeoutexception-the-angular-cli-process-did-not-start-listening-for-requests-w>
 90. 莫名其妙在 angular.json 加上 "progress": true 就又恢復正常 debug 模式 ...
 91. 繼續照著 1-50 操作，
 92. npm install --save @angular/material @angular/cdk -> 相較於之前 core 幾乎都兼融了。
+
+<details><summary> CMD msg </summary>
 
 ```JavaScript
 npm+ @angular/cdk@9.2.0
@@ -465,6 +485,8 @@ npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
 found 2 low severity vulnerabilities
   run `npm audit fix` to fix them, or `npm audit` for details
 ```
+
+</details>
 
 93. "@angular/animations": "~9.0.7" -> package.json
 94. 接續著成功處理了前幾天卡住的步驟，而架構整理則是將共用 module data function style 等等抽出 ...
@@ -538,6 +560,8 @@ found 2 low severity vulnerabilities
 174. 因為 timestamp 資料型態必須做多一次的轉內容，又沒其他地方需要用到 timestamp 型態，所以從根本上 SQL Server 直接做修改。<https://pjchender.github.io/2017/12/27/js-javascript-date-time-method-%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93/>。<https://dotblogs.com.tw/kevinya/2014/09/05/146474>
 175. matTable 是依照 flexbox 排版組合，所以客製化樣式，ng 會依照 matColumnDef 將 class 產生，只要寫入 CSS 即可 Sample 如下。 -> class="mat-header-cell cdk-header-cell cdk-column-id mat-column-id ng-star-inserted"
 
+<details><summary> CSS </summary>
+
 ```CSS
 .mat-column-user {
   max-width: 100px;
@@ -553,6 +577,8 @@ found 2 low severity vulnerabilities
   cursor: pointer;
 }
 ```
+
+</details>
 
 176. 資料顯示設定完後是結合另外兩個元件的用法， NG 在這方面拆得非常開，另外兩個元件也可以在別處使用不局限於 matTable ，分頁元件與排序元件。
 177. 再來是進階應用的 data source filter。以上使用方式都直接看程式碼較方便理解。<https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/mangement/management.component.ts>
@@ -575,7 +601,7 @@ found 2 low severity vulnerabilities
 194. 選擇了一個較小較簡易的線上編輯器 Library -> npm i @types/jquery.cleditor --save ->　每個用 npm 安裝的套件，一律放在 node_modules 資料夾裡
 195. 跟著一步一步做　<https://premiumsoftware.net/cleditor/gettingstarted>
 
-<details><summary>node_modules\cl-editor\README.md</summary>
+<details><summary> node_modules\cl-editor\README.md </summary>
 
 ## Lightweight text editor
 
