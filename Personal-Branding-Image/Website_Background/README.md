@@ -99,6 +99,8 @@ Done. To undo this action, use 'ef migrations remove'
 229. api/SiteReception/5 一定要傳參數否則不會匹配 .net core router
 230. InvalidOperationException: Collection was modified; enumeration operation may not execute. -> 改為for <https://www.cnblogs.com/haoliansheng/p/3229774.html>
 231. 找 demo 時找到一個線上編譯器，就可以純邏輯探討省去 build 時間 -> <https://dotnetfiddle.net/Mobile?id=XVLAcH#code-editor>
+232. 雖然在演算法上卡了一段時間，但最後還是在今日又37分...完成了，成果如下 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/Controllers/SiteReceptionController.cs>
+233. 接著就要進行動態 AJAX 渲染畫面了 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
 
 ---------------------------
 
