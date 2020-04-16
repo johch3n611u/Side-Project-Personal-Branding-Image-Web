@@ -27,6 +27,7 @@
 131. 接著 <https://dotblogs.com.tw/topcat/2017/07/12/115753> 前端 Component 部分。
 132. back to <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 
+---------------------------
 
 144. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 145. 建置 news db <https://dbdiagram.io/d/5e86e0544495b02c3b89305d>
@@ -68,6 +69,7 @@ Done. To undo this action, use 'ef migrations remove'
 160. 沒用到 inject 時，記得將 api 模板產生的 controller 調整一下否則 request 無法訪問 <https://stackoverflow.com/questions/46930090/unable-to-resolve-service-for-type-while-attempting-to-activate/46930161>
 161. 這裡先告一段落，接續處理 ng crud table 等內容。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 
+---------------------------
 
 193. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 194. 上一次 creat_at timestamp -> varchar(50) 有動到 SQL Service 可能造成 EF Models 有問題，所以先嘗試解決。( 確定就是此問題 )
@@ -76,6 +78,7 @@ Done. To undo this action, use 'ef migrations remove'
 197. 重複 get 一次資料更新 table 但是寫了重複的程式碼，趕時間所以先繼續，有機會再重構。
 198. 接著要處理 Creat 與 Update 的頁面回到 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 
+---------------------------
 
 206. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp>
 207. 取得參數 private route: ActivatedRoute <https://angular.tw/tutorial/toh-pt5>，<https://ithelp.ithome.com.tw/articles/10226927>，<https://medium.com/chikuwa-tech-study/angular-%E7%AC%AC9%E8%AA%B2-%E8%B7%AF%E7%94%B1%E6%94%9C%E5%B8%B6%E5%8F%83%E6%95%B8-39a4d4f05448>
@@ -84,6 +87,7 @@ Done. To undo this action, use 'ef migrations remove'
 210. 嘗試各種生命週期還是無用，最後靠 router 轉址硬卡參數才成功 <https://angular.tw/guide/lifecycle-hooks>
 211. 雖然複雜的 cleditor 渲染放在不同的生命週期會整個報錯，但是 title 還是要藉由不同生命週期去調整，最後終於完成連動 ... 洗個澡要來寫串接 api 功能了。
 
+---------------------------
 
 222. 接著 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
 223. 不再前端組合查詢語言，只有單一 api 接口與單一參數 get 固定內容，首先 

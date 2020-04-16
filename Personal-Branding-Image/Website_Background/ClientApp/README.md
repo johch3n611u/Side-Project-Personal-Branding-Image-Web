@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 已更新至以下版本
 
+<details><summary> ng version </summary>
+
 ```JavaScript
 Angular CLI: 9.1.0-rc.0
 Node: 12.16.1
@@ -37,6 +39,8 @@ rxjs                                       6.5.3
 typescript                                 3.8.3
 webpack                                    4.42.0
 ```
+
+</details>
 
 ## Development server
 
@@ -502,6 +506,8 @@ found 2 low severity vulnerabilities
 141. 在實作 CRUD API 前，先依照社群大大給的建議架構重新整理了一下架構。 <https://forum.angular.tw/t/topic/1758/2>
 142. 主要是藉由 AuthGuard 直接將組件分為需要驗證與不需要驗證，而需要驗證的因為需要子路由所以依功能延伸，但資料夾較難分類，所以先改路由並先去
 143. 實作 Web API <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
+
+---------------------------
 
 162. <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background> API 利用樣板產生告一段落，接著處理 table,sort_header,paginator-> <https://ithelp.ithome.com.tw/m/articles/10196731>
 163. fakedata -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/StudyProject/Angular%20Basis/todolist2/src/app/todo-list.service.ts>
