@@ -448,8 +448,6 @@ Package '@angular/animations' is already up to date.
 87. ng new ClientApp --routing  --style=scss
 88. 成功了但是還是有以下異常，可能整個 npm 都要整理一下。
 
-<details><summary> Error msg </summary>
-
 ```JavaScript
 Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/common : es2015 as esm2015
 
@@ -457,8 +455,6 @@ Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/platform-browser : e
 
 Microsoft.AspNetCore.SpaServices: Error: Compiling @angular/platform-browser-dynamic : es2015 as esm2015
 ```
-
-</details>
 
 89. <https://stackoverflow.com/questions/55406292/timeoutexception-the-angular-cli-process-did-not-start-listening-for-requests-w>
 90. 莫名其妙在 angular.json 加上 "progress": true 就又恢復正常 debug 模式 ...
@@ -560,8 +556,6 @@ found 2 low severity vulnerabilities
 174. 因為 timestamp 資料型態必須做多一次的轉內容，又沒其他地方需要用到 timestamp 型態，所以從根本上 SQL Server 直接做修改。<https://pjchender.github.io/2017/12/27/js-javascript-date-time-method-%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93/>。<https://dotblogs.com.tw/kevinya/2014/09/05/146474>
 175. matTable 是依照 flexbox 排版組合，所以客製化樣式，ng 會依照 matColumnDef 將 class 產生，只要寫入 CSS 即可 Sample 如下。 -> class="mat-header-cell cdk-header-cell cdk-column-id mat-column-id ng-star-inserted"
 
-<details><summary> CSS </summary>
-
 ```CSS
 .mat-column-user {
   max-width: 100px;
@@ -577,8 +571,6 @@ found 2 low severity vulnerabilities
   cursor: pointer;
 }
 ```
-
-</details>
 
 176. 資料顯示設定完後是結合另外兩個元件的用法， NG 在這方面拆得非常開，另外兩個元件也可以在別處使用不局限於 matTable ，分頁元件與排序元件。
 177. 再來是進階應用的 data source filter。以上使用方式都直接看程式碼較方便理解。<https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/ClientApp/src/app/home/mangement/management.component.ts>
