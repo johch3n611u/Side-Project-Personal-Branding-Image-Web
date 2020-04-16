@@ -101,15 +101,6 @@ Done. To undo this action, use 'ef migrations remove'
 231. 找 demo 時找到一個線上編譯器，就可以純邏輯探討省去 build 時間 -> <https://dotnetfiddle.net/Mobile?id=XVLAcH#code-editor>
 232. 雖然在演算法上卡了一段時間，但最後還是在今日又37分...完成了，成果如下 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/Controllers/SiteReceptionController.cs>
 233. 接著就要進行動態 AJAX 渲染畫面了 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
-234.　API Response demo ↓ (應該照理來說是要寫一個基本　API　文件頁面的，記得後端有 Swagger 套件能較美觀較快速地完成，這邊先不談) -> <https://kevintsengtw.blogspot.com/2015/12/aspnet-web-api-swagger.html>　
-
-<details><summary> JSON </summary>
-
-```JSON
-
-```
-
-</details>
 
 ---------------------------
 
