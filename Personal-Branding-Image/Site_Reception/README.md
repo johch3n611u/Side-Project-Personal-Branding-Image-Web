@@ -34,9 +34,9 @@
 
 234.　API Response ↓ (應該照理來說是要寫一個基本　API　文件頁面的，記得後端有 Swagger 套件能較美觀較快速地完成，這邊先不談) -> <https://kevintsengtw.blogspot.com/2015/12/aspnet-web-api-swagger.html>
 
-<details><summary> JSON </summary>
-
 ![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/api_document.png)
+
+<details><summary> JSON </summary>
 
 ```HTML
 
