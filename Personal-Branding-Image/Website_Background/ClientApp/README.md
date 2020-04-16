@@ -1,4 +1,4 @@
-# Website_Background
+# Website_Background_Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
@@ -84,6 +84,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 57. 看到以下文章發現似乎在去年就有類似問題且官方已修正?如果透過 dotnet run 似乎可以成功運行。 <https://developercommunity.visualstudio.com/content/problem/234150/the-angular-cli-process-did-not-start-listening-fo.html>
 58. 所以直接刪除整個專案重新測試
 
+<details><summary> CMD </summary>
+
 ```JavaScript
 D:\Desk\Side-Project-Personal-Branding-Image-Web\Personal-Branding-Image>cd Website_Background
 
@@ -134,6 +136,8 @@ See "C:\Users\liu\AppData\Local\Temp\ng-RmcGse\angular-errors.log" for further d
 D:\Desk\Side-Project-Personal-Branding-Image-Web\Personal-Branding-Image\Website_Background\ClientApp>
 ```
 
+</details>
+
 59. ng version 後 An unhandled exception occurred: ENOENT: no such file or directory, scandir
 60. 似乎 Visual Studio 起的專案，在還沒編譯第一次前 Angular 是還沒起專案的。
 61. 所以嘗試在執行 1-50 步驟前先改為 scss 編譯。
@@ -141,6 +145,8 @@ D:\Desk\Side-Project-Personal-Branding-Image-Web\Personal-Branding-Image\Website
 63. 1>Restoring dependencies using 'npm'. This may take several minutes... <https://stackoverflow.com/questions/58158344/restoring-dependencies-using-npm-this-may-take-several-minutes-in-visual-stud>
 64. Data path ".projects['Website_Background']" should NOT have additional properties(@schematics/angular:component).
 65. 似乎只能改除了 schematics 外的東西，不知道會不會影響到其他問題。重新起了一次專案重新執行 1-50 步驟
+
+<details><summary> ng version </summary>
 
 ```JavaScript
 Your global Angular CLI version (9.0.7) is greater than your local
@@ -175,6 +181,8 @@ typescript                                 3.5.3
 webpack                                    4.39.2
 ```
 
+</details>
+
 66. nvm version -> nvm version 1.1.7
 67. nvm list -> * 12.16.1 (Currently using 64-bit executable)
 68. node -v -> v12.16.1
@@ -187,6 +195,8 @@ UPDATE src/app/app.module.ts (1250 bytes)
 74. npm ls -g -> -g 全域套件, -l 詳細內容
 75. 結果發現 VS ng 專案，安裝了一堆東西 ... 果斷先不看
 76. npm install --save @angular/material @angular/cdk -> 有點慘版本太高依賴高版本 ng core
+
+<details><summary> CMD </summary>
 
 ```JavaScript
 npm
@@ -215,7 +225,9 @@ found 78 vulnerabilities (77 low, 1 moderate)
   run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
-77. ng update
+</details>
+
+77. <details><summary> ng update </summary>
 
 ```JavaScript
 Your global Angular CLI version (9.0.7) is greater than your local
@@ -246,6 +258,8 @@ Found 40 dependencies.
       @nguniversal/aspnetcore-engine            8.1.1 -> 8.2.6           ng update @nguniversal/aspnetcore-engine
       rxjs                                      6.5.4 -> 6.5.5           ng update rxjs
 ```
+
+</details>
 
 78. ng update --all --force -> 不知道為何就是強制更新不了 ...
 79. ng update @angular/cli @angular/core --allow-dirty --force -> <https://stackoverflow.com/questions/56773528/repository-is-not-clean-please-commit-or-stash-any-changes-before-updating-in-a>
