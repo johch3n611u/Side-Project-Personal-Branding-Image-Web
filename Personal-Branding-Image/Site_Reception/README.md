@@ -36,7 +36,18 @@
 
 <details><summary> JSON </summary>
 
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/api_document.png)
+
 ```HTML
+
+限制 api response header :
+// https://docs.microsoft.com/zh-tw/aspnet/core/web-api/advanced/formatting?view=aspnetcore-3.1
+[ApiController]
+[Route("[controller]")]
+[Produces("application/json")]
+public class WeatherForecastController : ControllerBase
+{
+
 
 Path : https://localhost:44367/
 
