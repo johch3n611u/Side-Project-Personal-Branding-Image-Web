@@ -12,6 +12,7 @@ namespace Website_Background.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class SiteReceptionController : ControllerBase
     {
         //https://localhost:44367/

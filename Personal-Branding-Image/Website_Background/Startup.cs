@@ -33,6 +33,7 @@ namespace Website_Background
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // https://blog.johnwu.cc/article/ironman-day16-asp-net-core-multiple-environments.html
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

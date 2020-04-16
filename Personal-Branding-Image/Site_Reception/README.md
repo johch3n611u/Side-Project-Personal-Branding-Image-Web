@@ -42,11 +42,136 @@ Path : https://localhost:44367/
 
 GET: api/SiteReception/1
 
+[
+    {
+        "id": 49,
+        "sort": "asdasdasdasd",
+        "title": "dasdasd",
+        "subtitle": "dasdasdasdasd",
+        "content_text": "asdadada",
+        "content_html": "asdadada",
+        "img_url": "asdasdsada",
+        "created_at": "2020-04-16 11:11:48"
+    },
+    {
+        "id": 47,
+        "sort": "測試",
+        "title": "測試",
+        "subtitle": "測試",
+        "content_text": "測試",
+        "content_html": "<div style=\"text-align: center;\">測試<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/California_123.svg/449px-California_123.svg.png\"></div>",
+        "img_url": "測試s",
+        "created_at": "2020-04-15 23:09:36"
+    },
+    {
+        "id": 51,
+        "sort": "測試5",
+        "title": "測試5",
+        "subtitle": "測試5",
+        "content_text": "測試5",
+        "content_html": "測試5",
+        "img_url": "測試5",
+        "created_at": "2020-04-16 20:45:21"
+    },
+    {
+        "id": 46,
+        "sort": "首篇",
+        "title": "後台完成感想",
+        "subtitle": "劉育誠編輯",
+        "content_text": "登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...\n",
+        "content_html": "<div style=\"text-align: left;\">登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular &amp; DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...<br></div>",
+        "img_url": "",
+        "created_at": "2020-04-15 18:29:51"
+    }
+]
+
 GET: api/SiteReception/2
+
+[
+    {
+        "id": 46,
+        "subtitle": "劉育誠編輯",
+        "date": "2020-04"
+    },
+    {
+        "id": 47,
+        "subtitle": "測試",
+        "date": "2020-04"
+    },
+    {
+        "id": 49,
+        "subtitle": "dasdasdasdasd",
+        "date": "2020-04"
+    },
+    {
+        "id": 50,
+        "subtitle": "測試",
+        "date": "2020-04"
+    },
+    {
+        "id": 51,
+        "subtitle": "測試5",
+        "date": "2020-04"
+    }
+]
 
 GET: api/SiteReception/3
 
+[
+    {
+        "id": 51,
+        "title": "測試5",
+        "subtitle": "測試5",
+        "content_text": "測試5",
+        "img_url": "測試5",
+        "created_at": "2020-04-16 20:45:21"
+    },
+    {
+        "id": 50,
+        "title": "測試",
+        "subtitle": "測試",
+        "content_text": "測試測試測試測試測試測試測試",
+        "img_url": "測試",
+        "created_at": "2020-04-16 11:12:46"
+    },
+    {
+        "id": 49,
+        "title": "dasdasd",
+        "subtitle": "dasdasdasdasd",
+        "content_text": "asdadada",
+        "img_url": "asdasdsada",
+        "created_at": "2020-04-16 11:11:48"
+    },
+    {
+        "id": 47,
+        "title": "測試",
+        "subtitle": "測試",
+        "content_text": "測試",
+        "img_url": "測試s",
+        "created_at": "2020-04-15 23:09:36"
+    },
+    {
+        "id": 46,
+        "title": "後台完成感想",
+        "subtitle": "劉育誠編輯",
+        "content_text": "登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...\n",
+        "img_url": "",
+        "created_at": "2020-04-15 18:29:51"
+    }
+]
+
 GET: api/News/id
+
+{
+    "id": 46,
+    "sort": "首篇",
+    "title": "後台完成感想",
+    "subtitle": "劉育誠編輯",
+    "contentText": "登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...\n",
+    "contentHtml": "<div style=\"text-align: left;\">登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular &amp; DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...<br></div>",
+    "imgUrl": "",
+    "createdAt": "2020-04-15 18:29:51"
+}
 
 ```
 
