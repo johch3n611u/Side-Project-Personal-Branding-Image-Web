@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Website_Background.Models;
+using Dapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Website_Background.Controllers
 {
@@ -13,21 +15,38 @@ namespace Website_Background.Controllers
     public class SiteReceptionController : ControllerBase
     {
         //https://localhost:44367/
-        public Website_BackgroundContext WB_Context = new Website_BackgroundContext();
-
         // GET: api/SiteReception/5
         [HttpGet("{id}")]
         public async Task<ActionResult<News>> GetNews(int id)
         {
-            var news = await WB_Context.News.FindAsync(id);
+            // ㊝㊝㊝㊝㊝ https://ithelp.ithome.com.tw/articles/10225378 ㊝㊝㊝㊝㊝
+            // https://esofar.gitbooks.io/dapper-tutorial-cn/content/methods/query-first.html
+            using (var Connection = new Website_BackgroundContext().Database.GetDbConnection()) {
+            
+            
+            
+            
+            
+            
+            
+            
 
-            if (news == null)
-            {
-                return NotFound();
+
+
+
+
+            
             }
 
+            //var news = await news;
 
-            return news;
+            //if (news == null)
+            //{
+            //    return NotFound();
+            //}
+
+
+            return NotFound() /*news*/;
         }
 
     }
