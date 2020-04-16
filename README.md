@@ -223,7 +223,19 @@ _
 
 <https://medium.com/html-test/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E4%BD%BF%E7%94%A8npm%E5%A5%97%E4%BB%B6-317beefdf182>
 
+### Dapper
+
+<https://esofar.gitbooks.io/dapper-tutorial-cn/content/>
+
+<https://ithelp.ithome.com.tw/users/20105988/ironman/2161>
+
+<https://dotblogs.com.tw/initials/2016/10/31/115213>
+
+<https://dotblogs.com.tw/OldNick/2018/01/15/Dapper#QueryFirst>
+
 ### Other
+
+<https://dotnetfiddle.net/>
 
 <https://softwareengineering.stackexchange.com/questions/278686/having-a-production-branch-or-using-master>
 

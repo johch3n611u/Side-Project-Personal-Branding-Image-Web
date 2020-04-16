@@ -91,11 +91,14 @@ Done. To undo this action, use 'ef migrations remove'
 
 222. 接著 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
 223. 不再前端組合查詢語言，只有單一 api 接口與單一參數 get 固定內容，首先
-224. ㊀ aboutmepage 四篇內容，四張圖，四則純文字與文章 id，
+224. ㊀ aboutmepage 四篇內容，四張圖，四則純文字與文章 id (隨機選四篇)
 225. ㊁ productspage 年份月份 sort 每年分月份文章數量 隨機渲染顏色 icon 與副標題小字與 id ， (年份月份或純年份依照整理出來的文章數量待訂)
 226. ㊂ 所有文章數量 與 圖片連結與文章純文字與 id
-227. postspage 內容則直接使用舊 api/News/id 做直接查詢顯示 ，這裡查詢與組合條件較複雜，想藉由 Dapper 使用純 SSMS TSQL 處理，順道幫 SSMS 安裝 <https://www.devart.com/> 應該是這個 conplete 有點忘記是不是。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/Controllers/SiteReceptionController.cs>
+227. postspage 內容則直接使用舊 api/News/id 做直接查詢顯示 ，這裡查詢與組合條件較複雜，想藉由 Dapper 使用純 SSMS TSQL 處理，順道幫 SSMS 安裝 <https://www.devart.com/> 應該是這個 complete 有點忘記是不是。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/Controllers/SiteReceptionController.cs>
 228. 這裡有些麻煩，因為設計的 data 有些內容必須決定是在 service 計算組成 JSON 後再由 client 直接取值使用，或是到 client 再利用資料去做計算，最後決定在 service 端計算，因為都使用 dapper 了。
+229. api/SiteReception/5 一定要傳參數否則不會匹配 .net core router
+230. InvalidOperationException: Collection was modified; enumeration operation may not execute. -> 改為for <https://www.cnblogs.com/haoliansheng/p/3229774.html>
+231. 找 demo 時找到一個線上編譯器，就可以純邏輯探討省去 build 時間 -> <https://dotnetfiddle.net/Mobile?id=XVLAcH#code-editor>
 
 ---------------------------
 

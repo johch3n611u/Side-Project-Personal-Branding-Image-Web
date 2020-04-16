@@ -90,13 +90,17 @@ export class PostsComponent implements OnInit {
   // Program sequence run 2
   Poststitle = 'Publish';
   id = +this.route.snapshot.paramMap.get('id');
-  // ngOnChanges() { }
+
+  ngOnChanges() { }
 
   // Program sequence run 7
   ngDoCheck() {
     this.id = +this.route.snapshot.paramMap.get('id');
     // console.log('ngDoCheck=>id=' + this.id);
-    if (this.id == 0) { this.Poststitle = 'Publish'; }
+    if (this.id == 0) {
+      this.Poststitle = 'Publish';
+      this.resetform();
+    }
   }
 
   ngAfterContentInit() { }
@@ -116,7 +120,7 @@ export class PostsComponent implements OnInit {
     if (this.id !== 0) {
       //console.log('id!=0,id=' + this.id);
       this.Poststitle = 'Edit';
-    }
+    } 
   }
 
   submit() {
@@ -199,6 +203,24 @@ export class PostsComponent implements OnInit {
         console.log('ErrorGetQuery:' + value);
       });
     }
+
+  }
+
+  resetform() {
+
+    if (this.form.value.id != '') { 
+    this.form.patchValue(
+      {
+        sort: '',
+        title: '',
+        subtitle: '',
+        contentText: '',
+        contentHtml: '',
+        imgUrl: '',
+        id: ''
+      }
+    );
+    document.getElementsByClassName('cl-content')[0].innerHTML = '';}
 
   }
 
