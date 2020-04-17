@@ -220,7 +220,6 @@
                     See more &gt;&gt;
                 </div>
             </a>
-            </a>
             <div class="card">
                 <a href="Products.html">
                     <!-- img size 412pxx412px -->
@@ -271,9 +270,19 @@
     <div class="footer">
         <span>Copyright © 2020</span>
     </div>
-
+    <div id="myDiv"></div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+    <script>
+        $(document).ready(function() {
 
+            htmlobj = $.ajax({
+                url: "/assets/fakejson/api_SiteReception_1.json",
+                async: false
+            });
+            $("#myDiv").html(htmlobj);
+
+        });
+    </script>
 </body>
 
 </html>
