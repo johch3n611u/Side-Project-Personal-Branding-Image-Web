@@ -9,7 +9,11 @@ $(document).ready(function() {
             // console.log(document);
             // console.log(data[0].id);
 
-            for (i = 0; i < 4; i++) {
+            console.log('log data.length=' + data.length);
+            var datalength = data.length;
+            console.log('log var datalength=' + data.length);
+
+            for (i = 0; i < data.length; i++) {
 
                 var id = data[i].id;
                 var sort = data[i].sort;
@@ -24,13 +28,13 @@ $(document).ready(function() {
 
                 $('.card')[i].innerHTML = combination;
 
-                console.log('for is working');
+                console.log('JQ AJAX for loop is Working.');
             }
 
         },
         timeout: 20000,
         error: function() {
-            alert('AJAX error !!!');
+            alert('JQ AJAX for loop is Error !!!');
         }
     });
 });

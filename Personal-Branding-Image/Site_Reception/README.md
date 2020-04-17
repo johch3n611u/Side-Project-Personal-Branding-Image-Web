@@ -263,3 +263,4 @@ GET: api/News/id
 247. 以往沒有試過這種方式套版，嘗試第二種，接下來其他頁面如符合第一種需求再利用第一種。 -> <https://www.w3school.com.cn/jquery/jquery_dom_add.asp>
 248. Empty is not a function [duplicate] <https://stackoverflow.com/questions/44073126/empty-is-not-a-function>
 249. 動態渲染成功一頁，在靜態頁面間互傳遞參數上遇到問題才發現，原來只有動態網頁才會帶有參數... -> <https://blog.csdn.net/csdn_ds/article/details/78393564>
+250. 結果似乎是 ajax data length 抓取出錯，才導致 get 網址出不來，應該是小事 <https://stackoverflow.com/questions/46660460/how-to-find-the-length-of-success-data-in-jquery-ajax>
