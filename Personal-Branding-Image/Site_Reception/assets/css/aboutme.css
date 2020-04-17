@@ -1,0 +1,479 @@
+body {
+    background-color: darkslategrey;
+}
+
+
+/* https://daneden.github.io/animate.css/ */
+
+@keyframes rubberBand {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.rubberBand:hover {
+    animation-name: rubberBand;
+    transform-origin: center bottom;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    color: aquamarine;
+}
+
+.rubberBand {
+    display: inline-block;
+    margin: 2px;
+}
+
+.rubberBand_rightnow {
+    display: inline-block;
+    animation-name: rubberBand;
+    transform-origin: center bottom;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    color: rgb(247, 102, 100);
+}
+
+.content_1 {
+    position: relative;
+    margin: 5px;
+    padding: 50px;
+    background-color: rgb(37, 38, 42);
+    color: floralwhite;
+    border-radius: 20px;
+    height: 90vh;
+}
+
+.text_box {
+    display: inline-block;
+    margin: 10% 5%;
+}
+
+.inf_card {
+    position: absolute;
+    border-radius: 10px;
+    width: 20%;
+    right: 23%;
+    top: 25%;
+    /* box-shadow: 3px 3px; */
+    color: black;
+    animation-name: tada;
+    animation-duration: 2s;
+}
+
+@keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.head_shot {
+    position: absolute;
+    border-radius: 10px;
+    width: 20%;
+    right: 6%;
+    top: 30%;
+    /* box-shadow: 3px 3px; */
+    color: black;
+}
+
+.content_2 {
+    position: relative;
+    display: flex;
+    margin: 5px;
+    padding: 50px;
+    background-color: rgb(86, 108, 115);
+    color: floralwhite;
+    border-radius: 20px;
+    height: 98vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_box_paragraph {
+    margin: 20px;
+}
+
+.content_2_background {
+    font-size: 45em;
+    opacity: 0.05;
+    position: absolute;
+    top: -0.2em;
+}
+
+.skill_box {
+    position: absolute;
+    width: 70%;
+}
+
+.ribbon {
+    display: inline-block;
+    position: relative;
+    width: 118px;
+    padding: 0px;
+    margin: 3%;
+    background: #FFA000;
+    font-size: 20px;
+    color: #555;
+    text-align: center;
+}
+
+.ribbon>* {
+    text-shadow: none;
+    color: black;
+    font-size: 1.3em;
+}
+
+.ribbon:before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    border: 19px solid #F57F17;
+    z-index: 1;
+    left: -28px;
+    border-right-width: 9px;
+    border-left-color: transparent;
+}
+
+.ribbon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    border: 19px solid #F57F17;
+    z-index: 1;
+    right: -51px;
+    border-left-width: 32px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+
+/* https://blog.techbridge.cc/2017/11/17/drawing-css-image/ */
+
+
+/* https://ithelp.ithome.com.tw/articles/10193056 */
+
+.skill_level_box {
+    position: relative;
+    display: inline-block;
+    margin-left: 2%;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1% / 50%;
+    width: 82%;
+}
+
+
+/* https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius */
+
+.skill_level_1 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_1;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_level_2 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_2;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_level_3 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_3;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_level_4 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_4;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_level_5 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_5;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_level_6 {
+    position: absolute;
+    height: 15px;
+    background-color: rgb(223, 64, 148);
+    z-index: 1;
+    margin: 5px 15px;
+    opacity: 0.7;
+    animation-name: skill_level_6;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.skill_text {
+    z-index: 100000000000;
+    display: inline-block;
+    position: relative;
+    margin: 0px 25px;
+}
+
+@keyframes skill_level_1 {
+    0% {
+        width: 0px;
+        background-color: rgb(2, 253, 209);
+    }
+    20% {
+        width: 50px;
+    }
+    30% {
+        width: 100px;
+    }
+    50% {
+        background-color: rgb(125, 130, 154);
+        width: 220px;
+    }
+    90% {
+        width: 300px;
+    }
+    100% {
+        width: 400px;
+    }
+}
+
+@keyframes skill_level_2 {
+    0% {
+        width: 0px;
+        background-color: rgb(2, 253, 209);
+    }
+    20% {
+        width: 150px;
+    }
+    30% {
+        width: 250px;
+    }
+    50% {
+        background-color: rgb(125, 130, 154);
+        width: 500px;
+    }
+    90% {
+        width: 600px;
+    }
+    100% {
+        width: 700px;
+    }
+}
+
+@keyframes skill_level_3 {
+    0% {
+        background-color: rgb(2, 253, 209);
+        width: 0px;
+    }
+    20% {
+        width: 150px;
+    }
+    30% {
+        width: 250px;
+    }
+    50% {
+        background-color: rgb(125, 130, 154);
+        width: 350px;
+    }
+    90% {
+        width: 450px;
+    }
+    100% {
+        width: 500px;
+    }
+}
+
+@keyframes skill_level_4 {
+    0% {
+        background-color: rgb(2, 253, 209);
+        width: 0px;
+    }
+    20% {
+        width: 150px;
+    }
+    30% {
+        width: 250px;
+    }
+    50% {
+        background-color: rgb(125, 130, 154);
+        width: 500px;
+    }
+    90% {
+        width: 700px;
+    }
+    100% {
+        width: 800px;
+    }
+}
+
+@keyframes skill_level_5 {
+    0% {
+        background-color: rgb(2, 253, 209);
+        width: 0px;
+    }
+    20% {
+        width: 150px;
+    }
+    30% {
+        background-color: rgb(125, 130, 154);
+        width: 250px;
+    }
+    50% {
+        width: 500px;
+    }
+    90% {
+        width: 600px;
+    }
+    100% {
+        width: 700px;
+    }
+}
+
+@keyframes skill_level_6 {
+    0% {
+        background-color: rgb(2, 253, 209);
+        width: 0px;
+    }
+    20% {
+        width: 150px;
+    }
+    30% {
+        background-color: rgb(125, 130, 154);
+        width: 250px;
+    }
+    50% {
+        width: 300px;
+    }
+    90% {
+        width: 400px;
+    }
+    100% {
+        width: 450px;
+    }
+}
+
+.content_3 {
+    position: relative;
+    display: flex;
+    margin: 5px;
+    padding: 50px;
+    background-color: rgb(11, 16, 19);
+    color: floralwhite;
+    border-radius: 20px;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: 1%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    height: 85%;
+    overflow: hidden;
+    padding-bottom: 610px;
+}
+
+.card>a {
+    color: black;
+}
+
+.card>*>img {
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 0 1em 0 rgba(255, 255, 255, 1);
+}
+
+.container {
+    padding: 2px 16px;
+    margin: 2px;
+}
+
+.container>* {
+    text-shadow: none;
+    margin: 2%;
+}
+
+.container>*>* {
+    text-shadow: none;
+}
+
+.content_3>a {
+    color: white;
+}
+
+
+/* https://www.w3schools.com/howto/howto_css_cards.asp */

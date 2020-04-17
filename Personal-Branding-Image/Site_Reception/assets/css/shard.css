@@ -1,0 +1,136 @@
+ @media screen and (max-width: 500px) {
+     img.icon {
+         display: none;
+     }
+     .content_left .content_right {
+         line-height: 500px;
+     }
+     .content_left:hover .content_right:hover {
+         animation-name: content;
+         animation-duration: 1.5s;
+     }
+     @keyframes content {
+         10% {
+             background-color: black;
+         }
+     }
+     .content_pre {
+         height: 550px;
+     }
+ }
+ 
+ @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap);
+ * {
+     font-family: 'Noto Sans TC', sans-serif;
+     text-shadow: 2px 2px 2px black;
+     box-sizing: border-box;
+     text-decoration: none;
+     list-style-type: none
+ }
+ 
+ body {
+     margin: 0;
+     height: 100vh;
+     position: absolute;
+     width: 100%;
+ }
+ 
+ .topnav {
+     position: relative;
+     background-color: #333;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     /* https://www.zhihu.com/question/26821863 */
+     line-height: 0;
+     animation-name: topnav;
+     animation-duration: 3s;
+ }
+ 
+ .topnav>a.rotate :hover {
+     color: black;
+     opacity: 0.5;
+     transform: rotate(360deg);
+     transition: transform 1s linear;
+ }
+ 
+ .topnav h1 {
+     color: white;
+     padding: 2px 40px;
+ }
+ 
+ .icon {
+     width: 60px;
+     margin: 0px 20px;
+ }
+ 
+ @keyframes topnav {
+     from {
+         top: -1000%;
+     }
+     to {
+         top: 0%;
+     }
+ }
+ 
+ .icon_right {
+     position: relative;
+     animation-name: topnav_right;
+     animation-duration: 5s;
+ }
+ 
+ .icon_left {
+     position: relative;
+     animation-name: topnav_left;
+     animation-duration: 5s;
+ }
+ 
+ @keyframes topnav_right {
+     0% {
+         right: -1000px;
+     }
+     70% {
+         right: 0px;
+     }
+     80% {
+         right: 500px;
+     }
+     100% {
+         right: 0px;
+     }
+ }
+ 
+ @keyframes topnav_left {
+     0% {
+         left: -1000px;
+     }
+     70% {
+         left: 0px;
+     }
+     80% {
+         left: 500px;
+     }
+     100% {
+         left: 0px;
+     }
+ }
+ 
+ .footer {
+     position: relative;
+     background-color: #333;
+     padding: 15px;
+     color: white;
+     animation-name: footer;
+     animation-duration: 3s;
+     text-align: center;
+     bottom: 0;
+ }
+ 
+ @keyframes footer {
+     from {
+         bottom: -5000%;
+     }
+     to {
+         bottom: 0;
+     }
+ }

@@ -191,3 +191,6 @@ GET: api/News/id
 235. 接續 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
 236. 動態編譯的部分可能可以嘗試 VS .NET Core API 開著，再利用　VS Code LiveService 去開 Site_Reception 會較快。今日先到這
 237. 前台動態渲染使用 CDN JQ -> ctrl + p -> keyword >cdnjs -> search for library -> library name
+238. body 底部引入 -> <https://www.twblogs.net/a/5b8756c92b71775d1cd698bb>
+239. 這邊渲染部分好像也可以分成兩種做法 1. service 在處理資料時就處理成能渲染成畫面的 HTML 傳純 Text 至 client 直接用簡單 js 處理 innerHTML 即可解決。 2.傳 JSON 至前端利用 JQ 等前端函式庫處理，做法較活也能配合各個套件。
+240. 比較來說其實第二種也不一定活，因為每種函式庫或套件的需求 JSON 格式也不一樣，不一定能一份 JSON 滿足所有，但在前公司已經嘗試過第一種方式，所以這邊嘗試第二種方式。
