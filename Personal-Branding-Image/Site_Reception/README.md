@@ -197,6 +197,8 @@ GET: api/News/id
 241. 首先先利用 JQ 拿取後端資料，先建立 fake.json 較好操作。-> <https://www.w3school.com.cn/jquery/ajax_ajax.asp>
 242. 類似於套版?其實就是套版? 所以先來看第一個部分
 
+## Dynamic render part 1
+
 ![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/dynamic_render_part1.png)
 
 ```HTML
@@ -264,3 +266,50 @@ GET: api/News/id
 248. Empty is not a function [duplicate] <https://stackoverflow.com/questions/44073126/empty-is-not-a-function>
 249. 動態渲染成功一頁，在靜態頁面間互傳遞參數上遇到問題才發現，原來只有動態網頁才會帶有參數... -> <https://blog.csdn.net/csdn_ds/article/details/78393564>
 250. 結果似乎是 ajax data length 抓取出錯，才導致 get 網址出不來，應該是小事 <https://stackoverflow.com/questions/46660460/how-to-find-the-length-of-success-data-in-jquery-ajax>
+251. 莫名其妙沒改什麼就好了... -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/assets/js/aboutme.js>
+252. 這邊其實應該將 url 拉出來做一個 shard data 的概念，但 js 不熟能跑就好，先繼續。
+
+## Dynamic render part 2
+
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/dynamic_render_part2.png)
+
+```HTML
+ <div class="content_catalog">
+            <div class="catalog_box">
+                <div class="catalog_box_column">
+                    <div class="year_title">2009</div>
+                    <div class="fack_catalog_box">
+                        <p>abc</p>
+                    </div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+                <div class="catalog_box_column">
+                    <div class="year_title">2010</div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+                <div class="catalog_box_column">
+                    <div class="year_title">2011</div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+                <div class="catalog_box_column">
+                    <div class="year_title">2012</div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+                <div class="catalog_box_column">
+                    <div class="year_title">2013</div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+                <div class="catalog_box_column">
+                    <div class="year_title">2014</div>
+                    <div class="fack_catalog_box"> </div>
+                </div>
+            </div>
+        </div>
+```
