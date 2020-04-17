@@ -199,66 +199,59 @@ GET: api/News/id
 ![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/dynamic_render_part1.png)
 
 ```HTML
-<div class="content_2">
-            <div class="skill_box">
-                <ul>
-                    <li>
-                        <div class="ribbon">
-                            <div>Font_end</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_1"></div>
-                            <div class="skill_text">HTML, Sass, Bootstrap, Angular2+, Most ES5 parts ES6, Some JS library...</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ribbon">
-                            <div>Back_end</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_2"></div>
-                            <div class="skill_text">C#, .NET Core 2.1+, ASP.NET Webform / MVC...</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ribbon">
-                            <div>Database</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_3"></div>
-                            <div class="skill_text">MS SQL, Stored Procedure, Normalization...</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ribbon">
-                            <div>Sketch</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_4"></div>
-                            <div class="skill_text">Adobe Photoshop /Illustrator /InDesign, AutoCad...</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ribbon">
-                            <div>Model</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_5"></div>
-                            <div class="skill_text">Sketchup Model / Vray, Rhino Grasshopper, Lumion Model / Animation...</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ribbon">
-                            <div>Other</div>
-                        </div>
-                        <div class="skill_level_box">
-                            <div class="skill_level_6"></div>
-                            <div class="skill_text">Video clip, UML, Analytics, planning, The art of questioning...</div>
-                        </div>
-                    </li>
-                </ul>
+<div class="content_3">
+            <div class="top_box">PROGRAMMING / DESIGNING _ SELECTED PROJECTS</div>
+            <a href="Products.html">
+                <div class="bottom_box">
+                    See more &gt;&gt;
+                </div>
+            </a>
+            <div class="card">
+                <a href="Products.html">
+                    <!-- img size 412pxx412px -->
+                    <img src="../img/sample1.png" alt="IMAGE">
+                    <div class="container">
+                        <h4><b>福德坑開發規劃 - 2020/07</b></h4>
+                        <p>
+                            福德坑環保復育公園－六日假日限定！全國最大免費滑草場景點福德坑環保復育公園－六日假日限定！全國最大免費滑草場景點福德坑環保復育公園－六日假日限定！全國最大免費滑草場景點福德坑環保復育公園－六日假日限定！全國最大免費滑草場景點／免費停車，刺激又好玩～野餐／放風箏／踏青／親子同樂好開心！福德坑環保復育公園－六日假日限定！全國最大免費滑草場景點／免費停車，刺激又好玩～野餐／放風箏／踏青／親子同樂好開心！
+                        </p>
+                    </div>
+                </a>
             </div>
-            <div class="content_2_background">SKILL</div>
+            <div class="card">
+                <a href="Products.html">
+                    <img src="../img/sample2.png" alt="IMAGE">
+                    <div class="container">
+                        <h4><b>世界十大建築奇蹟第二名佛洛倫薩大教堂穹頂 - 2007</b></h4>
+                        <p>
+                            義大利佛洛倫薩大教堂穹頂於1420年至1436年間建造，雖然橫跨長度為140英尺(約42米)，但此穹頂在建造時並沒有使用可支持的框架。建築工程師菲利普·布魯內萊斯基在設計建造該穹頂時曾大膽預言，無需任何內部腳手架，這在當時那個年代是不可能做到的。但是，他發明了一種全新的方式——分擔圓頂周圍的荷載，所以圓頂不會分裂。他還將一些石頭和鐵緊密粘合在一起，形成鎖鏈，並用人字斜紋磚堆砌保證了圓頂不會開裂，因此成為世界十大建築奇蹟第二名。
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Products.html">
+                    <img src="../img/sample3.png" alt="IMAGE">
+                    <div class="container">
+                        <h4><b>世界十大建築奇蹟第三名土耳其聖索非亞大教堂 - 2018</b></h4>
+                        <p>
+                            據說，土耳其伊斯坦堡的聖索非亞大教堂改變了建築史，它開創了間接荷載傳遞的理念，該建築的設計師大膽地說，穹頂不必從上直通地面。相反，穹頂以扇形的方式通向更多的圓頂。這一方法的應用促進了建築業的大發展。當時它成為1000多年來最大的禮拜場所，直到1520年建造了塞維亞大教堂。
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="Products.html">
+                    <img src="../img/sample4.png" alt="IMAGE>
+                    <div class="container">
+                        <h4><b>荷蘭三角洲工程 -2007</b></h4>
+                        <p>
+                            關鍵是堵截通向安特衛普市和鹿特丹市的河口。其基本前提很簡單：儘量減少海堤壩的決堤。但工程非常巨大，整個海岸線都改變了。整個工程包括12個大項目，1954年開始設計，1956年動工，1986年宣布竣工並正式啟用，共耗資120億荷盾。一些海灣的入口被大壩封閉，使得海岸線縮短了700公里。三角洲工程使荷蘭西南部地區擺脫了水患的困擾，改善了鹿特丹至比利時安特衛普的交通，促進了該地區、乃至全荷蘭的經濟發展。
+                        </p>
+                    </div>
+                </a>
+            </div>
         </div>
+    </div>
 ```
 
