@@ -52,8 +52,7 @@ namespace Website_Background.Models
 
                 entity.Property(e => e.ImgUrl)
                     .HasColumnName("img_url")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasColumnType("text");
 
                 entity.Property(e => e.Sort)
                     .HasColumnName("sort")

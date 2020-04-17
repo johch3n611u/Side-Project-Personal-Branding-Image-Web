@@ -136,6 +136,27 @@ body {
     top: -0.2em;
 }
 
+
+/* https://css-tricks.com/how-do-you-do-max-font-size-in-css/ */
+
+@media screen and (max-width: 1600px) {
+    .content_2_background {
+        font-size: 30em;
+        opacity: 0.05;
+        position: absolute;
+        top: -0.2em;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .content_2_background {
+        font-size: 10em;
+        opacity: 0.05;
+        position: absolute;
+        top: -0.2em;
+    }
+}
+
 .skill_box {
     position: absolute;
     width: 70%;
@@ -442,7 +463,6 @@ body {
     width: 40%;
     height: 85%;
     overflow: hidden;
-    padding-bottom: 610px;
 }
 
 .card>a {
@@ -465,6 +485,11 @@ body {
 .container>* {
     text-shadow: none;
     margin: 2%;
+}
+
+.container>p {
+    height: 15em;
+    overflow: hidden;
 }
 
 .container>*>* {

@@ -255,3 +255,11 @@ GET: api/News/id
         </div>
     </div>
 ```
+
+243. JQ 要求方法，似乎有蠻多種的 -> <https://www.w3school.com.cn/jquery/jquery_ajax_get_post.asp>
+244. 以往並沒有仔細了解 JQ 能幹嘛，都是局部的應用去使用，應該花點時間針對文件看一下，跟 JS 一樣，不過大致上看 Sidenav 能了解有啥使用方式..
+245. 但是為求時間就先參考 <https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/386334/> <https://awpluway.pixnet.net/blog/post/364195038>
+246. 這邊遇到一個問題是，當初沒有考慮到動態渲染問題， card div 外沒有用 div 容器包住它，現在包會造成排版問題，想到兩個解法，1.設置外殼改善跑版問題後動態刪除內容在動態產生。2.一個一個的置換現有內容內的資料。
+247. 以往沒有試過這種方式套版，嘗試第二種，接下來其他頁面如符合第一種需求再利用第一種。 -> <https://www.w3school.com.cn/jquery/jquery_dom_add.asp>
+248. Empty is not a function [duplicate] <https://stackoverflow.com/questions/44073126/empty-is-not-a-function>
+249. 動態渲染成功一頁，在靜態頁面間互傳遞參數上遇到問題才發現，原來只有動態網頁才會帶有參數... -> <https://blog.csdn.net/csdn_ds/article/details/78393564>
