@@ -196,6 +196,8 @@ GET: api/News/id
 240. 比較來說其實第二種也不一定活，因為每種函式庫或套件的需求 JSON 格式也不一樣，不一定能一份 JSON 滿足所有，但在前公司已經嘗試過第一種方式，所以這邊嘗試第二種方式。
 241. 類似於套版?其實就是套版? 所以先來看第一個部分
 
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/dynamic_render_part1.png)
+
 ```HTML
 <div class="content_2">
             <div class="skill_box">
