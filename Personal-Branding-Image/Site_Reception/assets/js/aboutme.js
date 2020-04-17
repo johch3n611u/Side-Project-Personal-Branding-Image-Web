@@ -1,15 +1,15 @@
 $(document).ready(function() {
     htmlobj = $.ajax({
         type: "GET",
-        url: "/assets/fakejson/api_SiteReception_1.json",
+        url: "../assets/fakejson/api_SiteReception_1.json",
         async: false,
         success: function(data) {
 
-            var url = '/News.html';
-            // console.log(data);
+            var url = 'News.html?id=';
+            // console.log(document);
             // console.log(data[0].id);
 
-            for (i = 0; i < data.lenght; i++) {
+            for (i = 0; i < 4; i++) {
 
                 var id = data[i].id;
                 var sort = data[i].sort;
@@ -23,12 +23,14 @@ $(document).ready(function() {
                 combination += content_text + '</p></div></a></div>';
 
                 $('.card')[i].innerHTML = combination;
+
+                console.log('for is working');
             }
 
         },
         timeout: 20000,
         error: function() {
             alert('AJAX error !!!');
-        },
+        }
     });
 });
