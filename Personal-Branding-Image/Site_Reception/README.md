@@ -268,6 +268,7 @@ GET: api/News/id
 250. 結果似乎是 ajax data length 抓取出錯，才導致 get 網址出不來，應該是小事 <https://stackoverflow.com/questions/46660460/how-to-find-the-length-of-success-data-in-jquery-ajax>
 251. 莫名其妙沒改什麼就好了... -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/assets/js/aboutme.js>
 252. 這邊其實應該將 url 拉出來做一個 shard data 的概念，但 js 不熟能跑就好，先繼續。
+253. 這裡比較麻煩當初重於設計畫面，現在遇到的問題是資料過多或過少時都會破壞版面，所以必須有個固定的內容。
 
 ## Dynamic render part 2
 
@@ -313,3 +314,5 @@ GET: api/News/id
             </div>
         </div>
 ```
+
+254. 吃個早餐回來再想...
