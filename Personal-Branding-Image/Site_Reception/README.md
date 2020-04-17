@@ -194,3 +194,69 @@ GET: api/News/id
 238. body 底部引入 -> <https://www.twblogs.net/a/5b8756c92b71775d1cd698bb>
 239. 這邊渲染部分好像也可以分成兩種做法 1. service 在處理資料時就處理成能渲染成畫面的 HTML 傳純 Text 至 client 直接用簡單 js 處理 innerHTML 即可解決。 2.傳 JSON 至前端利用 JQ 等前端函式庫處理，做法較活也能配合各個套件。
 240. 比較來說其實第二種也不一定活，因為每種函式庫或套件的需求 JSON 格式也不一樣，不一定能一份 JSON 滿足所有，但在前公司已經嘗試過第一種方式，所以這邊嘗試第二種方式。
+241. 類似於套版?其實就是套版? 所以先來看第一個部分
+
+```HTML
+<div class="content_2">
+            <div class="skill_box">
+                <ul>
+                    <li>
+                        <div class="ribbon">
+                            <div>Font_end</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_1"></div>
+                            <div class="skill_text">HTML, Sass, Bootstrap, Angular2+, Most ES5 parts ES6, Some JS library...</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ribbon">
+                            <div>Back_end</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_2"></div>
+                            <div class="skill_text">C#, .NET Core 2.1+, ASP.NET Webform / MVC...</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ribbon">
+                            <div>Database</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_3"></div>
+                            <div class="skill_text">MS SQL, Stored Procedure, Normalization...</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ribbon">
+                            <div>Sketch</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_4"></div>
+                            <div class="skill_text">Adobe Photoshop /Illustrator /InDesign, AutoCad...</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ribbon">
+                            <div>Model</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_5"></div>
+                            <div class="skill_text">Sketchup Model / Vray, Rhino Grasshopper, Lumion Model / Animation...</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ribbon">
+                            <div>Other</div>
+                        </div>
+                        <div class="skill_level_box">
+                            <div class="skill_level_6"></div>
+                            <div class="skill_text">Video clip, UML, Analytics, planning, The art of questioning...</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content_2_background">SKILL</div>
+        </div>
+```
+
