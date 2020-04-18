@@ -4,7 +4,7 @@ $(document).ready(function() {
         url: "../assets/fakejson/api_SiteReception_1.json",
         async: false,
         success: function(data) {
-
+            // console.log('URLobj.testpath.sitereception1=' + URLobj.testpath.sitereception1);
             var url = 'News.html?id=';
             // console.log(document);
             // console.log(data[0].id);
