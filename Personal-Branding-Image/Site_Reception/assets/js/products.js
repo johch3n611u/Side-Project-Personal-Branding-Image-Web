@@ -1,10 +1,11 @@
 $(document).ready(function() {
     htmlobj = $.ajax({
         type: "GET",
-        url: "/assets/fakejson/api_SiteReception_2.json",
+        url: URLobj.prodpath.sitereception2,
         async: false,
         success: function(data) {
-
+            console.log(URLobj.prodpath.sitereception2);
+            console.log(data);
             var url = 'News.html?id=';
             // checkdate 資料都是先 oderby ASC 了所以可以從第一筆直接順著一邊渲染一邊過濾 2013-2017
             var combination = '<div class="content_catalog"><div class="catalog_box">';
@@ -75,13 +76,13 @@ $(document).ready(
     function() {
         htmlobj = $.ajax({
             type: "GET",
-            url: "/assets/fakejson/api_SiteReception_3.json",
+            url: URLobj.prodpath.sitereception3,
             async: false,
             success: function(data) {
 
                 // console.log(data);
                 // console.log($('.content_onepage')[0].innerHTML);
-                console.log(data.length);
+                // console.log(data.length);
                 var combination = '';
                 for (i = 0; i < data.length; i++) {
 

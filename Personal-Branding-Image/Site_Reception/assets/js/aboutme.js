@@ -1,10 +1,10 @@
 $(document).ready(function() {
     htmlobj = $.ajax({
         type: "GET",
-        url: "../assets/fakejson/api_SiteReception_1.json",
+        url: URLobj.prodpath.sitereception1,
         async: false,
         success: function(data) {
-            // console.log('URLobj.testpath.sitereception1=' + URLobj.testpath.sitereception1);
+            console.log('URLobj.testpath.sitereception1=' + URLobj.prodpath.sitereception1);
             var url = 'News.html?id=';
             // console.log(document);
             // console.log(data[0].id);
@@ -25,7 +25,7 @@ $(document).ready(function() {
                 var combination = '<a href="' + url + id + '"><img src="' + img_url + '" alt="IMAGE">';
                 combination += '<div class="container"><h4><b>' + sort + '.' + title + ' - ' + created_at + '</b></h4><p>';
                 combination += content_text + '</p></div></a></div>';
-                console.log(combination);
+                // console.log(combination);
 
                 $('.card')[i].innerHTML = combination;
 

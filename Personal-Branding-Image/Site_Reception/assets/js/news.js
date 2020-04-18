@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     htmlobj = $.ajax({
         type: "GET",
-        url: "/assets/fakejson/api_News_id.json?" + obj.id,
+        url: URLobj.prodpath.getnewsid + obj.id,
         async: false,
         success: function(data) {
             console.log('id=' + obj.id);
