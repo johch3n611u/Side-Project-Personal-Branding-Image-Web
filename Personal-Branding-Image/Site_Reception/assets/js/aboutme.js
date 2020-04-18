@@ -9,9 +9,9 @@ $(document).ready(function() {
             // console.log(document);
             // console.log(data[0].id);
 
-            console.log('log data.length=' + data.length);
+            // console.log('log data.length=' + data.length);
             var datalength = data.length;
-            console.log('log var datalength=' + data.length);
+            // console.log('log var datalength=' + data.length);
 
             for (i = 0; i < data.length; i++) {
 
@@ -25,6 +25,7 @@ $(document).ready(function() {
                 var combination = '<a href="' + url + id + '"><img src="' + img_url + '" alt="IMAGE">';
                 combination += '<div class="container"><h4><b>' + sort + '.' + title + ' - ' + created_at + '</b></h4><p>';
                 combination += content_text + '</p></div></a></div>';
+                console.log(combination);
 
                 $('.card')[i].innerHTML = combination;
 

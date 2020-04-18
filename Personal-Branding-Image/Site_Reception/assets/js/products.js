@@ -69,6 +69,8 @@ $(document).ready(function() {
     });
 }, );
 
+// Dynamic Render Part 3
+
 $(document).ready(
     function() {
         htmlobj = $.ajax({
@@ -77,8 +79,21 @@ $(document).ready(
             async: false,
             success: function(data) {
 
-                console.log(data);
+                // console.log(data);
+                // console.log($('.content_onepage')[0].innerHTML);
+                console.log(data.length);
+                var combination = '';
+                for (i = 0; i < data.length; i++) {
 
+                    combination += '<a href="News.html?id=' + data[i].id;
+                    combination += '"><div class="onepage_box"><div class="new_card"><img src="';
+                    combination += data[i].img_url + '"><h3>' + data[i].created_at + ' - ' + data[i].title;
+                    combination += ' , ' + data[i].subtitle + '</h3><p>' + data[i].content_text;
+                    combination += ' </div></div></a>';
+
+                }
+                $('.content_onepage')[0].innerHTML = combination;
+                // console.log(combination);
             },
             timeout: 20000,
             error: function() {
