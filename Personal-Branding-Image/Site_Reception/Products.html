@@ -1,10 +1,114 @@
-[{ "id": 49, "year": 2018, "month": 4 }, { "id": 50, "year": 2018, "month": 9 }, { "id": 47, "year": 2019, "month": 4 }, { "id": 46, "year": 2020, "month": 1 }, { "id": 51, "year": 2020, "month": 6 } ] animation-duration: 3s; } @keyframes catalog_box
-{ from { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 1; } } .catalog_box_column { display: flex; flex-direction: column-reverse; text-align: center; } .year_title { font-size: 2em; color: white; font-weight: 700; } .fack_catalog_box
-{ height: 40px; width: 40px; background-color: rgb(224, 60, 138); margin: 50px; } .fack_catalog_box>p { text-shadow: none; } .back_top { display: flex; justify-content: center; align-items: center; content: " "; position: fixed; width: 4%; height: 7%;
-right: 48%; bottom: 0%; background-color: rgb(216, 108, 122); text-shadow: none; font-size: 2em; color: black; border-radius: 5%; } .onepage_box { position: relative; display: flex; justify-content: center; align-items: center; height: 100vh; width: 100%;
-text-shadow: none; } .new_card>* { text-shadow: none; } .new_card { border-radius: 1%; background-color: white; display: table; width: 40%; text-shadow: none; padding: 20px; box-shadow: 5px 6px 3px black; } .new_card>p { max-height: 70px; overflow: hidden;
-} .new_card:hover { box-shadow: 0 0 1em rgb(247, 194, 66), 0 0 1em rgb(247, 194, 66), 0 0 1em rgb(247, 194, 66); }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Branding</title>
+    <link rel="icon" href="/StudyProject/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="/assets/css/shard.css">
+    <style>
+        /* https://nipponcolors.com/ */
+        
+        .content_catalog {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 95vh;
+            width: 100%;
+            background: linear-gradient(rgb(67, 67, 67), rgb(12, 12, 12));
+        }
+        
+        .catalog_box {
+            display: flex;
+            animation-name: catalog_box;
+            animation-duration: 3s;
+        }
+        
+        @keyframes catalog_box {
+            from {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .catalog_box_column {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        
+        .year_title {
+            font-size: 2em;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .fack_catalog_box {
+            height: 40px;
+            width: 40px;
+            background-color: rgb(224, 60, 138);
+            margin: 50px;
+        }
+        
+        .fack_catalog_box>p {
+            text-shadow: none;
+        }
+        
+        .back_top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: " ";
+            position: fixed;
+            width: 4%;
+            height: 7%;
+            right: 48%;
+            bottom: 0%;
+            background-color: rgb(216, 108, 122);
+            text-shadow: none;
+            font-size: 2em;
+            color: black;
+            border-radius: 5%;
+        }
+        
+        .onepage_box {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            text-shadow: none;
+        }
+        
+        .new_card>* {
+            text-shadow: none;
+        }
+        
+        .new_card {
+            border-radius: 1%;
+            background-color: white;
+            display: table;
+            width: 40%;
+            text-shadow: none;
+            padding: 20px;
+            box-shadow: 5px 6px 3px black;
+        }
+        
+        .new_card>p {
+            max-height: 70px;
+            overflow: hidden;
+        }
+        
+        .new_card:hover {
+            box-shadow: 0 0 1em rgb(247, 194, 66), 0 0 1em rgb(247, 194, 66), 0 0 1em rgb(247, 194, 66);
+        }
+    </style>
 </head>
 
 <body>
@@ -58,70 +162,86 @@ text-shadow: none; } .new_card>* { text-shadow: none; } .new_card { border-radiu
             </div>
         </div>
         <span class="content_onepage">
-        <a href="News.html">
-           <div class="onepage_box">
-               <div class="new_card">
-                   <img src="../img/news_sample.jpg">
-                   <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
-                   <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the 3D production of nearly
-                5,000 face shields a week to help protect the amazing medical mercenaries on the front lines at The Mount Sinai Hospital
-                and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen offices to follow suit in
-                supporting local medical institutions. See how you can join the efforts with the open-source file initiated by Erik
-                Cederberg from 3DVerkstan here.</p>
-               </div>
-           </div>
-        </a>
-        <a href="News.html">
-            <div class="onepage_box">
-                <div class="new_card">
-                    <img src="../img/news_sample.jpg">
-                    <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
-                    <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the 3D
-                        production of nearly
-                        5,000 face shields a week to help protect the amazing medical mercenaries on the front lines at The
-                        Mount Sinai Hospital
-                        and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen offices to
-                        follow suit in
-                        supporting local medical institutions. See how you can join the efforts with the open-source file
-                        initiated by Erik
-                        Cederberg from 3DVerkstan here.</p>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="News.html">
-            <div class="onepage_box">
-                <div class="new_card">
-                    <img src="../img/news_sample.jpg">
-                    <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
-                    <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the 3D
-                        production of nearly
-                        5,000 face shields a week to help protect the amazing medical mercenaries on the front lines at The
-                        Mount Sinai Hospital
-                        and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen offices to
-                        follow suit in
-                        supporting local medical institutions. See how you can join the efforts with the open-source file
-                        initiated by Erik
-                        Cederberg from 3DVerkstan here.</p>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="News.html">
-            <div class="onepage_box">
-                <div class="new_card">
-                    <img src="../img/news_sample.jpg">
-                    <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
-                    <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the 3D
-                        production of nearly
-                        5,000 face shields a week to help protect the amazing medical mercenaries on the front lines at The
-                        Mount Sinai Hospital
-                        and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen offices to
-                        follow suit in
-                        supporting local medical institutions. See how you can join the efforts with the open-source file
-                        initiated by Erik
-                        Cederberg from 3DVerkstan here.</p>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
+                </div>
+            </a>
         </span>
         <div class="footer">
             <span>Copyright © 2020</span>
@@ -141,6 +261,49 @@ text-shadow: none; } .new_card>* { text-shadow: none; } .new_card { border-radiu
                     var url = 'News.html?id=';
                     // checkdate 資料都是先 oderby ASC 了所以可以從第一筆直接順著一邊渲染一邊過濾 2013-2017
                     var combination = '<div class="content_catalog"><div class="catalog_box">';
+                    for (i = 0; i < 4; i++) {
+                        combination += '<div class="catalog_box_column"><div class="year_title">1H-201' + (i + 4) + '</div></div>';
+                        combination += '<div class="catalog_box_column"><div class="year_title">2H-201' + (i + 4) + '</div></div>';
+                    }
+                    combination += '</div></div>';
+                    $('.catalog_box')[0].innerHTML = combination;
+                    // console.log($('.fack_catalog_box')[0]);
+                    var box = $('.catalog_box_column');
+                    for (i = 0; i < data.length; i++) {
+                        var insidetext = '<div class="fack_catalog_box"><p>' + data[i].id + '</p></div>';
+                        switch (data[i].year) {
+                            case 2014:
+                                if (data[i].month <= 6) {
+                                    box[0].innerHTML += insidetext;
+                                } else {
+                                    box[1].innerHTML += insidetext;
+                                };
+                                break;
+                            case 2015:
+                                if (data[i].month <= 6) {
+                                    box[2].innerHTML += insidetext;
+                                } else {
+                                    box[3].innerHTML += insidetext;
+                                };
+                                break;
+                            case 2016:
+                                if (data[i].month <= 6) {
+                                    box[4].innerHTML += insidetext;
+                                } else {
+                                    box[5].innerHTML += insidetext;
+                                };
+                                break;
+                            case 2017:
+                                if (data[i].month <= 6) {
+                                    box[6].innerHTML += insidetext;
+                                } else {
+                                    box[7].innerHTML += insidetext;
+                                };
+                                break;
+                        };
+                    };
+
+
 
                 },
                 timeout: 20000,
