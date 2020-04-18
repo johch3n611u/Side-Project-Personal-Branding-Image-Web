@@ -72,7 +72,7 @@ namespace Website_Background.Controllers
                             break;
                         case 3:
                             // ㊂ 所有文章數量 與 圖片連結與文章純文字與 id
-                            result = Connection.Query("SELECT id,title,subtitle,content_text,img_url,created_at  FROM news ORDER BY created_at DESC").ToList();
+                            result = Connection.Query("SELECT id,title,subtitle,content_text,img_url,CONVERT(VARCHAR,CONVERT(datetime,created_at),111) as created_at  FROM news ORDER BY created_at DESC").ToList();
                             break;
 
                         default:

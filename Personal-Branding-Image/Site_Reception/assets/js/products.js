@@ -86,8 +86,8 @@ $(document).ready(
                 for (i = 0; i < data.length; i++) {
 
                     combination += '<a href="News.html?id=' + data[i].id;
-                    combination += '"><div class="onepage_box"><div class="new_card"><img src="';
-                    combination += data[i].img_url + '"><h3>' + data[i].created_at + ' - ' + data[i].title;
+                    combination += '"><div class="onepage_box"><div class="new_card"><div class="img_box" style="background-image: url(';
+                    combination += data[i].img_url + ');"> </div><h3>' + data[i].created_at + ' - ' + data[i].title;
                     combination += ' , ' + data[i].subtitle + '</h3><p>' + data[i].content_text;
                     combination += ' </div></div></a>';
 

@@ -470,4 +470,5 @@ NewJSON 結構
         </span>
 ```
 
-1.   重新設計 img box 取代 img 避免跑版， news 應該也有這個問題 -> &lt;div class='img_box' style='background-image: url(https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/sample1.png?raw=true);width: 100%;'> &lt;/div>
+260. 重新設計 img box 取代 img 避免跑版， news 應該也有這個問題 -> &lt;div class='img_box' style='background-image: url(https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/sample1.png?raw=true);width: 100%;'> &lt;/div>
+261. 完成，最後兩部分一個是 news posts 畫面的取參數，渲染背景與文本，與把所有 fakejson 真正串上 web api 不過不知道會不會有 cors 問題。 -> <https://blog.csdn.net/csdn_ds/article/details/78393564>
