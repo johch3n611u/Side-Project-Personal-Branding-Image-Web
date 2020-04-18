@@ -380,3 +380,92 @@ NewJSON 結構
     }
 ]
 ```
+
+259. 最終還是完成了，接著以下
+
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/dynamic_render_part3.png)
+
+```HTML
+<span class="content_onepage">
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="News.html">
+                <div class="onepage_box">
+                    <div class="new_card">
+                        <img src="../img/news_sample.jpg">
+                        <h3>MAR 30TH, 2020 - BIG MOBILIZES 3D-PRINTED FACE SHIELD FOR HOSPITALS</h3>
+                        <p>Our NYC Model Shop spearheaded by Bernardo Schuhmacher and Carlos Castillo is overseeing the
+                            3D
+                            production of nearly
+                            5,000 face shields a week to help protect the amazing medical mercenaries on the front lines
+                            at The
+                            Mount Sinai Hospital
+                            and Weill Cornell Medicine in New York City. We look forward to our London and Copenhagen
+                            offices to
+                            follow suit in
+                            supporting local medical institutions. See how you can join the efforts with the open-source
+                            file
+                            initiated by Erik
+                            Cederberg from 3DVerkstan here.</p>
+                    </div>
+                </div>
+            </a>
+        </span>
+```

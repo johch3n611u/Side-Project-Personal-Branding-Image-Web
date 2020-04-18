@@ -40,6 +40,7 @@
             display: flex;
             flex-direction: column-reverse;
             text-align: center;
+            margin: 40px 5px;
         }
         
         .year_title {
@@ -53,10 +54,17 @@
             width: 40px;
             background-color: rgb(224, 60, 138);
             margin: 50px;
+            border-radius: 5%;
         }
         
-        .fack_catalog_box>p {
+        .fack_catalog_box:hover {
+            box-shadow: 0px 0 20px black inset, 0px 0 30px white;
+        }
+        
+        .fack_catalog_box>a>p {
+            color: white;
             text-shadow: none;
+            margin: 11px;
         }
         
         .back_top {
@@ -250,69 +258,7 @@
     <a href="#" class="back_top">︿</a>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
-    <script>
-        $(document).ready(function() {
-            htmlobj = $.ajax({
-                type: "GET",
-                url: "/assets/fakejson/api_SiteReception_2.json",
-                async: false,
-                success: function(data) {
-
-                    var url = 'News.html?id=';
-                    // checkdate 資料都是先 oderby ASC 了所以可以從第一筆直接順著一邊渲染一邊過濾 2013-2017
-                    var combination = '<div class="content_catalog"><div class="catalog_box">';
-                    for (i = 0; i < 4; i++) {
-                        combination += '<div class="catalog_box_column"><div class="year_title">1H-201' + (i + 4) + '</div></div>';
-                        combination += '<div class="catalog_box_column"><div class="year_title">2H-201' + (i + 4) + '</div></div>';
-                    }
-                    combination += '</div></div>';
-                    $('.catalog_box')[0].innerHTML = combination;
-                    // console.log($('.fack_catalog_box')[0]);
-                    var box = $('.catalog_box_column');
-                    for (i = 0; i < data.length; i++) {
-                        var insidetext = '<div class="fack_catalog_box"><p>' + data[i].id + '</p></div>';
-                        switch (data[i].year) {
-                            case 2014:
-                                if (data[i].month <= 6) {
-                                    box[0].innerHTML += insidetext;
-                                } else {
-                                    box[1].innerHTML += insidetext;
-                                };
-                                break;
-                            case 2015:
-                                if (data[i].month <= 6) {
-                                    box[2].innerHTML += insidetext;
-                                } else {
-                                    box[3].innerHTML += insidetext;
-                                };
-                                break;
-                            case 2016:
-                                if (data[i].month <= 6) {
-                                    box[4].innerHTML += insidetext;
-                                } else {
-                                    box[5].innerHTML += insidetext;
-                                };
-                                break;
-                            case 2017:
-                                if (data[i].month <= 6) {
-                                    box[6].innerHTML += insidetext;
-                                } else {
-                                    box[7].innerHTML += insidetext;
-                                };
-                                break;
-                        };
-                    };
-
-
-
-                },
-                timeout: 20000,
-                error: function() {
-                    alert('AJAX error !!!');
-                }
-            });
-        });
-    </script>
+    <script src='/assets/js/products.js'></script>
 
 
 </body>
