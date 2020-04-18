@@ -29,6 +29,12 @@
             width: 100%;
         }
         
+        .news_content>*>* {
+            text-shadow: none;
+            line-height: 2em;
+            margin: 10px;
+        }
+        
         .img_box {
             width: 800px;
             height: 533px;
@@ -67,6 +73,35 @@
                 right: 48%;
             }
         }
+        /* https://meyerweb.com/eric/tools/css/reset/ */
+        
+        .right_news>a {
+            position: fixed;
+            font-size: 10em;
+            text-shadow: 3px 3px 0px #333;
+            top: 50%;
+            right: 5%;
+            color: white;
+        }
+        
+        .right_news>a:hover {
+            color: rgb(80, 83, 83);
+            text-shadow: none;
+        }
+        
+        .left_news>a {
+            position: fixed;
+            font-size: 10em;
+            text-shadow: 3px 3px 0px #333;
+            top: 50%;
+            left: 5%;
+            color: white;
+        }
+        
+        .left_news>a:hover {
+            color: rgb(80, 83, 83);
+            text-shadow: none;
+        }
     </style>
 </head>
 
@@ -81,6 +116,8 @@
             <a class="rotate" href="http://line.naver.jp/ti/p/~lyc1165" target="_blank"><img class="icon icon_right" src="../img/icon_line.png"></a>
             <a class="rotate" href="#" target="_blank"><img class="icon icon_right" src="../img/icon_fb.png"></a>
     </div>
+    <div class='right_news'><a href="#">&gt;</a></div>
+    <div class='left_news'><a href="#">&lt;</a></div>
     <div class="news_content">
         <h1>肺炎疫情：關於新型冠狀病毒，這九個問題我們尚無答案</h1>
         <h4>詹姆斯·加拉格爾（James Gallagher） BBC健康與科學事務記者</h4>
@@ -117,55 +154,7 @@
         <span>Copyright © 2020</span>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
-    <script>
-        $(document).ready(function() {
-
-            var params = decodeURIComponent(window.location.search.substr(1)).split('&');
-            // console.log(params); //  ["id=51", "r=56", "g=126", "b=55"]
-            var obj = '{';
-            for (i = 0; i < params.length; i++) {
-                obj += '"' + params[i].split("=")[0] + '":';
-                obj += params[i].split("=")[1];
-                if (i != params.length - 1) {
-                    obj += ','
-                };
-            }
-            obj += '}';
-            // console.log(obj)
-            // console.log(JSON.parse(obj));
-            if (obj != '{"":undefined}') {
-
-                obj = JSON.parse(obj);
-                console.log('JSON Success to Obj. ↓');
-                console.log(obj);
-
-            }
-
-            htmlobj = $.ajax({
-                type: "GET",
-                url: "/assets/fakejson/api_News_id.json?" + obj.id,
-                async: false,
-                success: function(data) {
-
-                    console.log('id=' + obj.id);
-                    // console.log(params.length);
-                    if (params.length > 0) {
-                        console.log('params.length =' + params.length);
-                        var getcolor = 'rgba(' + obj.r + ',' + obj.g + ',' + obj.b + ',0.5)'
-                        console.log($('body').attr("style", "background-color:" + getcolor));
-                    }
-
-
-
-
-                },
-                timeout: 20000,
-                error: function() {
-                    alert('JQ AJAX for loop is Error !!!');
-                }
-            });
-        });
-    </script>
+    <script src='/assets/js/news.js'></script>
 </body>
 
 </html>
