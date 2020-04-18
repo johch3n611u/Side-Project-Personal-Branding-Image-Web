@@ -1,5 +1,7 @@
 # Hello, world
 
+登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...
+
 ## Wireframe
 
 <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=0%3A1>
@@ -318,3 +320,63 @@ GET: api/News/id
 254. 吃個早餐回來再想...兩種可能性 1.今後繼續使用此程式紀錄 資料持續增加。2.只紀錄景觀 資料固定 四年每年上下季。 因之後有意使用 github.io 故選 2。
 255. 新想法:隨機渲染 顏色 icon id ，帶參數過去 news 渲染 background
 256. 後續應該會想辦法轉為吃 Mdf 資料，才有利於用筆電 demo 之類。
+257. datetime 不好處理...可能要先進行一部分的 length 計算，寫死一點頂多 2013-2017 每年分兩季也才 8季 1H of 2019 -> <https://tw.answers.yahoo.com/question/index?qid=20091206000015KK06262>
+258. 非常困難處理，只好從資料源頭處理 -> SELECT id,YEAR(created_at) AS year,MONTH(created_at) AS month  FROM news ORDER BY created_at ASC
+
+原始錯誤邏輯
+
+```JavaScript
+for (i = 0; i < 8; i++) {
+    var date = data[i].date;
+    if (2013 - 01 < date < 2013 - 12) {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+};
+//這邊很明顯就發現資料不固定的狀態下是很難分類的 ... 各種邏輯都怪怪的，只好寫更死直接先把 column 渲染出來再分類 ↑
+for (i = 0; i < data.length; i++) {
+    var id = data[i].id;
+    var date = data[i].date;
+    if () {}
+    elseif() {}
+    elseif() {}
+    elseif() {}
+    combination += '<div class="year_title">1H of 2013</div>'
+};
+```
+
+NewJSON 結構
+
+```JSON
+[
+    {
+        "id": 49,
+        "year": 2018,
+        "month": 4
+    },
+    {
+        "id": 50,
+        "year": 2018,
+        "month": 9
+    },
+    {
+        "id": 47,
+        "year": 2019,
+        "month": 4
+    },
+    {
+        "id": 46,
+        "year": 2020,
+        "month": 1
+    },
+    {
+        "id": 51,
+        "year": 2020,
+        "month": 6
+    }
+]
+```

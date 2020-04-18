@@ -37,7 +37,7 @@ namespace Website_Background.Controllers
                             //用於組合結果
                             List<dynamic> Combine = new List<dynamic>();
 
-                            result = Connection.Query("SELECT * FROM news").ToList();
+                            result = Connection.Query("SELECT id,sort,title,content_text,img_url,created_at FROM news").ToList();
 
                             int[] CheckRepeat = new int[4];  // 紀錄 4 個整數亂數
                             Random random = new Random(Guid.NewGuid().GetHashCode()); // https://ksjolin.pixnet.net/blog/post/150115680
@@ -68,7 +68,7 @@ namespace Website_Background.Controllers
 
                         case 2:
                             // ㊁ productspage 年份月份 sort 每年分月份文章數量 隨機渲染顏色 icon 與副標題小字與 id (年份月份或純年份依照整理出來的文章數量待訂)
-                            result = Connection.Query("SELECT id,subtitle,convert(varchar(7), created_at, 126) AS date  FROM news ORDER BY created_at ASC").ToList();
+                            result = Connection.Query("SELECT id,YEAR(created_at) AS year,MONTH(created_at) AS month  FROM news ORDER BY created_at ASC").ToList();
                             break;
                         case 3:
                             // ㊂ 所有文章數量 與 圖片連結與文章純文字與 id
