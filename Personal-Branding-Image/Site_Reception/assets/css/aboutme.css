@@ -488,7 +488,7 @@ body {
 }
 
 .container>p {
-    max-height: 9em;
+    max-height: 18em;
     overflow: hidden;
 }
 

@@ -23,7 +23,7 @@ $(document).ready(function() {
                 var img_url = data[i].img_url;
 
                 var combination = '<a href="' + url + id + '"><img src="' + img_url + '" alt="IMAGE">';
-                combination += '<div class="container"><h4><b>' + sort + '.' + title + ' - ' + created_at + '</b></h4><p>';
+                combination += '<div class="container"><h3><b>[ ' + sort + ' ].' + title + ' - ' + created_at + '</b></h3><p>';
                 combination += content_text + '</p></div></a></div>';
                 // console.log(combination);
 
