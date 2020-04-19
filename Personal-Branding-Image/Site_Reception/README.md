@@ -514,5 +514,5 @@ var URLobj = {
 264. 測試資料都成功了但真的就卡在這 cors 關... Access to XMLHttpRequest at 'https://localhost:44367/api/SiteReception/1' from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 265. 嘗試依照處理 -> <https://blog.johnwu.cc/article/ironman-day26-asp-net-core-cross-origin-requests.html>
 266. 成功!接著就是一些細節的整理， news 部分資料跑版了要確定問題，後台日期必須能更改 -> <https://ithelp.ithome.com.tw/articles/10194720>
-267. 這裡就不動 datepick 了知道怎麼用即可，因為涉及到格式問題 api module 等等都要接著調整，時程上需要整理履歷了不然感不上時間，接著做總結。
+267. 這裡就不動 datepick 了知道怎麼用即可，因為涉及到格式問題 api module 等等都要接著調整，功能上只是個小功能，時程上需要接著整理履歷了不然趕不上設定時間。
 268. 總結 : <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web>
