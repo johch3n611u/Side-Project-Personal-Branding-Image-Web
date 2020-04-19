@@ -41,6 +41,8 @@ $(document).ready(function() {
             combination += '</div><a href="Products.html"><div class="bottom_box"> See more &gt;&gt; </div></a>';
             $('.news_content')[0].innerHTML = combination;
 
+            console.log(combination);
+
             // console.log($('.right_news')[0].innerHTML);
             // console.log($('.left_news')[0].innerHTML);
             $('.right_news')[0].innerHTML = '<a href="/News.html?id=' + (obj.id + 1) + '">&gt;</a>';
