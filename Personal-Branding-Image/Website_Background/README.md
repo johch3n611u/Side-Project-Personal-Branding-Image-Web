@@ -131,3 +131,27 @@ To help you get started, we've also set up:
 * ***Efficient production builds***. In production mode, development-time features are disabled, and your ***dotnet publish***configuration automatically invokes ***ng build*** to produce minified, ahead-of-time compiled JavaScript files.
 
 The ***ClientApp*** subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any ***ng*** command (e.g., ***ng test***), or use ***npm*** to install extra packages into it.
+
+---------------------------
+
+# Azure Try
+
+## 參考文章
+
+<https://ithelp.ithome.com.tw/m/articles/10208666>
+
+<https://ithelp.ithome.com.tw/users/20111777/ironman/1717>
+
+<https://azure.microsoft.com/zh-tw/free/search/?&ef_id=CjwKCAjw7e_0BRB7EiwAlH-goF5DUeYv2_dsAv0NkUbsoQ0aOaqdPDFVG7_IH27F9XhjFZtkHkxRnxoC8YoQAvD_BwE:G:s&OCID=AID2000122_SEM_7b95bQiY&MarinID=7b95bQiY_324859233556_azure_e_c__65092434156_kwd-49508422&lnkd=Google_Azure_Brand&dclid=CjkKEQjw7e_0BRCq3bSv6NGZ94EBEiQAn9wxv1UfvcMz7dOV6oIxOb44vM9_pu7Az37hnnGMt-sxyJDw_wcB>
+
+<https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215>
+
+<https://ithelp.ithome.com.tw/m/users/20083151/ironman/2890>
+
+<https://ithelp.ithome.com.tw/users/20111768/ironman/1713>
+
+## 步驟
+
+274. ckeck 哪些產品 12 個月免費？ 哪些產品永遠免費？ Azure Cosmos DB , App Service  這兩個似乎就是需要的服務，似乎在要求單位下都可免費 !!?
+275.
+276. 收費忘記以前是否有嘗試過 Azure 但由註冊時需要填卡與電話判斷，我以前應該是沒有試過，就照著步驟走。

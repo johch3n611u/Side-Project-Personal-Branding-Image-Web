@@ -47,7 +47,7 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
 >
 >雖然以後是有想要連 docker 也順道學習，
 >
->但是 Azure 暫時免費制的內容，還需要再花時間研究與設定... [1](https://ithelp.ithome.com.tw/m/articles/10208666) [2](https://ithelp.ithome.com.tw/articles/10201687) [3](https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215) [4](https://azure.microsoft.com/zh-tw/free/search/?&ef_id=CjwKCAjw7e_0BRB7EiwAlH-goF5DUeYv2_dsAv0NkUbsoQ0aOaqdPDFVG7_IH27F9XhjFZtkHkxRnxoC8YoQAvD_BwE:G:s&OCID=AID2000122_SEM_7b95bQiY&MarinID=7b95bQiY_324859233556_azure_e_c__65092434156_kwd-49508422&lnkd=Google_Azure_Brand&dclid=CjkKEQjw7e_0BRCq3bSv6NGZ94EBEiQAn9wxv1UfvcMz7dOV6oIxOb44vM9_pu7Az37hnnGMt-sxyJDw_wcB)
+>但是 Azure 暫時免費制的內容，還需要再花時間研究與設定...
 >
 >人生好難...
 
