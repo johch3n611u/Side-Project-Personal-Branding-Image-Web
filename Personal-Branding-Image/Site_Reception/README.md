@@ -1,7 +1,5 @@
 # Hello, world
 
-登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...
-
 ## Wireframe
 
 <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=0%3A1>
@@ -516,3 +514,5 @@ var URLobj = {
 264. 測試資料都成功了但真的就卡在這 cors 關... Access to XMLHttpRequest at 'https://localhost:44367/api/SiteReception/1' from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 265. 嘗試依照處理 -> <https://blog.johnwu.cc/article/ironman-day26-asp-net-core-cross-origin-requests.html>
 266. 成功!接著就是一些細節的整理， news 部分資料跑版了要確定問題，後台日期必須能更改 -> <https://ithelp.ithome.com.tw/articles/10194720>
+267. 這裡就不動 datepick 了知道怎麼用即可，因為涉及到格式問題 api module 等等都要接著調整，時程上需要整理履歷了不然感不上時間，接著做總結。
+268. 總結 : <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web>

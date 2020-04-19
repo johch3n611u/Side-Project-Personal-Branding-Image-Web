@@ -6,8 +6,14 @@
     background-color: rgb(252, 250, 242);
 }
 
-.posts_title>button {
-    float: right;
+.posts_title{
+    display:flex;
+    align-items:center;
+}
+
+.posts_title > button {
+    position:absolute;
+    right:20px;
 }
 
 .mat-card {
@@ -19,6 +25,7 @@
 
 .mat-card-title {
     display: inline-block;
+    margin-bottom:0;
 }
 
 mat-form-field {

@@ -2,6 +2,10 @@
 
 Framework - Angular 2+ & .Net Core 2+
 
+## 完成心得
+
+登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...
+
 ## 方式
 
 以 ASP.NET MVC5 的知識為底學習 .NET Core
@@ -143,6 +147,8 @@ _
 
 ## 參考文章
 
+<details><summary> ↓ Link ↓ </summary>
+
 ### Angular
 
 <https://www.slideshare.net/WillHuangTW/happy-leaning-angular-2-web-framework-modern-web-2016>
@@ -256,3 +262,5 @@ _
 ### 規劃設計
 
 <https://www.youtube.com/watch?v=MFropqypz3M&t=13s>
+
+</details>
