@@ -4,7 +4,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 完成架構
 
-StudyProject 內包含 study 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
+StudyProject study 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
 
 Personal Branding Image 專案則包含了一個 Site_Reception 純靜態網站只藉由 AJAX 從 .NET Core API 要求固定資料，
 
@@ -12,7 +12,8 @@ Website_Background 則是 Angular SPA 的後台管理文章系統，實作登入
 
 ## 完成心得
 
-回想起大學時期，每個提案教授、同學都有給明確回饋，我給的內容很豐富，但太多太雜，重點不抓緊很容易失焦，希望自己一直記得這件事情並改善。
+回想起大學時期，每個提案教授、同學給的回饋，都有個共同點 ↓
+> 我給的內容很豐富，但太多太雜，重點不抓緊很容易失焦，希望自己一直記得這件事情並改善。
 
 從上一份工作離開，[到中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，[整個過程大約三百個步驟](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material)，無數多個困難。
 
