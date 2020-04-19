@@ -21,6 +21,38 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
 
 接著要面對的就是另一個檻了，整理完履歷後，希望能面試到一間不錯的公司。
 
+<details>
+  <summary> 2020-04-20 更新 * Demo Server 架設問題... </summary>
+<br/>
+
+在專案完成編輯景觀建築作品文章時，發現一些問題，主要是面試 demo 實際上的問題，
+
+本來考慮到 demo db server 問題，所以綁定 db server 改為綁定 db.mdf ，
+
+但這樣我只想到以下 demo 方式，且各自有困難點必須突破...
+
+首先在本機或筆電，用開發模式 debug 狀態，專案起在臨時 iis 上 demo ，
+
+或真實放在 local iis server 上 demo ，
+
+但筆電部分因為家人需要等於是沒筆電狀態，所以不暫考慮...
+
+且家機為共用機、娛樂機似乎也不太適合，當作臨時 local server，
+
+<br/>
+
+後來想到可能可以嘗試將 web 與 db 都架在 Azure 上，
+
+這樣在編輯景觀建築作品時就能直接順道處理了，
+
+雖然以後是有想要連 docker 也順道學習，
+
+但是 Azure 暫時免費制的內容，還需要再花時間研究與設定... [1](https://ithelp.ithome.com.tw/m/articles/10208666) [2](https://ithelp.ithome.com.tw/articles/10201687) [3](https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215)
+
+人生好難...
+
+</details>
+
 ## 方式
 
 以 ASP.NET MVC5 的知識為底學習 .NET Core 2.1+ ☝
