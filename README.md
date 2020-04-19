@@ -4,7 +4,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 完成架構
 
-StudyProject 內包含 study 了基本的 ng basis 與 ng mat 與 .net core 也嘗試了 wireframe to html ，
+StudyProject 內包含 study 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
 
 Personal Branding Image 專案則包含了一個 Site_Reception 純靜態網站只藉由 AJAX 從 .NET Core API 要求固定資料，
 
@@ -12,7 +12,11 @@ Website_Background 則是 Angular SPA 的後台管理文章系統，實作登入
 
 ## 完成心得
 
-登入功能是將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...
+回想起大學時期，每個提案教授、同學都有給明確回饋，我給的內容很豐富，但太多太雜，重點不抓緊很容易失焦，希望自己一直記得這件事情並改善。
+
+從上一份工作離開，[到中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜 ( 不包含看文件時間 )，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，整個過程大約三百個步驟，無數多個困難。
+
+接著要面對的就是另一個檻了，整理完履歷後，希望能面試到一間不錯的公司。
 
 ## 方式
 
