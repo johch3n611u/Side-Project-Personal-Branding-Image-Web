@@ -1,37 +1,39 @@
+<p id='top'></p>
+
 # Personal Branding Image Web
 
 Framework - Angular 2+ & .Net Core 2+
 
 ## 完成架構
 
-[StudyProject study](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
+[StudyProject study](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 了基本的 ng basis 、 mat 與 .net core ，也嘗試了 wireframe to html ，
 
-Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception) 純靜態網站只藉由 AJAX 從 .NET Core API 要求固定資料，
+Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception) 純靜態網站，只藉由 AJAX 從 .NET Core API 要求固定資料，
 
-[Website_Background](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background) 由 [Angular SPA](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp) 架構的後台管理文章系統，實作登入與 CRUD 功能，資料也是由 .NET Core API 界接 MS SQL。
+[Website_Background](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background) 由 [Angular SPA](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp) 架構的後台管理文章系統，實作登入與 CRUD 功能，資料是由 EFCore 界接 MS SQL。
 
 ## 完成心得
 
-回想起大學時期，每個提案教授、同學給的回饋，都有個共同點 ↓
-> 我給的內容很豐富，但太多太雜，重點不抓緊很容易失焦，希望自己一直記得這件事情並改善。
+回想起大學時期，我的每個提案，教授、同學給的回饋，都有個共同點 ☟
+> 提案內容豐富，但太多太雜，重點不抓緊容易失焦，希望自己一直銘記這件事情並改善。
 
-從上一份工作離開，[到中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，[整個過程大約三百個步驟](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material)，無數多個困難。
+從上一份工作離開到現在，[中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，[整個過程大約三百個步驟](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material)，無數多個困難。
 
 接著要面對的就是另一個檻了，整理完履歷後，希望能面試到一間不錯的公司。
 
 ## 方式
 
-以 ASP.NET MVC5 的知識為底學習 .NET Core
+以 ASP.NET MVC5 的知識為底學習 .NET Core 2.1+ ☝
 
-以 EasyUi、JQ 的知識為底學習 Angular
+以 EasyUi、JQ 的知識為底學習 Angular 2+ ☝
 
 ## 步驟
 
-以[此教學](https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008)為架構並構思 UML、Sitemap、Wireframe、Prototype，建置 Sideproject，
+以[此教學](https://ithelp.ithome.com.tw/m/users/20105684/ironman/2008)為發想並構思 [UML、Sitemap、Wireframe、Prototype](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception)，建置 Sideproject，
 
 發現以上對於剛接觸的人可能會不瞭解 Angular 架構，
 
-所以優先把以下參考看完或實做，
+所以優先把以下[參考](#reference)看完或實做，
 
 .Net、MVC、C# 相對於前端較熟，
 
@@ -158,7 +160,7 @@ _
 
 <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Untitled?node-id=0%3A1>
 
-## 參考文章
+## 參考文章 <a id = 'reference' href='#top'> back top </a>
 
 <details><summary> ↓ Link ↓ </summary>
 
