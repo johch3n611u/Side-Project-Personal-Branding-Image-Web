@@ -14,7 +14,7 @@ Website_Background 則是 Angular SPA 的後台管理文章系統，實作登入
 
 回想起大學時期，每個提案教授、同學都有給明確回饋，我給的內容很豐富，但太多太雜，重點不抓緊很容易失焦，希望自己一直記得這件事情並改善。
 
-從上一份工作離開，[到中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜 ( 不包含看文件時間 )，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，整個過程大約三百個步驟，無數多個困難。
+從上一份工作離開，[到中間發生蠻多事](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202001/20200321.md)，本來預計一個月就能開始找工作，到此專案結束已經過了將近三個多月，能在短短兩個禮拜，成功完成自己設定的架構系統，成就感還是有的，但由於是自己摸索也沒人可以問，期間遇到蠻多問題，但都一一解決也記錄下來，[整個過程大約三百個步驟](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material)，無數多個困難。
 
 接著要面對的就是另一個檻了，整理完履歷後，希望能面試到一間不錯的公司。
 
