@@ -145,7 +145,6 @@ _
 
 [Website_Background](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background) - .NET Core Web API + Angular Material 後台 SPA 管理儀錶板。
 
-
 ## 參考範例
 
 - [特色進入頁面](http://www.adhamdannaway.com/)
