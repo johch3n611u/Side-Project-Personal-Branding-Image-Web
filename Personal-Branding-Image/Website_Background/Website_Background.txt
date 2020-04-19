@@ -1,0 +1,15 @@
+表格名稱	欄位名稱	資料型別	最大長度	預設值	允許空值	欄位備註
+news	id	int	NULL	NULL	NO	NULL
+news	sort	varchar	50	NULL	YES	NULL
+news	title	varchar	50	NULL	YES	NULL
+news	subtitle	varchar	50	NULL	YES	NULL
+news	content_text	text	2147483647	NULL	YES	NULL
+news	content_html	text	2147483647	NULL	YES	NULL
+news	img_url	text	2147483647	NULL	YES	NULL
+news	created_at	varchar	50	(CONVERT([varchar],getdate(),(120)))	NO	NULL
+
+表格名稱	欄位名稱	資料型別	最大長度	預設值	允許空值	欄位備註
+users	id	int	NULL	NULL	NO	NULL
+users	username	varchar	50	NULL	NO	NULL
+users	password	varchar	50	NULL	NO	NULL
+users	created_at	timestamp	NULL	NULL	NO	NULL

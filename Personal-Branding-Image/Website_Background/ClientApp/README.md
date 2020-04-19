@@ -1,5 +1,11 @@
 # Website_Background_Angular
 
+## 小結
+
+Angular 第一次摸索且也沒人可以問，像是功能將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...
+
+---------------------------------------------
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 已更新至以下版本
@@ -754,6 +760,4 @@ import Editor
 216. 整體為了初學體驗此架構寫程式與考慮時程問題，程式碼架構較亂且也無考慮資安問題，但最後基本後台 crud 功能完成，接著靠此後台整理景觀建築設計專案文章，接著就進入最後前台 AJAX 顯示畫面了，弄完此架構會再回去整理履歷，就可以開始面試了預計是下個禮拜。
 217. 先確定那些頁面哪些內容需要用到 API 資料，大概是什麼類型，才能確定如何整理景觀建築設計資料。 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception>
 
-## 小結
 
-NG 第一次摸索且也沒人可以問，像是功能將資料存取與邏輯判斷都拉出來至共用服務層，感覺結構簡潔易讀好擴充，本來文章 CRUD 不使用此方法是想體驗 @Input @Ouput 方式，後來卻發現那只適用於父子 Component ，中間結合像是 cleditor 套件也有一些問題，後來只要超過半天我還沒想到解法的問題都會上台灣 angular tw 社群詢問，也感謝蠻多大大的幫忙，都過一至兩個小時問題就解決了，接著就要將一些 demo 景觀建築設計專案的內容發上來，就要執行前台的 AJAX 取資料了，感覺此次 Angular & DotNET Core Demo ，因為急著要拿來面試的關係，所以像是資安部分等等的都較無考量，以一切最快能動為主，廢話太多了繼續開工...

@@ -515,4 +515,8 @@ var URLobj = {
 265. 嘗試依照處理 -> <https://blog.johnwu.cc/article/ironman-day26-asp-net-core-cross-origin-requests.html>
 266. 成功!接著就是一些細節的整理， news 部分資料跑版了要確定問題，後台日期必須能更改 -> <https://ithelp.ithome.com.tw/articles/10194720>
 267. 這裡就不動 datepick 了知道怎麼用即可，因為涉及到格式問題 api module 等等都要接著調整，功能上只是個小功能，時程上需要接著整理履歷了不然趕不上設定時間。
-268. 總結 : <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web>
+268. 最後要將資料庫參考改為 mdf 檔，方便 demo -> cannot be opened because it is version 904. this server supports version 852 and earlier
+269. <https://stackoverflow.com/questions/46431043/cannot-be-opened-because-it-is-version-852-this-server-supports-version-782-and>
+270. 資料庫檔案版本是用較新的資料庫服務器創建，結果不知道為何 vs 直接開啟 mdf 檔案只支援 sql server 2016 前的 ... ->
+271. 雖然資料結構超級簡單也無關連...但不支援還是只能嘗試以同樣資料結構載 2016 下來重新建置試試看 <https://sqlserverbuilds.blogspot.com/2014/01/sql-server-internal-database-versions.html>
+272. 總結 : <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web>
