@@ -138,20 +138,20 @@ The ***ClientApp*** subdirectory is a standard Angular CLI application. If you o
 
 ## 參考文章
 
-<https://ithelp.ithome.com.tw/m/articles/10208666>
+* <https://ithelp.ithome.com.tw/m/articles/10208666>
 
-<https://ithelp.ithome.com.tw/users/20111777/ironman/1717>
+* <https://ithelp.ithome.com.tw/users/20111777/ironman/1717>
 
-<https://azure.microsoft.com/zh-tw/free/search/?&ef_id=CjwKCAjw7e_0BRB7EiwAlH-goF5DUeYv2_dsAv0NkUbsoQ0aOaqdPDFVG7_IH27F9XhjFZtkHkxRnxoC8YoQAvD_BwE:G:s&OCID=AID2000122_SEM_7b95bQiY&MarinID=7b95bQiY_324859233556_azure_e_c__65092434156_kwd-49508422&lnkd=Google_Azure_Brand&dclid=CjkKEQjw7e_0BRCq3bSv6NGZ94EBEiQAn9wxv1UfvcMz7dOV6oIxOb44vM9_pu7Az37hnnGMt-sxyJDw_wcB>
+* <https://azure.microsoft.com/zh-tw/free/search/?&ef_id=CjwKCAjw7e_0BRB7EiwAlH-goF5DUeYv2_dsAv0NkUbsoQ0aOaqdPDFVG7_IH27F9XhjFZtkHkxRnxoC8YoQAvD_BwE:G:s&OCID=AID2000122_SEM_7b95bQiY&MarinID=7b95bQiY_324859233556_azure_e_c__65092434156_kwd-49508422&lnkd=Google_Azure_Brand&dclid=CjkKEQjw7e_0BRCq3bSv6NGZ94EBEiQAn9wxv1UfvcMz7dOV6oIxOb44vM9_pu7Az37hnnGMt-sxyJDw_wcB>
 
-<https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215>
+* <https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215>
 
-<https://ithelp.ithome.com.tw/m/users/20083151/ironman/2890>
+* <https://ithelp.ithome.com.tw/m/users/20083151/ironman/2890>
 
-<https://ithelp.ithome.com.tw/users/20111768/ironman/1713>
+* <https://ithelp.ithome.com.tw/users/20111768/ironman/1713>
 
 ## 步驟
 
 274. ckeck 哪些產品 12 個月免費？ 哪些產品永遠免費？ Azure Cosmos DB , App Service  這兩個似乎就是需要的服務，似乎在要求單位下都可免費 !!?
-275.
-276. 收費忘記以前是否有嘗試過 Azure 但由註冊時需要填卡與電話判斷，我以前應該是沒有試過，就照著步驟走。
+275. 忘記以前是否有嘗試過 Azure 但由註冊時需要填卡與電話判斷，我以前應該是沒有試過，就照著步驟走，成功註冊。
+276. 甘霖老師，沒錯誤碼搞超久，模板建立的 VS 專案都直接依照參考文章瞬間就部屬上去了 ... 然後這個做了很多事情的，搞半天都 500 ... 先吃早餐，假如一日搞不定只能想其他辦法了
