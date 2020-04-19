@@ -515,4 +515,4 @@ var URLobj = {
 
 264. 測試資料都成功了但真的就卡在這 cors 關... Access to XMLHttpRequest at 'https://localhost:44367/api/SiteReception/1' from origin 'http://127.0.0.1:8080' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 265. 嘗試依照處理 -> <https://blog.johnwu.cc/article/ironman-day26-asp-net-core-cross-origin-requests.html>
-266. 成功!接著就是一些細節的整理， news 部分資料跑版了要確定問題，後台日期必須能更改
+266. 成功!接著就是一些細節的整理， news 部分資料跑版了要確定問題，後台日期必須能更改 -> <https://ithelp.ithome.com.tw/articles/10194720>
