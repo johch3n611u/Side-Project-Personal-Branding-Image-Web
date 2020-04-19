@@ -1,5 +1,9 @@
 # Hello, world
 
+## 小結
+
+這次應該較想著重的除了前端框架外，就是此部分了因為 layout Photoshop 是大學較熟悉的，沒到非常專業但也摸了四年，所以版型 UIUX 炫炮功能，其實都有蠻多想法的，但是礙於時程與技術能力不足，所以妥協蠻多設計想法，不過最後還是完成了電腦版的版型，如果有時間再補 RWD 。
+
 ## Wireframe
 
 <https://www.figma.com/file/Trw2pDqLBz8ximcE1r0cDk/Personal-Branding-Image-Web?node-id=0%3A1>
