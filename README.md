@@ -4,11 +4,11 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 完成架構
 
-StudyProject study 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
+[StudyProject study](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 了基本的 ng basis 、 mat 與 .net core 也嘗試了 wireframe to html ，
 
-Personal Branding Image 專案則包含了一個 Site_Reception 純靜態網站只藉由 AJAX 從 .NET Core API 要求固定資料，
+Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception) 純靜態網站只藉由 AJAX 從 .NET Core API 要求固定資料，
 
-Website_Background 則是 Angular SPA 的後台管理文章系統，實作登入與 CRUD 功能，資料也是由 .NET Core API 界接 MS SQL。
+[Website_Background](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background) 由 [Angular SPA](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background/ClientApp) 架構的後台管理文章系統，實作登入與 CRUD 功能，資料也是由 .NET Core API 界接 MS SQL。
 
 ## 完成心得
 
