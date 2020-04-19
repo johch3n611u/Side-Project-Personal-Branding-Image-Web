@@ -25,31 +25,33 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
   <summary> 2020-04-20 更新 * Demo Server 架設問題... </summary>
 <br/>
 
-在專案完成編輯景觀建築作品文章時，發現一些問題，主要是面試 demo 實際上的問題，
+>在專案完成編輯景觀建築作品文章時，發現一些問題，主要是面試 demo 實際上的問題，
+>
+>本來考慮到 demo db server 問題，所以綁定 db server 改為綁定 db.mdf ，
+>
+>但這樣我只想到以下 demo 方式，且各自有困難點必須突破...
+>
+>首先在本機或筆電，用開發模式 debug 狀態，專案起在臨時 iis 上 demo ，
+>
+>或真實放在 local iis server 上 demo ，
+>
+>但筆電部分因為家人需要等於是沒筆電狀態，所以不暫考慮...
+>
+>且家機為共用機、娛樂機似乎也不太適合，當作臨時 local server，
+>
+><br/>
+>
+>後來想到可能可以嘗試將 web 與 db 都架在 Azure 上，
+>
+>這樣在編輯景觀建築作品時就能直接順道處理了，
+>
+>雖然以後是有想要連 docker 也順道學習，
+>
+>但是 Azure 暫時免費制的內容，還需要再花時間研究與設定... [1](https://ithelp.ithome.com.tw/m/articles/10208666) [2](https://ithelp.ithome.com.tw/articles/10201687) [3](https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215) [4](https://azure.microsoft.com/zh-tw/free/search/?&ef_id=CjwKCAjw7e_0BRB7EiwAlH-goF5DUeYv2_dsAv0NkUbsoQ0aOaqdPDFVG7_IH27F9XhjFZtkHkxRnxoC8YoQAvD_BwE:G:s&OCID=AID2000122_SEM_7b95bQiY&MarinID=7b95bQiY_324859233556_azure_e_c__65092434156_kwd-49508422&lnkd=Google_Azure_Brand&dclid=CjkKEQjw7e_0BRCq3bSv6NGZ94EBEiQAn9wxv1UfvcMz7dOV6oIxOb44vM9_pu7Az37hnnGMt-sxyJDw_wcB)
+>
+>人生好難...
 
-本來考慮到 demo db server 問題，所以綁定 db server 改為綁定 db.mdf ，
-
-但這樣我只想到以下 demo 方式，且各自有困難點必須突破...
-
-首先在本機或筆電，用開發模式 debug 狀態，專案起在臨時 iis 上 demo ，
-
-或真實放在 local iis server 上 demo ，
-
-但筆電部分因為家人需要等於是沒筆電狀態，所以不暫考慮...
-
-且家機為共用機、娛樂機似乎也不太適合，當作臨時 local server，
-
-<br/>
-
-後來想到可能可以嘗試將 web 與 db 都架在 Azure 上，
-
-這樣在編輯景觀建築作品時就能直接順道處理了，
-
-雖然以後是有想要連 docker 也順道學習，
-
-但是 Azure 暫時免費制的內容，還需要再花時間研究與設定... [1](https://ithelp.ithome.com.tw/m/articles/10208666) [2](https://ithelp.ithome.com.tw/articles/10201687) [3](https://ithelp.ithome.com.tw/m/users/20103790/ironman/1215)
-
-人生好難...
+詳細內容轉紀錄於 <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Website_Background>
 
 </details>
 
