@@ -12,7 +12,7 @@ namespace Angular.Controllers
         // Postman https://localhost:44367/api/SignIn Post{ "Username":"liu","Password":"12345"}
         [HttpPost]
         [Produces("application/json")]
-        public IActionResult verification([FromBody] Users? Users)
+        public IActionResult verification([FromBody] Users Users)
         {
             // [Bind("Username,Password")] Users? Users -> 不確定 Post JSON 格式
             // [FromBody] Users ?Users

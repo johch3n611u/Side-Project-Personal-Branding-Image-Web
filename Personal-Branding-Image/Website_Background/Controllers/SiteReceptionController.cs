@@ -23,7 +23,7 @@ namespace Website_Background.Controllers
             // ㊝㊝㊝㊝㊝ https://ithelp.ithome.com.tw/articles/10225378 ㊝㊝㊝㊝㊝
             // https://esofar.gitbooks.io/dapper-tutorial-cn/content/methods/query-first.html
             List<dynamic> result = new List<dynamic>();
-            try
+             try
             {   
                 using (var Connection = new Website_BackgroundContext().Database.GetDbConnection())
                 {   

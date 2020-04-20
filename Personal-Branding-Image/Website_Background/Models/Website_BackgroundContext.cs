@@ -22,7 +22,7 @@ namespace Website_Background.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
 
                 optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Desk\\Side-Project-Personal-Branding-Image-Web\\Personal-Branding-Image\\Website_Background\\Website_Background.mdf;Integrated Security=True;Connect Timeout=30");
             }
