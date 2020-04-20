@@ -12,8 +12,8 @@ export class SignInComponent implements OnInit {
   constructor(private formbilder: FormBuilder, public sharedservice: SharedService) { }
 
   form: FormGroup = new FormGroup({
-    Username: new FormControl('liu'),
-    Password: new FormControl('12345'),
+    Username: new FormControl(''),
+    Password: new FormControl(''),
   });
 
   error: string | null;
