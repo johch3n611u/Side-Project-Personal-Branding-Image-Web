@@ -625,3 +625,4 @@ Publish Succeeded.
 285. 原來 Azure Cosmos DB 是 nosql ... 那就只能用 sql database 了 -> <https://ithelp.ithome.com.tw/m/articles/10188701>
 286. .net core connectionstring -> <https://dotblogs.com.tw/shadow/2018/09/10/003606> 。 <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1> 。 <https://marcus116.blogspot.com/2019/03/how-to-get-value-appsettingsjson-in-netcore.html> 。 <https://dotblogs.com.tw/kinanson/2017/12/01/122740> 。 <https://ithelp.ithome.com.tw/articles/10158057>
 287. 因為改為 Azure db 所以 connstring 必須要改為 IConfiguration 安全性才不會出問題但，搞半天就是無法注入成功，不知道是架構問題還是安怎...
+288. 時間考量就先不琢磨此問題，應該只是注入生命週期架構有點問題而已，就先將 gitignore 排除敏感資料，避免問題接著繼續將網站架至 Azure 。
