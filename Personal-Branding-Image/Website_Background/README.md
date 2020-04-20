@@ -618,3 +618,4 @@ Publish Succeeded.
 </details>
 
 280. 所以現在執行第三方案，擷取功能 Gif 如果家人筆電有辦法使用在建置環境 demo 。
+281. 中文關鍵字都沒啥方法，跑去問 stackoverflow ... 在嘗試看看 ftp 上傳一次，如果失敗就不試了 <https://stackoverflow.com/questions/61314644/when-i-deploy-to-azure-it-just-get-internal-server-error-500-no-more>
