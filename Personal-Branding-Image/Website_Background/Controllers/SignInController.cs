@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Website_Background.Models;
 
 namespace Angular.Controllers
@@ -9,11 +10,19 @@ namespace Angular.Controllers
     [Route("api/[controller]")]
     public class SignInController : ControllerBase
     {
+        //// requires using Microsoft.Extensions.Configuration;
+        //private readonly IConfiguration Configuration;
+        //public SignInController(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
+
         // Postman https://localhost:44367/api/SignIn Post{ "Username":"liu","Password":"12345"}
         [HttpPost]
         [Produces("application/json")]
         public IActionResult verification([FromBody] Users Users)
         {
+           
             // [Bind("Username,Password")] Users? Users -> 不確定 Post JSON 格式
             // [FromBody] Users ?Users
             // https://blog.walterlv.com/post/use-postman-to-debug-asp-net-core-api.html

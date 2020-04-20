@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Website_Background.Models;
 
 namespace Website_Background
 {
@@ -33,8 +34,6 @@ namespace Website_Background
                           .AllowCredentials();
                 });
             });
-
-
 
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

@@ -1,11 +1,17 @@
-﻿using System.Linq;
+﻿using Microsoft.Extensions.Configuration;
+using System.Linq;
 
 namespace Website_Background.Models
 {
     public class SingIn
     {
+        //// requires using Microsoft.Extensions.Configuration;
+        //private readonly IConfiguration Configuration;
+        ////https://stackoverflow.com/questions/12870478/how-to-convert-vb-net-function-to-c
 
-        //https://stackoverflow.com/questions/12870478/how-to-convert-vb-net-function-to-c
+        //public SingIn(IConfiguration configuration) {
+        //    Configuration = configuration;
+        //}
         public string verification(string Username, string Password)
         {
 

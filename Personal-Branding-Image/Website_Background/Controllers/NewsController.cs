@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Website_Background.Models;
 
 namespace Website_Background.Controllers
@@ -12,7 +13,13 @@ namespace Website_Background.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class NewsController : ControllerBase
-    {   
+    {
+        //// requires using Microsoft.Extensions.Configuration;
+        //static IConfiguration Configuration;
+        //public NewsController(IConfiguration configuration) {
+        //    Configuration = configuration;
+        //}
+
         //https://localhost:44367/
         public Website_BackgroundContext WB_Context = new Website_BackgroundContext();
         // GET: api/News

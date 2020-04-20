@@ -620,5 +620,8 @@ Publish Succeeded.
 280. 所以現在執行第三方案，擷取功能 Gif 如果家人筆電有辦法使用在建置環境 demo 。
 281. 中文關鍵字都沒啥方法，跑去問 stackoverflow ... 在嘗試看看 ftp 上傳一次，如果失敗就不試了 <https://stackoverflow.com/questions/61314644/when-i-deploy-to-azure-it-just-get-internal-server-error-500-no-more>
 282. 結果藉由 ftp 比對資料夾格式時，想到之前有看過有人有個問題是 dist/Client App/ 之類的路徑問題，看不到錯誤碼，死馬當活馬醫結果成功了...
-283. 現在就差 db 要改為 [Microsoft Azure SQL Database](https://zh.wikipedia.org/wiki/Microsoft_Azure_SQL_Database) 或 [Azure Cosmos DB](https://en.wikipedia.org/wiki/Cosmos_DB) 的比較了，
+283. 現在就差 db 要改為 [Microsoft Azure SQL Database](https://zh.wikipedia.org/wiki/Microsoft_Azure_SQL_Database) 或 [Azure Cosmos DB](https://en.wikipedia.org/wiki/Cosmos_DB) 的比較了。
 284. 原本以為 GCP 有免費架靜態網站的地方，就不用再部屬一個靜態網站了，不過看了一下發現看錯了...那就再開一個 Azure Web App 就好，只是組太 default page 可能要注意一下要設定成 Homepage
+285. 原來 Azure Cosmos DB 是 nosql ... 那就只能用 sql database 了 -> <https://ithelp.ithome.com.tw/m/articles/10188701>
+286. .net core connectionstring -> <https://dotblogs.com.tw/shadow/2018/09/10/003606> 。 <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1> 。 <https://marcus116.blogspot.com/2019/03/how-to-get-value-appsettingsjson-in-netcore.html> 。 <https://dotblogs.com.tw/kinanson/2017/12/01/122740> 。 <https://ithelp.ithome.com.tw/articles/10158057>
+287. 因為改為 Azure db 所以 connstring 必須要改為 IConfiguration 安全性才不會出問題但，搞半天就是無法注入成功，不知道是架構問題還是安怎...

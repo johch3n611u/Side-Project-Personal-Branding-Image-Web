@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Website_Background.Models;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Website_Background.Controllers
 {
@@ -15,6 +16,13 @@ namespace Website_Background.Controllers
     [Produces("application/json")]
     public class SiteReceptionController : ControllerBase
     {
+        //// requires using Microsoft.Extensions.Configuration;
+        //private readonly IConfiguration Configuration;
+        //public SiteReceptionController(IConfiguration configuration)
+        //{
+        //    Configuration = configuration;
+        //}
+
         //https://localhost:44367/
         // GET: api/SiteReception/5
         [HttpGet("{id}")]
