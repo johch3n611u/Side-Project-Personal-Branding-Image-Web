@@ -1,5 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 appsettings.json
+Website_BackgroundContext.cs
 # compiled output
 /dist
 /tmp
