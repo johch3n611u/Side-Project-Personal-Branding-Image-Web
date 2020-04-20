@@ -159,8 +159,6 @@ The ***ClientApp*** subdirectory is a standard Angular CLI application. If you o
 278. <https://www.diffchecker.com/> 比較了成功發布的 Template 檔案，發現前端框架應該是沒甚麼問題，但 .NET Core 少了一堆 dll 檔案... 完全不知道如何解
 279. 怪異的是本地 test local server 又能正常建置也能跑 ... ????? 看來如果要用 Azure 要解決的問題蠻多的 ... 如果是參照以往 PetPet 專案，可能只能將邏輯部分抽至新開的乾淨專案，但問題是好像裝了不少 nuget 還是 npm 套件也不知道影響性多大，這樣時程更趕... 只好先將比對程式碼先 down 以下日後有時間在參考
 
-![IMAGE]()
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Website_Background/prod_different_part.png)
 
 280. 所以現在執行第三方案，擷取功能 Gif 如果家人筆電有辦法使用在建置環境 demo 。
-
-
