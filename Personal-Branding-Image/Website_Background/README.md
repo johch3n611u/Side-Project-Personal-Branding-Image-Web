@@ -619,3 +619,6 @@ Publish Succeeded.
 
 280. 所以現在執行第三方案，擷取功能 Gif 如果家人筆電有辦法使用在建置環境 demo 。
 281. 中文關鍵字都沒啥方法，跑去問 stackoverflow ... 在嘗試看看 ftp 上傳一次，如果失敗就不試了 <https://stackoverflow.com/questions/61314644/when-i-deploy-to-azure-it-just-get-internal-server-error-500-no-more>
+282. 結果藉由 ftp 比對資料夾格式時，想到之前有看過有人有個問題是 dist/Client App/ 之類的路徑問題，看不到錯誤碼，死馬當活馬醫結果成功了...
+283. 現在就差 db 要改為 [Microsoft Azure SQL Database](https://zh.wikipedia.org/wiki/Microsoft_Azure_SQL_Database) 或 [Azure Cosmos DB](https://en.wikipedia.org/wiki/Cosmos_DB) 的比較了，
+284. 原本以為 GCP 有免費架靜態網站的地方，就不用再部屬一個靜態網站了，不過看了一下發現看錯了...那就再開一個 Azure Web App 就好，只是組太 default page 可能要注意一下要設定成 Homepage
