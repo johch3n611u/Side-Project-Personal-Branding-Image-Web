@@ -48,11 +48,11 @@ namespace Website_Background.Models
 
                 entity.Property(e => e.ContentHtml)
                     .HasColumnName("content_html")
-                    .HasColumnType("text");
+                    .HasColumnType("ntext");
 
                 entity.Property(e => e.ContentText)
                     .HasColumnName("content_text")
-                    .HasColumnType("text");
+                    .HasColumnType("ntext");
 
                 entity.Property(e => e.CreatedAt)
                     .IsRequired()
@@ -63,22 +63,25 @@ namespace Website_Background.Models
 
                 entity.Property(e => e.ImgUrl)
                     .HasColumnName("img_url")
-                    .HasColumnType("text");
+                    .HasColumnType("ntext");
 
                 entity.Property(e => e.Sort)
                     .HasColumnName("sort")
                     .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .IsUnicode(false)
+                    .HasColumnType("nvarchar");
 
                 entity.Property(e => e.Subtitle)
                     .HasColumnName("subtitle")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnType("nvarchar");
 
                 entity.Property(e => e.Title)
                     .HasColumnName("title")
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(150)
+                    .IsUnicode(false)
+                    .HasColumnType("nvarchar");
             });
 
             modelBuilder.Entity<Users>(entity =>
