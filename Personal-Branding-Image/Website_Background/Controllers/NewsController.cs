@@ -21,16 +21,18 @@ namespace Website_Background.Controllers
         //}
 
         //https://localhost:44367/
+        // Postman https://websitebackground20200420071406.azurewebsites.net/api/News/GetNewsAll
         public Website_BackgroundContext WB_Context = new Website_BackgroundContext();
         // GET: api/News
-        [HttpGet]
+        [HttpGet, Route("GetNewsAll")]
         public async Task<ActionResult<IEnumerable<News>>> GetNews()
         {
             return await WB_Context.News.ToListAsync();
         }
 
         // GET: api/News/5
-        [HttpGet("{id}")]
+        // Postman https://websitebackground20200420071406.azurewebsites.net/api/News/GetNews?id=1
+        [HttpGet, Route("GetNews")]
         public async Task<ActionResult<News>> GetNews(int id)
         {
             var news = await WB_Context.News.FindAsync(id);
@@ -46,8 +48,9 @@ namespace Website_Background.Controllers
         // PUT: api/News/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutNews(int id, News news)
+        // https://websitebackground20200420071406.azurewebsites.net/api/News/PutNews?id=
+        [HttpPut, Route("PutNews")]
+        public async Task<IActionResult> PutNews(int id,News news)
         {
             if (id != news.Id)
             {
@@ -80,7 +83,8 @@ namespace Website_Background.Controllers
         // POST: api/News
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
+        // https://websitebackground20200420071406.azurewebsites.net/api/News/PostNews
+        [HttpPost, Route("PostNews")]
         public async Task<ActionResult<News>> PostNews(News news)
         {
             WB_Context.News.Add(news);
@@ -90,7 +94,7 @@ namespace Website_Background.Controllers
         }
 
         // DELETE: api/News/5
-        [HttpDelete("{id}")]
+        [HttpDelete, Route("DeleteNews")]
         public async Task<ActionResult<News>> DeleteNews(int id)
         {
             var news = await WB_Context.News.FindAsync(id);

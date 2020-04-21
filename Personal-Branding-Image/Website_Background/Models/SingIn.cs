@@ -34,7 +34,7 @@ namespace Website_Background.Models
                     queryPassword = queryResponse.Password;
                 }
 
-                if (queryPassword == Password)
+                if (queryPassword == Password && queryPassword != "")
                 {
                     verificationInfo = "success";
                 }

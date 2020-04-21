@@ -16,19 +16,19 @@ export class SharedService {
 
   SignIn(form): string | null {
 
-    const apiurl = 'https://localhost:44367/api/SignIn';
+    const apiurl = 'https://websitebackground20200420071406.azurewebsites.net/api/SignIn/Verification';
     const headers = new HttpHeaders({
       'Content-Type': 'text/json'
     });
     const options = {
       headers
     };
-    console.log(form);
+    //console.log(form);
     const body = JSON.stringify(form);
     this.httpclient.post<any>(apiurl, body, options)
       .subscribe(
         (value) => {
-          console.log('Response:' + value);
+          //console.log('Response:' + value);
           // https://stackoverflow.com/questions/32459512/extracting-a-string-from-a-response-text
           if (value == "success") {
             this.cookieutil.setCookie('verificationInfo', value, 20 * 60 * 1000);
@@ -39,7 +39,7 @@ export class SharedService {
             this.result = 'Error Username or Password, Please try again!';
           }
         }, (value) => {
-          console.log('Response:' + value);
+          //console.log('Response:' + value);
           this.result = 'This background is for private use !!!';
         }
       );
@@ -49,7 +49,7 @@ export class SharedService {
   checkSignIn(): Observable<boolean> {
     let CookieVerificationInfo = this.cookieutil.getCookie('verificationInfo');
 
-    console.log('verificationInfo:' + CookieVerificationInfo);
+    //console.log('verificationInfo:' + CookieVerificationInfo);
 
     if (CookieVerificationInfo == '') {
       CookieVerificationInfo = this.ResponseVerificationInfo;

@@ -25,8 +25,9 @@ namespace Website_Background.Controllers
 
         //https://localhost:44367/
         // GET: api/SiteReception/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<dynamic>> GetNews(int id)
+        // https://websitebackground20200420071406.azurewebsites.net/api/SiteReception/GetPosts?id=1
+        [HttpGet,Route("GetPosts")]
+        public async Task<ActionResult<dynamic>> GetPosts(int id)
         {
             // ㊝㊝㊝㊝㊝ https://ithelp.ithome.com.tw/articles/10225378 ㊝㊝㊝㊝㊝
             // https://esofar.gitbooks.io/dapper-tutorial-cn/content/methods/query-first.html

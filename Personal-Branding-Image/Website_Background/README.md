@@ -628,3 +628,13 @@ Publish Succeeded.
 288. 時間考量就先不琢磨此問題，應該只是注入生命週期架構有點問題而已，就先將 gitignore 排除敏感資料，避免問題接著繼續將網站架至 Azure 。
 289. The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time <https://stackoverflow.com/questions/53675850/how-to-fix-the-cors-protocol-does-not-allow-specifying-a-wildcard-any-origin>
 290. 新問題 API 跟 Angular 是連動 router 的結果現在 api 都叫不動都自動轉址至 ag sign in 頁面...乾上個 Azure 事情怎那樣多 -> <https://stackoverflow.com/questions/58192222/angular-with-mvc-core-catching-some-routes-that-should-go-to-controllers>
+291. Startup.cs 在伺服器啟動後跑完一次後接下來不管是 Spa 或 Api 訪問就都沒再到過裡面了，懷疑是.Net Core 、 Angular 的 Router 權重、複寫之類的問題 ?? <https://stackoverflow.com/questions/59107064/difference-between-mapcontrollerroute-mapdefaultcontrollerroute-and-mapco>
+292. "Cannot open server 'website-background' requested by the login. Client with IP address '13.75.89.24' is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect." <https://docs.microsoft.com/zh-tw/azure/sql-database/sql-database-firewall-configure>
+293. 換了路由規則後終於 api 可以訪問 ... 都快哭出來了，路由搞定後可能就是 sql 亂碼????問題了 -> <https://dotblogs.com.tw/newmonkey48/2013/07/05/107814>
+294. 不知道為何，原本是方便測試 api 所以 cors 設置 * 給 local Postman，.NET Core 內也 AllowCredentials ， 但後來條回來就條不回來了...
+295. 接著是 azure 靜態網站託管 -> <https://docs.microsoft.com/zh-tw/azure/storage/blobs/storage-blob-static-website> 。 <https://docs.microsoft.com/zh-tw/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal>
+296. 靜態網站也使用 Azure 所提供的 Blob 容器 1. 建置靜態網站 2.儲存體總管 上傳靜態內容。
+297. 大功告成，兩個連結如下。
+298. <https://pbi20200421.z7.web.core.windows.net/>
+299. <https://websitebackground20200420071406.azurewebsites.net/SignIn>
+300. 剛好 300 步驟結束，接著開始繼續整理景觀建築專案回到首頁 -> <https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web>

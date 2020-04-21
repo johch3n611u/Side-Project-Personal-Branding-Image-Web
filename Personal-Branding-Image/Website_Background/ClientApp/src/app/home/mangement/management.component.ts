@@ -73,7 +73,7 @@ export class ManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpclient.get<any>(
-      'https://localhost:44367/api/News'
+      'https://websitebackground20200420071406.azurewebsites.net/api/News/GetNewsAll'
       //'/assets/fack.json'
     ).subscribe(data => {
       this.NewsDataSourse.data = data;
@@ -99,7 +99,7 @@ export class ManagementComponent implements OnInit {
     console.log(row);
     if (confirm('Sure to delete id : ' + row.id + ' ?')) {
 
-      const apiurl = 'https://localhost:44367/api/News/' + row.id;
+      const apiurl = 'https://websitebackground20200420071406.azurewebsites.net/api/News/GetNews?id=' + row.id;
       const headers = new HttpHeaders({
         'Content-Type': 'text/json'
       });
@@ -115,7 +115,7 @@ export class ManagementComponent implements OnInit {
             alert('delete success !!!');
 
             this.httpclient.get<any>(
-              'https://localhost:44367/api/News'
+              'https://websitebackground20200420071406.azurewebsites.net/api/News/GetNewsAll'
               //'/assets/fack.json'
             ).subscribe(data => {
               this.NewsDataSourse.data = data;

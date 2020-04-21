@@ -24,13 +24,14 @@ namespace Website_Background
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddCors(options =>
             {
-                // CorsPolicy 是自訂的 Policy 名稱 WithOrigins("http://127.0.0.1:8080") .AllowCredentials()
+                // CorsPolicy 是自訂的 Policy 名稱 WithOrigins("http://127.0.0.1:8080") .AllowCredentials() 
+                // https://websitebackground20200420071406.azurewebsites.net
+
                 options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyOrigin() 
+                    policy.WithOrigins("https://websitebackground20200420071406.azurewebsites.net") 
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
@@ -46,18 +47,8 @@ namespace Website_Background
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
 
-            app.UseRouting();
-
-            app.UseCors("CorsPolicy");
-
-            // https://blog.johnwu.cc/article/ironman-day16-asp-net-core-multiple-environments.html
+        {    // https://blog.johnwu.cc/article/ironman-day16-asp-net-core-multiple-environments.html
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -69,11 +60,23 @@ namespace Website_Background
                 app.UseHsts();
             }
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
+
+            app.UseRouting();
+
+            app.UseCors("CorsPolicy");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                //throw new Exception();
+                endpoints.MapControllers();
+                //endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                //throw new Exception(); https://stackoverflow.com/questions/59107064/difference-between-mapcontrollerroute-mapdefaultcontrollerroute-and-mapco
             });
 
             //app.UseEndpoints(endpoints =>
@@ -94,7 +97,6 @@ namespace Website_Background
                 }
             });
             
-            app.UseHttpsRedirection();
         }
     }
 }

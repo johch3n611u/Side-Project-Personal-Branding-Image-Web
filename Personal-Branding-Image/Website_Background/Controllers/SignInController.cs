@@ -17,10 +17,12 @@ namespace Angular.Controllers
         //    Configuration = configuration;
         //}
 
-        // Postman https://localhost:44367/api/SignIn Post{ "Username":"liu","Password":"12345"}
-        [HttpPost]
+        // Postman https://localhost:44367/api/SignIn Post{ "Username":"liu","Password":"12345" }
+        // Postman https://websitebackground20200420071406.azurewebsites.net/api/SignIn/Verification
+        //localhost/api/SignIn/verification
+        [HttpPost, Route("Verification")]
         [Produces("application/json")]
-        public IActionResult verification([FromBody] Users Users)
+        public IActionResult Verification([FromBody] Users Users)
         {
            
             // [Bind("Username,Password")] Users? Users -> 不確定 Post JSON 格式
