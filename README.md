@@ -55,6 +55,18 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
 
 </details>
 
+## 成果展示
+
+待補
+
+## 使用心得
+
+待補
+
+---------------------------------
+
+# 實作
+
 ## 方式
 
 以 ASP.NET MVC5 的知識為底學習 .NET Core 2.1+ ☝
