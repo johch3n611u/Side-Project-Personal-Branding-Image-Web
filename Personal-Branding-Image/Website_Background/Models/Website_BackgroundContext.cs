@@ -7,6 +7,10 @@ namespace Website_Background.Models
 {
     public partial class Website_BackgroundContext : DbContext
     {
+        public Website_BackgroundContext()
+        {
+        }
+
         //// requires using Microsoft.Extensions.Configuration;
         //private readonly IConfiguration Configuration;
         //public Website_BackgroundContext(IConfiguration configuration)

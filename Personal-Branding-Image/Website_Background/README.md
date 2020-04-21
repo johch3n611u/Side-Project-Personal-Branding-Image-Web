@@ -626,3 +626,5 @@ Publish Succeeded.
 286. .net core connectionstring -> <https://dotblogs.com.tw/shadow/2018/09/10/003606> 。 <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1> 。 <https://marcus116.blogspot.com/2019/03/how-to-get-value-appsettingsjson-in-netcore.html> 。 <https://dotblogs.com.tw/kinanson/2017/12/01/122740> 。 <https://ithelp.ithome.com.tw/articles/10158057>
 287. 因為改為 Azure db 所以 connstring 必須要改為 IConfiguration 安全性才不會出問題但，搞半天就是無法注入成功，不知道是架構問題還是安怎...
 288. 時間考量就先不琢磨此問題，應該只是注入生命週期架構有點問題而已，就先將 gitignore 排除敏感資料，避免問題接著繼續將網站架至 Azure 。
+289. The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time <https://stackoverflow.com/questions/53675850/how-to-fix-the-cors-protocol-does-not-allow-specifying-a-wildcard-any-origin>
+290. 新問題 API 跟 Angular 是連動 router 的結果現在 api 都叫不動都自動轉址至 ag sign in 頁面...乾上個 Azure 事情怎那樣多 -> <https://stackoverflow.com/questions/58192222/angular-with-mvc-core-catching-some-routes-that-should-go-to-controllers>

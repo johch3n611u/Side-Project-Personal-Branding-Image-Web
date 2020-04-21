@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
 using Website_Background.Models;
 
 namespace Website_Background
@@ -25,13 +27,12 @@ namespace Website_Background
 
             services.AddCors(options =>
             {
-                // CorsPolicy 是自訂的 Policy 名稱
+                // CorsPolicy 是自訂的 Policy 名稱 WithOrigins("http://127.0.0.1:8080") .AllowCredentials()
                 options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.WithOrigins("http://127.0.0.1:8080")
+                    policy.AllowAnyOrigin() 
                           .AllowAnyHeader()
-                          .AllowAnyMethod()
-                          .AllowCredentials();
+                          .AllowAnyMethod();
                 });
             });
 
@@ -46,6 +47,13 @@ namespace Website_Background
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseStaticFiles();
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
+
+            app.UseRouting();
 
             app.UseCors("CorsPolicy");
 
@@ -61,19 +69,17 @@ namespace Website_Background
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
-
-            app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                //throw new Exception();
             });
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllers();
+            //});
 
             app.UseSpa(spa =>
             {
@@ -87,6 +93,8 @@ namespace Website_Background
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+            
+            app.UseHttpsRedirection();
         }
     }
 }

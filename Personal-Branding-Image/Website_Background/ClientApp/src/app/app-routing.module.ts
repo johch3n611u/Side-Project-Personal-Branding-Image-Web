@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'Home',
     component: HomeComponent,
-    canActivate: [SignInGuard],
+    //canActivate: [SignInGuard],
     children: [
       { path: 'Edit/:id', component: PostsComponent },
       { path: 'Publish', redirectTo: '/Home/Edit/0' },
