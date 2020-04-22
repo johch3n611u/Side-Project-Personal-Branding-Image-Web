@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
     <div class="posts">
     <mat-card>
         <div class="posts_title">
-          <a [href]='SRurl'><mat-card-title>{{Poststitle}}</mat-card-title></a>
+          <a [href]='SRurl' target="_blank"><mat-card-title>{{Poststitle}}</mat-card-title></a>
           <button type="text" mat-button form="posts">Submit</button>
         </div>
         <mat-card-content>
