@@ -10,10 +10,12 @@
     display:flex;
     align-items:center;
 }
-
+.posts_title>a{
+    color:black;
+}
 .posts_title > button {
-    position:absolute;
-    right:20px;
+  position: absolute;
+  right: 20px;
 }
 
 .mat-card {

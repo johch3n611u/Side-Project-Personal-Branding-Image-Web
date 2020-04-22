@@ -11,8 +11,8 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
     <div class="posts">
     <mat-card>
         <div class="posts_title">
-          <mat-card-title>{{Poststitle}}</mat-card-title>
-            <button type="text" mat-button form="posts">Submit</button>
+          <a [href]='SRurl'><mat-card-title>{{Poststitle}}</mat-card-title></a>
+          <button type="text" mat-button form="posts">Submit</button>
         </div>
         <mat-card-content>
             <form id="posts" [formGroup]="form" (ngSubmit)="submit()">
@@ -61,6 +61,8 @@ export class PostsComponent implements OnInit {
     private router: Router,
   ) { }
 
+  
+
   // Program sequence run 4
   ngOnInit(): void {
 
@@ -90,7 +92,7 @@ export class PostsComponent implements OnInit {
   // Program sequence run 2
   Poststitle = 'Publish';
   id = +this.route.snapshot.paramMap.get('id');
-
+  SRurl = 'https://pbi20200421.z7.web.core.windows.net/News.html?id=' + this.id;
   ngOnChanges() { }
 
   // Program sequence run 7
