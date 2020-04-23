@@ -145,7 +145,7 @@ export class PostsComponent implements OnInit {
   }
 
   postRequest(form) {
-    const apiurl = 'https://websitebackground20200420071406.azurewebsites.net/api/News/PostNews';
+    const apiurl = 'https://websitebackground20200423181629.azurewebsites.net/api/News/PostNews';
     const headers = new HttpHeaders({
       'Content-Type': 'text/json'
     });
@@ -170,7 +170,7 @@ export class PostsComponent implements OnInit {
   putRequest(form) {
     this.id = +this.route.snapshot.paramMap.get('id');
     //https://localhost:44367  https://websitebackground20200420071406.azurewebsites.net
-    const apiurl = 'https://websitebackground20200420071406.azurewebsites.net/api/News/PutNews?id=' + this.id;
+    const apiurl = 'https://websitebackground20200423181629.azurewebsites.net/api/News/PutNews?id=' + this.id;
     const headers = new HttpHeaders({
       'Content-Type': 'text/json'
     });
@@ -196,7 +196,7 @@ export class PostsComponent implements OnInit {
 
     if (id != 0) {
       this.httpclient.get<any>(
-        'https://websitebackground20200420071406.azurewebsites.net/api/News/GetNews?id=' + this.id
+        'https://websitebackground20200423181629.azurewebsites.net/api/News/GetNews?id=' + this.id
         //'/assets/fack.json'
       ).subscribe((value) => {
         console.log('SuccessGetQuery:' + value);

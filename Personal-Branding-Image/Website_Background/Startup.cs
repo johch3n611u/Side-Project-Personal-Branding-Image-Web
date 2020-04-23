@@ -31,7 +31,8 @@ namespace Website_Background
 
                 options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.WithOrigins("https://websitebackground20200420071406.azurewebsites.net") 
+                    policy.WithOrigins("https://websitebackground20200423181629.azurewebsites.net/")
+                          .WithOrigins("https://pbi20200421.z7.web.core.windows.net")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });

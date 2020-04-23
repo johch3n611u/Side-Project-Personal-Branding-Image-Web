@@ -6,9 +6,9 @@ var URLobj = {
         "getnewsid": "/assets/fakejson/api_News_id.json"
     },
     "prodpath": {
-        "sitereception1": "https://websitebackground20200420071406.azurewebsites.net/api/SiteReception/GetPosts?id=1",
-        "sitereception2": "https://websitebackground20200420071406.azurewebsites.net/api/SiteReception/GetPosts?id=2",
-        "sitereception3": "https://websitebackground20200420071406.azurewebsites.net/api/SiteReception/GetPosts?id=3",
-        "getnewsid": "https://websitebackground20200420071406.azurewebsites.net/api/News/GetNews?id="
+        "sitereception1": "https://websitebackground20200423181629.azurewebsites.net/api/SiteReception/GetPosts?id=1",
+        "sitereception2": "https://websitebackground20200423181629.azurewebsites.net/api/SiteReception/GetPosts?id=2",
+        "sitereception3": "https://websitebackground20200423181629.azurewebsites.net/api/SiteReception/GetPosts?id=3",
+        "getnewsid": "https://websitebackground20200423181629.azurewebsites.net/api/News/GetNews?id="
     }
 };
