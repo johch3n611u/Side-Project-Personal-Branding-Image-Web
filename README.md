@@ -4,6 +4,12 @@
 
 Framework - Angular 2+ & .Net Core 2+
 
+[Site_Reception](https://pbi20200421.z7.web.core.windows.net/)
+
+[Website_Background](https://websitebackground20200423181629.azurewebsites.net/SignIn)
+
+* Update 2020/04/25 by yochen publish on Azure account free try out, not sure work duration.
+
 ## 完成架構
 
 [StudyProject study](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 了基本的 ng basis 、 mat 與 .net core ，也嘗試了 wireframe to html ，
