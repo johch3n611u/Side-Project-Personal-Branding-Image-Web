@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var params = decodeURIComponent(window.location.search.substr(1)).split('&');
-    // console.log(params); //  ["id=51", "r=56", "g=126", "b=55"]
+    // console.log(params); // ["id=51", "r=56", "g=126", "b=55"]
     var obj = '{';
     for (i = 0; i < params.length; i++) {
         obj += '"' + params[i].split("=")[0] + '":';
@@ -26,12 +26,12 @@ $(document).ready(function() {
         url: URLobj.prodpath.getnewsid + obj.id,
         async: false,
         success: function(data) {
-            console.log('id=' + obj.id);
+            // console.log('id=' + obj.id);
             // console.log(params.length);
             if (params.length > 0) {
                 // console.log('params.length =' + params.length);
                 var getcolor = 'rgba(' + obj.r + ',' + obj.g + ',' + obj.b + ',0.5)'
-                    // console.log($('body').attr("style", "background-color:" + getcolor));
+                console.log($('body').attr("style", "background-color:" + getcolor));
             }
             var combination;
             combination = '<h1>' + data.title;
@@ -41,7 +41,7 @@ $(document).ready(function() {
             combination += '</div><a href="Products.html"><div class="bottom_box"> See more &gt;&gt; </div></a>';
             $('.news_content')[0].innerHTML = combination;
 
-            console.log(combination);
+            // console.log(combination);
 
             // console.log($('.right_news')[0].innerHTML);
             // console.log($('.left_news')[0].innerHTML);
