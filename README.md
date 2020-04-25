@@ -63,7 +63,11 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
 
 ## 成果展示
 
-待補
+### 前台首頁
+
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/1.gif)
+
+### 前台個人簡介 ( 隨機文章產生 )
 
 ## 使用心得
 
