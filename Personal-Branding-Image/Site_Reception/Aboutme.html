@@ -273,8 +273,19 @@
     <script src='/assets/js/shard.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
     <script>
+        function isMobile() {
+            try {
+                document.createEvent("TouchEvent");
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
         $(document).ready(function() {
-            alert('此 Demo 只支援 PC 頁面 , 不支援 Mobile 頁面 , RWD 將轉交其他編輯者執行 , 如後續版本有變動請再來查看 , 謝謝 !!!');
+            if (isMobile()) {
+                alert('此 Demo 只支援 PC 頁面 , 不支援 Mobile 頁面 , RWD 將轉交其他編輯者執行 , 如後續版本有變動請再來查看 , 謝謝 !!!');
+            }
         });
     </script>
     <script src='/assets/js/aboutme.js'></script>
