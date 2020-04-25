@@ -77,13 +77,23 @@ Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/j
 
 ### 前台文章頁面 ( 背景分為基礎與隨機顏色 )
 
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/4.gif)
+
 ### 後台登入畫面
+
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/5.gif)
 
 ### 後台首頁文章管理頁面
 
+![IMAGE](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/Personal-Branding-Image/Site_Reception/img/6.gif)
+
 ## 使用心得
 
-待補
+因為一開始架構就設定為簡易的 demo ，所以真實使用起來缺陷蠻多的，先不管資安問題，
+像是欄位編輯、時間、img 或是 html text 就有一些存取上的問題，
+但其實都是些小問題，真的要處理時間花費也不會很久，
+最後是 mobile 顯示問題，因為沒有特別使用 CSS 框架，也沒有撰寫 RWD ，
+所以並沒有考慮到手機板應用問題，後續應該會交由還在學的弟弟來接棒，當作他的練習作品。
 
 ---------------------------------
 
