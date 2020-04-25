@@ -12,7 +12,7 @@ Framework - Angular 2+ & .Net Core 2+
 
 ## 完成架構
 
-[StudyProject study](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 了基本的 ng basis 、 mat 與 .net core ，也嘗試了 wireframe to html ，
+[StudyProject](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/StudyProject/Angular%20Material) 研究了基本的 ng basis 、 mat 與 .net core ，也嘗試了 wireframe to html ，
 
 Personal Branding Image 專案則包含了 [Site_Reception](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/tree/master/Personal-Branding-Image/Site_Reception) 純靜態網站，只藉由 AJAX 從 .NET Core API 要求固定資料，
 
