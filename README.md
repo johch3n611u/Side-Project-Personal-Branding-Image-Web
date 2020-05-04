@@ -6,11 +6,12 @@
 
 Framework - Angular 2+ & .Net Core 2+
 
-[Site_Reception](https://pbi20200421.z7.web.core.windows.net/)
+[Site_Reception](https://pbi20200421.z7.web.core.windows.net/) 前台 Static web page
 
-[Website_Background](https://websitebackground20200423181629.azurewebsites.net/SignIn)
+[Website_Background](https://websitebackground20200423181629.azurewebsites.net/SignIn) 後台 Single-page application + .Net Core Web API
 
 * Update 2020/04/25 by yochen publish on Azure account free try out, not sure work duration.
+* 資料庫使用 Azure 無伺服器資料庫 ( 自動暫停延遲方案 )，初次讀取較慢，請見諒。
 
 ## 完成架構
 
