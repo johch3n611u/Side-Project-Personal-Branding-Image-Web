@@ -13,6 +13,7 @@ Framework - Angular 2+ & .Net Core 2+
 * Update 2020/04/25 by yochen publish on Azure account free try out, not sure work duration.
 * 資料庫使用 Azure 無伺服器資料庫 ( 自動暫停延遲方案 )，初次讀取較慢，請見諒。
 * [20200606](https://github.com/johch3n611u/Side-Project-Personal-Branding-Image-Web/blob/master/202006/20200606.md) 目前 Azure 整體使用方案都在十二個月免費期間，就先這樣了，但是綁著信用卡的感覺還是怪怪的，免費服務到期日 2021-0519 。
+* [Azure 信用卡改發票付款](http://blog.sanc.idv.tw/2014/01/windows-azure.html)
 
 ## 完成架構
 
