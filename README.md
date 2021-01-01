@@ -1,3 +1,13 @@
+## 引言
+
+Framework - Angular 2+ & .NET Core 2+ ---------------------- 
+
+Personal-Branding-Image-Web used for sort out personal works and Devoted to be a multipotentialite unicorn developer. 
+
+F2E architecture Site_Reception (Static web page with AJAX),
+
+B2E architecture  Website_Background (Single page application with Angular Material), .NET Core API with MS SQL.
+
 <p id='top'></p>
 
 # Personal Branding Image Web
